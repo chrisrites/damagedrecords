@@ -7,10 +7,12 @@ connectDb()
 
 export default async (req, res) => {
     const { email, password } = req.body
+    console.log(email, password)
 
     try{
         // Check if a user exists with the provided email.  **the select function is to get the password which was purposely omitted in the user model
         const user = await User.findOne({ email }).select('+password')
+        console.log(user)
         // if not, return an error
         if(!user){ 
             return res.status(404).send('No user exists with that email address')
