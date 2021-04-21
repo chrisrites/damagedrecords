@@ -43,7 +43,7 @@ class MyApp extends App {
         redirectUser(ctx, 'login')
       }
     }
-
+    
     return { pageProps }
   }
 
