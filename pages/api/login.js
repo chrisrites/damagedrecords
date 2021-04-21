@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken'
 connectDb()
 
 export default async (req, res) => {
+    console.log('MADE IT TO THE LOGIN ENDPOINT')
     const { email, password } = req.body
 
     try{
