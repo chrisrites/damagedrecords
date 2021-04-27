@@ -42,7 +42,7 @@ function Header({ user, toggleOverlay }) {
 
   return (
     <div className="header-body" style={{ top: headerScrollPos }}>
-      <div className="damaged-container">
+      <div className="content-container">
         <nav className={styles.navBar}>
           <div id={styles.navBrand} className={isActive('/')}>
             <Link href="/">

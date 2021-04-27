@@ -1,0 +1,9 @@
+/* Image Slider styles */
+
+.sliderContainer {
+    z-index: 1;
+
+    .carouselElement {
+        cursor: pointer;
+    }
+}
