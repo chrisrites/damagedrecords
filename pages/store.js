@@ -6,10 +6,10 @@ import baseUrl from '../utils/baseUrl'
 
 function Store({ products, totalPages }) {
    return (
-        <>
+        <div className="content-container">
             <ProductList products={products} />
             <ProductPagination totalPages={totalPages} />
-        </>
+        </div>
     )
 }
 

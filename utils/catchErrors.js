@@ -1,5 +1,6 @@
 function catchErrors(error, displayError){
     let errorMsg
+    
     if(error.response){
         // The request was made and the server responded with a status code that is not in the range of 200
         errorMsg = error.response.data

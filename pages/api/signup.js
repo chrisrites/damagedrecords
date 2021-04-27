@@ -1,7 +1,6 @@
 import connectDb from '../../utils/connectDb'
 import User from '../../models/User'
 import Cart from '../../models/Cart'
-// import bcrypt from 'bcrypt'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import isEmail from 'validator/lib/isEmail'
