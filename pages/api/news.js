@@ -13,7 +13,6 @@ export default async (req, res) => {
         let newsItems = await NewsItem.find().sort({date: 'desc'}).limit(10)
         // Check if we have a query ID, if we do, search the newsItem array we just created, extract the newsItem and and set it as our singleNews item
         if(_id){
-            console.log("ID is: " + _id)
             for(let i=0; i < newsItems.length; i++) {
                 // Only double equal sign because news._id is an Object and _id is a String
                 if(newsItems[i]._id == _id) {
@@ -34,7 +33,8 @@ export default async (req, res) => {
         }
 
         // return both our single news item and our list
-        res.status(200).json({ singleNews, newsItems })
+        // res.status(200).json({ singleNews, newsItems })
+        res.status(200).json({ props: { singleNews, newsItems }})
     } catch (error) {
         console.error(error)
         res.status(403).send('DB/Server Error fetching news.  Please try again')

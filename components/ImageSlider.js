@@ -1,7 +1,6 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import Link from 'next/link';
-// import sliderBands from '../static/sliderBands.json'
 import styles from '../static/styles/imageSlider.module.scss'
 
 function ImageSlider({ artists }) {

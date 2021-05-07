@@ -14,10 +14,11 @@ function Account({ user, orders }) {
   </>
 }
 
-Account.getInitialProps = async ctx => {
+// Account.getInitialProps = async ctx => {
+export async function getServerSideProps(ctx) {
   const { token } = parseCookies(ctx)
   if(!token){
-    return { orders: [] }
+    return { props: { orders: [] }}
   }
   const payload = { headers: { Authorization: token }}
   const url = `${baseUrl}/api/orders`

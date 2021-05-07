@@ -49,16 +49,17 @@ function Cart({ products, user }) {
   )
 }
 
-Cart.getInitialProps = async ctx => {
+// Cart.getInitialProps = async ctx => {
+export async function getServerSideProps(ctx) {
   const { token } = parseCookies(ctx) 
   if(!token) {
-    return { products: [] }
+    return { props: { products: [] }}
   }
   const url = `${baseUrl}/api/cart`
   const payload = { headers: { Authorization: token }}
   const response = await axios.get(url, payload)
-  console.log(response.data)
-  return { products: response.data }
+  // return { products: response.data }
+  return response.data
 }
 
 export default Cart;
