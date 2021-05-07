@@ -21,5 +21,6 @@ export default async (req, res) => {
         products = await Product.find().skip(skips).limit(pageSize)
     }
     // const products = await Product.find()
-    res.status(200).json({ products, totalPages })
+    // res.status(200).json({ products, totalPages })
+    res.status(200).json({ props: { products, totalPages }})
 }

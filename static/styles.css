@@ -17,7 +17,7 @@ body {
     transition: top 1s;
     display: inline-block;
     margin: 0 auto;
-    text-align: center;
+    /* text-align: center; */
     width: 100%;
     background: #0c0f0a;
     /* height: 70px; */

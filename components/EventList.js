@@ -3,19 +3,19 @@ import Link from 'next/link';
 import { Segment } from 'semantic-ui-react'
 import stringifyDate from '../utils/stringifyDate'
 
-function NewsList({ news }) {
+function EventList({ events }) {
 
-    function mapNewsToSegment(){
+    function mapEventsToSegment(){
         return (
-            news.map((newsItem, idx) => (
+            events.map((event, idx) => (
                 <Segment key={idx} inverted >
-                    <Link href={`/news?_id=${newsItem._id}`}><h3>{newsItem.title}</h3></Link>
-                    <h4>{stringifyDate(newsItem.date)}</h4>
-                    <p>{newsItem.content}</p>
-                    {newsItem.links.map((link, idx) => (
+                    <Link href={`/events/${event._id}`}><h3>{event.title}</h3></Link>
+                    <h4>{stringifyDate(event.date)}</h4>
+                    {/* <p>{event.description}</p> */}
+                    {event.links.map((link, idx) => (
                         <a key={idx} href={link.link}>{link.linkName}</a>
                     ))}
-                    {newsItem.artists.map((artist, idx) => (
+                    {event.artists.map((artist, idx) => (
                         <Link key={artist} href={`/artists/${artist}`}>{artist}</Link>
                     ))}
                 </Segment>
@@ -25,9 +25,9 @@ function NewsList({ news }) {
 
   return (
         <div>
-            {mapNewsToSegment()}
+            {mapEventsToSegment()}
         </div>
   )
 }
 
-export default NewsList;
+export default EventList;

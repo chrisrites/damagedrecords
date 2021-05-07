@@ -7,6 +7,7 @@ import axios from "axios";
 import Router from "next/router";
 
 class MyApp extends App {
+  
   // This is a NEXT.JS function which lets us run getInitialProps and send it to each child Component
   static async getInitialProps({ Component, ctx }){
     const { token } = parseCookies(ctx)
