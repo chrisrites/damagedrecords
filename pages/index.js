@@ -18,12 +18,9 @@ function Home({ artists, news, events }) {
   )
 }
 
-// This is a NEXT.JS function to fetch data on the server (we don't have to wait until our component is mounted like using the useEffect hook)
-// Home.getInitialProps = async () =>{
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // fetch data on the server
-  const url = `${baseUrl}/api/home`
-  // const payload = { params: { page, size } }  
+  const url = `${baseUrl}/api/home`  
   const response = await axios.get(url);
   return response.data
   // return response data as an object
