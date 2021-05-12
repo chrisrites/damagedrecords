@@ -8,12 +8,13 @@ import EventList from '../components/EventList'
 function Home({ artists, news, events }) {
   return (
     <div>
-      <ImageSlider artists={artists} /> 
+      <ImageSlider artists={artists} />
+      <Link href="/artists">ALL ARTISTS</Link> 
       <NewsList news={news} />
       <Link href="/news">ALL NEWS</Link>
       <h3>Upcoming Events</h3>
       <EventList events={events} />
-      <Link href="/events"><h4>All Upcoming Events</h4></Link>
+      <Link href="/events">All Upcoming Events</Link>
     </div>
   )
 }

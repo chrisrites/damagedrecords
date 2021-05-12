@@ -49,7 +49,7 @@ function Header({ user, toggleOverlay }) {
               <div id={styles.brandAlign}>
                 <div id={styles.navBrandContent}>
                   <Image id={styles.brandLogo} src="/static/logo.svg" />
-                  <span id={styles.brandTitle}>DAMAGED RECORDS</span>
+                  <span id={styles.brandTitle}>MELTED WAX</span>
                 </div>
               </div>
             </Link>

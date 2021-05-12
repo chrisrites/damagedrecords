@@ -9,7 +9,7 @@ function ImageSlider({ artists }) {
         return (  
             artists.map(artist => (
                 <Carousel.Item key={artist.name}>
-                    <Link className={styles.sliderLinks} href={`/artists/${artist.name}`} >
+                    <Link className={styles.sliderLinks} href={`/artists/${artist.url}`} >
                         <img
                             className="d-block w-100"
                             src={artist.image}

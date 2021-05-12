@@ -32,7 +32,7 @@ function Events({ events }) {
 
 // query is destructured from ctx, and _id is destructured from query
 // export async function getServerSideProps({ query: { event } }){
-    export async function getServerSideProps(){
+export async function getServerSideProps(){
     const url = `${baseUrl}/api/events`
     const response = await axios.get(url)
     return response.data
