@@ -8,6 +8,11 @@ const ArtistSchema  = new mongoose.Schema({
         unique: true,
         required: true
     },
+    url: {
+        type: String,
+        unique: true,
+        required: true
+    },
     bio: {
         type: String,
         required: true
