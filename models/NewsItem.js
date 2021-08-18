@@ -31,7 +31,12 @@ const NewsItemSchema  = new mongoose.Schema({
     ],
     artists: [
         {
-            type: String
+            name: {
+                type: String
+            },
+            path: {
+                type: String
+            }
         }
     ]
 })

@@ -14,13 +14,14 @@ function Layout({ children, user }) {
   }
 
   return (
-    <>
+    <div id={styles.layoutContainer}>
       <Head>
         <HeadContent />
         {/* Stylesheets */}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+        {/* <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" /> */}
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&family=Montserrat&family=Merriweather&family=Noto+Sans+JP:wght@300&family=Rubik&family=Ubuntu:wght@300&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://use.typekit.net/uqi8xbk.css" />
         <link
           rel="stylesheet"
@@ -36,14 +37,14 @@ function Layout({ children, user }) {
         <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
         <title>Damaged Records</title>
       </Head>
-      <Header className={styles.headerComponent} user={user} toggleOverlay={toggleOverlay} />
-      <Overlay className={styles.overlayComponent} user={user} overlayHeight={overlayHeight} toggleOverlay={toggleOverlay} />
+      <Header id={styles.headerComponent} user={user} toggleOverlay={toggleOverlay} style={{zIndex:99}}/>
+      <Overlay id={styles.overlayComponent} user={user} overlayHeight={overlayHeight} style={{zIndex:100}} toggleOverlay={toggleOverlay} />
       {/* <Container style={{ paddingTop: "1em" }}> */}
-      <div className={styles.layoutContainer} style={{marginTop:"70px", height:"1200px"}}>
+      <div id={styles.childrenComponent} >
         {children}
       </div>
       {/* </Container> */}
-    </>
+    </div>
   );
 }
 

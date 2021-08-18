@@ -17,8 +17,7 @@ function Event({ events }) {
 
   return (
     <>
-        <h2>Event Page</h2>
-      <h3>{events[0].title}</h3>x
+      <h2>{events[0].title}</h2>
       <h4>{stringifyDate(events[0].date)}</h4>
       <p>{events[0].description}</p>
       <Image src={events[0].image}></Image>

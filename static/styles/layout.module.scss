@@ -12,6 +12,17 @@
 //     background: $black;
 // }
 
+#layoutContainer {
+    // background-color: black;
+
+    #overlayComponent {}
+
+    #childrenComponent {
+        margin-top: 70px;
+        height: 1200px;
+    }
+}
+
 /* Overrides default styled accordion styles (too much bottom padding) */
 .ui.styled.accordion .content {
     margin: 0;

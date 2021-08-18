@@ -12,6 +12,7 @@ body {
 
 .header-body {
     /* border: 2px solid red; */
+    z-index: 99;
     position: fixed;
     left: 0;
     transition: top 1s;
@@ -19,7 +20,7 @@ body {
     margin: 0 auto;
     /* text-align: center; */
     width: 100%;
-    background: #0c0f0a;
+    /* background: #0c0f0a; */
     /* height: 70px; */
 }
 

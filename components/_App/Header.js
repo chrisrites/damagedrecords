@@ -42,14 +42,14 @@ function Header({ user, toggleOverlay }) {
 
   return (
     <div className="header-body" style={{ top: headerScrollPos }}>
-      <div className="content-container">
+      <div id={styles.headerContainer}>
         <nav className={styles.navBar}>
           <div id={styles.navBrand} className={isActive('/')}>
             <Link href="/">
               <div id={styles.brandAlign}>
                 <div id={styles.navBrandContent}>
                   <Image id={styles.brandLogo} src="/static/logo.svg" />
-                  <span id={styles.brandTitle}>MELTED WAX</span>
+                  <span id={styles.brandTitle}>MELTED WAX RECORDS</span>
                 </div>
               </div>
             </Link>
@@ -62,7 +62,7 @@ function Header({ user, toggleOverlay }) {
                     className={styles.semUINavIcons}
                     name="cart"
                   /> */}
-                  <FontAwesomeIcon icon={faStore} className={styles.faNavIcons} />
+                  {/* <FontAwesomeIcon icon={faStore} className={styles.faNavIcons} /> */}
                   <span className={styles.navTitles}>Store</span>
                 </div>
               </Link>
@@ -70,10 +70,10 @@ function Header({ user, toggleOverlay }) {
             <li className={`${styles.navLi} ${isActive('/cart')}`}>
               <Link href="/cart">
                 <div className={styles.navItems}>
-                  <Icon
+                  {/* <Icon
                     className={styles.semUINavIcons}
                     name="cart"
-                  />
+                  /> */}
                   <span className={styles.navTitles}>Cart</span>
                 </div>
               </Link>
@@ -82,10 +82,10 @@ function Header({ user, toggleOverlay }) {
               <li className={`${styles.navLi} ${isActive('/create')}`}>
                 <Link href="/create">
                   <div className={styles.navItems}>
-                    <Icon
+                    {/* <Icon
                       className={styles.semUINavIcons}
                       name="add square"
-                    />
+                    /> */}
                     <span className={styles.navTitles}>Create</span>
                   </div>
                 </Link>
@@ -95,10 +95,10 @@ function Header({ user, toggleOverlay }) {
               <li className={`${styles.navLi} ${isActive('/account')}`}>
                 <Link href="/account">
                   <div className={styles.navItems}>
-                    <Icon
+                    {/* <Icon
                       className={styles.semUINavIcons}
                       name="user"
-                    />
+                    /> */}
                     <span className={styles.navTitles}>Account</span>
                   </div>
                 </Link>
@@ -106,10 +106,10 @@ function Header({ user, toggleOverlay }) {
               <li className={`${styles.navLi} ${isActive('/')}`} onClick={handleLogout}>
                 <Link href="/">
                   <div className={styles.navItems}>
-                    <Icon
+                    {/* <Icon
                       className={styles.semUINavIcons}
                       name="sign out"
-                    />
+                    /> */}
                     <span className={styles.navTitles}>Log Out</span>
                   </div>
                 </Link>
@@ -120,10 +120,10 @@ function Header({ user, toggleOverlay }) {
                 <li className={`${styles.navLi} ${isActive('/login')}`}>
                   <Link href="/login">
                     <div className={styles.navItems}>
-                      <Icon
+                      {/* <Icon
                         className={styles.semUINavIcons}
                         name="sign in"
-                      />
+                      /> */}
                       <span className={styles.navTitles}>Login</span>
                     </div>
                   </Link>
@@ -131,10 +131,10 @@ function Header({ user, toggleOverlay }) {
                 <li className={`${styles.navLi} ${isActive('/signup')}`}>
                   <Link href="/signup">
                     <div className={styles.navItems}>
-                      <Icon
+                      {/* <Icon
                         className={styles.semUINavIcons}
                         name="signup"
-                      />
+                      /> */}
                       <span className={styles.navTitles}>Signup</span>
                     </div>
                   </Link>
@@ -147,7 +147,7 @@ function Header({ user, toggleOverlay }) {
             onClick={() => toggleOverlay("100%")}
           /></div>
         </nav>
-      </div>
+        </div>
     </div>
   )
 }
