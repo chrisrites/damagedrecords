@@ -3,6 +3,7 @@ import { Menu, Container, Image, Icon } from 'semantic-ui-react';
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router';
 import NProgress from 'nprogress';
+import globalStyles from '../../static/styles/global.module.scss'
 import styles from '../../static/styles/header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStore } from '@fortawesome/free-solid-svg-icons'
@@ -41,7 +42,7 @@ function Header({ user, toggleOverlay }) {
   }
 
   return (
-    <div className="header-body" style={{ top: headerScrollPos }}>
+    <div className={globalStyles.headerBody} style={{ top: headerScrollPos }}>
       <div id={styles.headerContainer}>
         <nav className={styles.navBar}>
           <div id={styles.navBrand} className={isActive('/')}>

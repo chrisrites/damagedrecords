@@ -3,10 +3,11 @@ import axios from 'axios'
 import ProductList from '../components/Store/ProductList'
 import ProductPagination from '../components/Store/ProductPagination'
 import baseUrl from '../utils/baseUrl'
+import globalStyles from '../static/styles/global.module.scss'
 
 function Store({ products, totalPages }) {
    return (
-        <div className="content-container">
+        <div className={globalStyles.contentContainer}>
             <ProductList products={products} />
             <ProductPagination totalPages={totalPages} />
         </div>

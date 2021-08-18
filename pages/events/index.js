@@ -8,11 +8,11 @@ import { mapRelevantLinks, mapArtistsLinks } from '../../utils/mapLinks'
 function Events({ events }) {
 
     function buildEventList(){
-        let list = []
-        for(let i = 1; i < events.length; i++){
-            list[i-1] = events[i]
-        }
-        return list
+      let list = []
+      for(let i = 1; i < events.length; i++){
+        list[i-1] = events[i]
+      }
+      return list
     }
 
   return (

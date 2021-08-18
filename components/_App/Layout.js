@@ -40,7 +40,7 @@ function Layout({ children, user }) {
       <Header id={styles.headerComponent} user={user} toggleOverlay={toggleOverlay} style={{zIndex:99}}/>
       <Overlay id={styles.overlayComponent} user={user} overlayHeight={overlayHeight} style={{zIndex:100}} toggleOverlay={toggleOverlay} />
       {/* <Container style={{ paddingTop: "1em" }}> */}
-      <div id={styles.childrenComponent} >
+      <div>
         {children}
       </div>
       {/* </Container> */}

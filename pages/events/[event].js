@@ -10,7 +10,7 @@ function Event({ events }) {
     function buildEventList(){
         let list = []
         for(let i = 1; i < events.length; i++){
-            list[i-1] = events[i]
+          list[i-1] = events[i]
         }
         return list
     }

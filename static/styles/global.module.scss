@@ -1,45 +1,43 @@
 @use 'globals';
 @use 'colours';
 
+.headerBody {
+    /* border: 2px solid red; */
+    z-index: 99;
+    position: fixed;
+    left: 0;
+    transition: top 1s;
+    display: inline-block;
+    margin: 0 auto;
+    /* text-align: center; */
+    width: 100%;
+    /* background: #0c0f0a; */
+    /* height: 70px; */
+}
 
 .contentContainer {
-    #allArtistsHeading {
-        background-color: colours.$white;
-        padding: 0.25em 0;
-        margin: 0;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: left;
+    width: 95%;
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {
+            width: 90%;
     }
 
-    h5 {
-        text-align: center;
-        font-family: globals.$heading5Font;
-        font-size: globals.$heading5Size;
-        color: globals.$heading5Colour;
-
-        a {
-            color: globals.$heading5Colour;
-        }
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+            width: 85%;
     }
 
-    h5:hover {
-        cursor: globals.$heading3Cursor;
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+            width: 80%;
     }
 
-    h2 {
-        text-align: center;
-        font-family: globals.$heading2Font;
-        font-size: globals.$heading2Size;
-        margin-top: 0.5em;
-
-        a {
-            color: globals.$heading2Colour;
-        }
-    }
-
-    #newsListContainer {
-        margin-bottom: 2em;
-    }
-
-    #eventListContainer {
-        background-color: colours.$teal;
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+            width: 75%;
     }
 }
