@@ -2,118 +2,154 @@
 @use 'colours';
 @use 'fonts';
 
-.navBar {
-    // border: 2px solid white;
+
+#headerContainer {
     display: inline-block;
+    margin: 0 auto;
+    text-align: center;
     width: 100%;
-    height: 70px;
-    background: colours.$black;
+    background-color: #0c0f0a;
 
-    #navBrand {
-        // border: 2px solid red;
+    .navBar {
+        text-align: left;
+        // @include breakpoints.small {
+        //     width: 90%;
+        // }
+
+        // border: 2px solid white;
         display: inline-block;
-        // padding: 1em;
-        height: 100%;
-        // border-right: 0.5px solid rgb(143, 143, 143);
-        padding: 0 1em;
+        width: 100%;
+        height: 70px;
+        background: colours.$black;
 
-        #brandAlign {
-            // border: 2px solid purple;
-            display: flex;
-            align-items: center;
+        @include breakpoints.small {
+            width: 90%;
+        }
+
+        @include breakpoints.medium {
+            width: 85%;
+        }
+
+        @include breakpoints.large {
+            width: 80%;
+        }
+
+        @include breakpoints.exLarge {
+            width: 75%;
+        }
+
+        #navBrand {
+            // border: 2px solid red;
+            display: inline-block;
+            // padding: 1em;
             height: 100%;
+            // border-right: 0.5px solid rgb(143, 143, 143);
+            padding: 0 1em;
 
-            #navBrandContent {
-                // border: 2px solid yellow;
+            #brandAlign {
+                // border: 2px solid purple;
                 display: flex;
                 align-items: center;
-                cursor: pointer;
+                height: 100%;
 
-                #brandLogo {
-                    // border: 2px solid green;
-                    display: inline;
-                    height: 45px;
-                    width: 45px;
-                    margin: 0 1em 0 0;
-                }
+                #navBrandContent {
+                    // border: 2px solid yellow;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
 
-                #brandTitle {
-                    // border: 2px solid purple;
-                    display: inline;
-                    font-family: fonts.$futura-pt-cond;
-                    font-weight: 800;
-                    font-style: normal;
-                    font-size: 18pt;
+                    #brandLogo {
+                        // border: 2px solid green;
+                        display: inline;
+                        height: 45px;
+                        width: 45px;
+                        margin: 0 1em 0 0;
+                    }
+
+                    #brandTitle {
+                        // border: 2px solid purple;
+                        display: inline;
+                        font-family: fonts.$futura-pt-cond;
+                        font-weight: 800;
+                        font-style: normal;
+                        font-size: 18pt;
+                    }
                 }
             }
         }
-    }
 
-    .navUl {
-        // border: 2px solid blue;
-        display: none;
-        // align-items: center;
-        float: right;
-        list-style: none;
-        height: 100%;
-        margin: 0;
+        .navUl {
+            // border: 2px solid blue;
+            display: none;
+            // align-items: center;
+            float: right;
+            list-style: none;
+            height: 100%;
+            margin: 0;
 
 
-        @include breakpoints.large {
-            display: flex;
+            @include breakpoints.large {
+                display: flex;
+            }
+
+            .navLi {
+                // border: 2px solid rgb(255, 0, 255);
+                display: flex;
+                align-items: center;
+                margin: 0;
+                padding: 0 1em;
+                height: 100%;
+                // padding: 1em;
+
+                .navItems {
+                    // border: 2px solid rgb(0, 255, 234);
+                    // display: flex;
+                    // align-items: center;
+                    cursor: pointer;
+                    color: colours.$teal;
+
+                    :hover {
+                        color: colours.$pink;
+                    }
+
+                    .semUINavIcons {
+                        font-size: 18pt;
+                    }
+
+                    .faNavIcons {
+                        font-size: 15pt;
+                        margin-right: 0.5em;
+                    }
+
+                    .navTitles {
+                        font-size: 13pt;
+                        font-family: fonts.$montserrat;
+                        font-weight: 700;
+                    }
+                }
+            }
         }
 
-        .navLi {
-            // border: 2px solid rgb(255, 0, 255);
+        #menuToggle {
+            // border: 1px blue solid;
+            visibility: visible;
             display: flex;
             align-items: center;
-            margin: 0;
-            padding: 0 1em;
+            float: right;
             height: 100%;
-            // padding: 1em;
 
-            .navItems {
-                // border: 2px solid rgb(0, 255, 234);
-                // display: flex;
-                // align-items: center;
+            @include breakpoints.large {
+                display: none;
+            }
+
+            #menuToggleBtn {
                 cursor: pointer;
-
-                .semUINavIcons {
-                    font-size: 18pt;
-                }
-
-                .faNavIcons {
-                    font-size: 15pt;
-                    margin-right: 0.5em;
-                }
-
-                .navTitles {
-                    font-size: 13pt;
-                    font-family: fonts.$montserrat;
-                }
+                font-size: 18pt;
             }
         }
-    }
 
-    #menuToggle {
-        // border: 1px blue solid;
-        visibility: visible;
-        display: flex;
-        align-items: center;
-        float: right;
-        height: 100%;
-
-        @include breakpoints.large {
-            display: none;
+        .active {
+            background: colours.$background;
         }
-
-        #menuToggleBtn {
-            cursor: pointer;
-            font-size: 18pt;
-        }
-    }
-
-    .active {
-        background: colours.$background;
     }
 }

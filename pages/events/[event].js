@@ -10,15 +10,14 @@ function Event({ events }) {
     function buildEventList(){
         let list = []
         for(let i = 1; i < events.length; i++){
-            list[i-1] = events[i]
+          list[i-1] = events[i]
         }
         return list
     }
 
   return (
     <>
-        <h2>Event Page</h2>
-      <h3>{events[0].title}</h3>x
+      <h2>{events[0].title}</h2>
       <h4>{stringifyDate(events[0].date)}</h4>
       <p>{events[0].description}</p>
       <Image src={events[0].image}></Image>

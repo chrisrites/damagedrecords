@@ -8,9 +8,10 @@ function ImageSlider({ artists }) {
     function mapBandsToSlider(){
         return (  
             artists.map(artist => (
-                <Carousel.Item key={artist.name}>
-                    <Link className={styles.sliderLinks} href={`/artists/${artist.url}`} >
+                <Carousel.Item id={styles.carouselItem} key={artist.name}>
+                    <Link id={styles.sliderLinks} href={`/artists/${artist.url}`} >
                         <img
+                            id={styles.carouselImg}
                             className="d-block w-100"
                             src={artist.image}
                             alt={artist.name + " artist photo"}
@@ -26,12 +27,12 @@ function ImageSlider({ artists }) {
     }
 
     return (
-        <div className={styles.sliderContainer}>
+        <div id={styles.sliderContainer}>
             <Carousel 
                 fade
                 interval={4000}
                 indicators={false}
-                className={styles.carouselElement}
+                id={styles.carouselElement}
             >
               {mapBandsToSlider()}  
             </Carousel>

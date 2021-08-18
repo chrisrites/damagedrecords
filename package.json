@@ -9,7 +9,7 @@
     "build": "next build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Christopher Chartrand",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

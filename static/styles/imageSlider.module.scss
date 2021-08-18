@@ -1,9 +1,17 @@
 /* Image Slider styles */
 
-.sliderContainer {
-    z-index: 1;
+#sliderContainer {
+    z-index: -1;
 
-    .carouselElement {
+    #carouselElement {
         cursor: pointer;
+
+        #carouselItem {
+
+            #sliderLinks {
+
+                #carouselImg {}
+            }
+        }
     }
 }
