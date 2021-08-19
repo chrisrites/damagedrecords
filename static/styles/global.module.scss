@@ -1,21 +1,20 @@
 @use 'globals';
 @use 'colours';
 
-.headerBody {
-    /* border: 2px solid red; */
-    z-index: 99;
-    position: fixed;
-    left: 0;
-    transition: top 1s;
-    display: inline-block;
-    margin: 0 auto;
-    /* text-align: center; */
-    width: 100%;
-    /* background: #0c0f0a; */
-    /* height: 70px; */
+.pageContainer {
+
+    .newsContainer {
+        background-color: colours.$background;
+    }    
+
+    .eventsContainer {
+        background-color: colours.$teal;
+        color: colours.$background;
+    } 
 }
 
 .contentContainer {
+        //border: 2px solid red;
     display: inline-block;
     margin: 0 auto;
     text-align: left;
