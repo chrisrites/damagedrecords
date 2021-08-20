@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import Head from "next/head";
-import { Container } from "semantic-ui-react";
 import Header from "./Header";
 import HeadContent from "./HeadContent";
 import Overlay from './Overlay';
-import styles from '../../static/styles/layout.module.scss'
 
 function Layout({ children, user }) {
   const [overlayHeight, setOverlayHeight] = useState("0%");
@@ -14,13 +12,11 @@ function Layout({ children, user }) {
   }
 
   return (
-    <div id={styles.layoutContainer}>
+    <div id="melted-wax">
       <Head>
         <HeadContent />
         {/* Stylesheets */}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        {/* <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" /> */}
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&family=Montserrat&family=Merriweather&family=Noto+Sans+JP:wght@300&family=Rubik&family=Ubuntu:wght@300&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://use.typekit.net/uqi8xbk.css" />
         <link
@@ -35,15 +31,15 @@ function Layout({ children, user }) {
         />
         <link rel="stylesheet" type="text/css" href="/static/styles.css" />
         <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
-        <title>Damaged Records</title>
+        <title>Melted Wax Records</title>
       </Head>
-      <Header id={styles.headerComponent} user={user} toggleOverlay={toggleOverlay} style={{zIndex:99}}/>
-      <Overlay id={styles.overlayComponent} user={user} overlayHeight={overlayHeight} style={{zIndex:100}} toggleOverlay={toggleOverlay} />
-      {/* <Container style={{ paddingTop: "1em" }}> */}
-      <div>
-        {children}
-      </div>
-      {/* </Container> */}
+      <body>
+        <Header user={user} toggleOverlay={toggleOverlay} style={{zIndex:99}}/>
+        <Overlay user={user} overlayHeight={overlayHeight} style={{zIndex:100}} toggleOverlay={toggleOverlay} />
+        <div id="layout">
+          {children}
+        </div>
+      </body>
     </div>
   );
 }
