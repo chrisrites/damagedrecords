@@ -3,40 +3,181 @@
 
 .pageContainer {
 
-    .newsContainer {
+    .darkContainer {
         background-color: colours.$background;
+
+        .contentContainer{
+            h2 {
+                text-align: center;
+                font-family: globals.$heading2Font;
+                font-size: globals.$heading2Size;
+                margin-top: 0.5em;
+            
+                a {
+                    color: colours.$white;
+                }
+    
+                a:hover {
+                    color: colours.$teal;
+                }
+            }
+    
+            #newsListContainer {
+                text-align: center;
+                margin: 1em 0 2em 0;
+
+                #heading3 {
+                    font-family: globals.$heading3Font;
+                    font-size: globals.$heading3Size;
+                    color: colours.$pink;
+                    cursor: pointer;
+                }
+
+                #heading3:hover {
+                    color: colours.$teal;
+                }
+
+                #heading4 {
+                    font-family: globals.$heading4Font;
+                    font-size: globals.$heading4Size;
+                    color: colours.$white;
+                }
+
+                #paragraph {
+                    text-align: justify;
+                    margin: 0 2em;
+                    font-family: globals.$paragraphFont;
+                    font-size: globals.$paragraphSize;
+                    color: colours.$white;
+                    margin-bottom: 0.5em;
+                }
+
+                #relevantLinks {
+                    font-family: globals.$relevantLinksFont;
+                    font-size: globals.$relevantLinksSize;
+                    margin-top: 0.5em;
+
+                    a {
+                        color: colours.$yellow;
+                        margin: 0 0.25em;
+                    }
+
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }  
+        }
     }    
 
-    .eventsContainer {
-        background-color: colours.$teal;
-        color: colours.$background;
+    .whiteContainer {
+        background-color: colours.$white;
+        border: 8px solid colours.$teal;
+        
+        .contentContainer{
+            h2 {
+                text-align: center;
+                font-family: globals.$heading2Font;
+                font-size: globals.$heading2Size;
+                margin-top: 0.5em;
+            
+                a {
+                    color: colours.$background;
+                }
+    
+                a:hover {
+                    border-bottom: 3px solid colours.$teal;
+                }
+            }
+    
+            #eventListContainer {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "title date links artists";
+            
+                text-align: center;
+                margin: 1em 0 2em 0;
+            
+                #title {
+                    grid-area: title;
+                }
+            
+                #eventDate {
+                    grid-area: date;
+                    color: colours.$background;
+                    font-family: globals.$heading4Font;
+                    font-size: globals.$heading4Size;
+                }
+            
+                #relevantLinks {
+                    grid-area: links;
+
+                    h5 {
+                        font-family: globals.$relevantLinksFont;
+                        font-size: globals.$relevantLinksSize;
+                        color: colours.$black;
+                    }
+                    h5:hover {
+                        border-bottom: 2px solid colours.$teal;
+                    }
+                }
+
+                #artists {
+                    grid-area: artists;
+                    font-family: globals.$heading4Font;
+                    font-size: globals.$heading4Size;
+                    color: colours.$black;
+                    cursor: pointer;
+                }
+
+                #artists:hover {
+                    color: colours.$pink;
+                    font-weight: 900;
+                }
+            
+                h3 {
+                    font-family: globals.$heading3Font;
+                    font-size: globals.$heading3Size;
+                    color: colours.$pink;
+                    cursor: pointer;
+                }
+
+                h3:hover{
+                    color: colours.$background;
+                }
+            }
+        }
     } 
-}
 
-.contentContainer {
+    .contentContainer {
         //border: 2px solid red;
-    display: inline-block;
-    margin: 0 auto;
-    text-align: left;
-    width: 95%;
+        display: inline-block;
+        margin: 0 auto;
+        text-align: left;
+        width: 95%;
 
-    /* Small devices (landscape phones, 576px and up) */
-    @media (min-width: 576px) {
-            width: 90%;
-    }
-
-    /* Medium devices (tablets, 768px and up) */
-    @media (min-width: 768px) {
-            width: 85%;
-    }
-
-    /* Large devices (desktops, 992px and up) */
-    @media (min-width: 992px) {
-            width: 80%;
-    }
-
-    /* Extra large devices (large desktops, 1200px and up) */
-    @media (min-width: 1200px) {
-            width: 75%;
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {
+                width: 90%;
+        }
+    
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) {
+                width: 85%;
+        }
+    
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+                width: 80%;
+        }
+    
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) {
+                width: 75%;
+        }
     }
 }
+
+

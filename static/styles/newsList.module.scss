@@ -1,42 +1,43 @@
 @use 'globals';
+@use 'colours';
 
 
-#newsListContainer {
-    text-align: center;
-    margin: 1em 0 2em 0;
+// .newsContainer {
+//     text-align: center;
+//     margin: 1em 0 2em 0;
 
-    #paragraph {
-        text-align: justify;
-        margin: 0 2em;
-        font-family: globals.$paragraphFont;
-        font-size: globals.$paragraphSize;
-        color: globals.$paragraphColour;
-        margin-bottom: 0.5em;
-    }
+    // #paragraph {
+    //     text-align: justify;
+    //     margin: 0 2em;
+    //     font-family: globals.$paragraphFont;
+    //     font-size: globals.$paragraphSize;
+    //     color: colours.$white;
+    //     margin-bottom: 0.5em;
+    // }
 
-    #heading3 {
-        font-family: globals.$heading3Font;
-        font-size: globals.$heading3Size;
-        color: globals.$heading3Colour;
-        cursor: pointer;
-    }
+    // #heading3 {
+    //     font-family: globals.$heading3Font;
+    //     font-size: globals.$heading3Size;
+    //     color: colours.$white;
+    //     cursor: pointer;
+    // }
 
-    #heading4 {
-        font-family: globals.$heading4Font;
-        font-size: globals.$heading4Size;
-        color: globals.$heading4Colour;
-        margin: 0;
-        margin-bottom: 0.5em;
-    }
+    // #heading4 {
+    //     font-family: globals.$heading4Font;
+    //     font-size: globals.$heading4Size;
+    //     color: colours.$white;
+    //     margin: 0;
+    //     margin-bottom: 0.5em;
+    // }
 
-    #relevantLinks {
-        font-family: globals.$relevantLinksFont;
-        font-size: globals.$relevantLinksSize;
-        margin-top: 0.5em;
+    // #relevantLinks {
+    //     font-family: globals.$relevantLinksFont;
+    //     font-size: globals.$relevantLinksSize;
+    //     margin-top: 0.5em;
 
-        a {
-            color: globals.$relevantLinksColour;
-            margin: 0 0.25em;
-        }
-    }
-}
+    //     a {
+    //         color: colours.$white;
+    //         margin: 0 0.25em;
+    //     }
+    // }
+// }

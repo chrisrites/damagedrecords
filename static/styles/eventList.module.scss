@@ -1,4 +1,5 @@
 @use 'globals';
+@use 'colours';
 
 
 #eventListContainer {
@@ -33,19 +34,19 @@
     h3 {
         font-family: globals.$heading3Font;
         font-size: globals.$heading3Size;
-        color: globals.$heading3Colour;
+        color: colours.$white;
         cursor: pointer;
     }
 
     h4 {
         font-family: globals.$heading4Font;
         font-size: globals.$heading4Size;
-        color: globals.$heading4Colour;
+        color: colours.$white;
     }
 
     h5 {
         font-family: globals.$relevantLinksFont;
         font-size: globals.$relevantLinksSize;
-        color: globals.$relevantLinksColour;
+        color: colours.$white;
     }
 }

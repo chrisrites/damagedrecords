@@ -2,18 +2,19 @@
 import Link from 'next/link';
 // import { Segment } from 'semantic-ui-react'
 import stringifyDate from '../utils/stringifyDate'
-import styles from '../static/styles/newsList.module.scss'
+import globalStyles from '../static/styles/global.module.scss'
+// import styles from '../static/styles/newsList.module.scss'
 
 function NewsList({ news }) {
 
     function mapNewsToSegment(){
         return (
             news.map((newsItem, idx) => (
-                <div id={styles.newsListContainer} key={idx}>
-                    <Link href={`/news?_id=${newsItem._id}`}><h3 id={styles.heading3}>{newsItem.title}</h3></Link>
-                    <h4 id={styles.heading4} >{stringifyDate(newsItem.date)}</h4>
-                    <p id={styles.paragraph}>{newsItem.content}</p>
-                    <div id={styles.relevantLinks}>
+                <div id={globalStyles.newsListContainer} key={idx}>
+                    <Link href={`/news?_id=${newsItem._id}`}><h3 id={globalStyles.heading3}>{newsItem.title}</h3></Link>
+                    <h4 id={globalStyles.heading4} >{stringifyDate(newsItem.date)}</h4>
+                    <p id={globalStyles.paragraph}>{newsItem.content}</p>
+                    <div id={globalStyles.relevantLinks}>
                         {newsItem.links.map((link, idx) => (
                             <a key={idx} href={link.link}>{link.linkName}</a>
                         ))}
