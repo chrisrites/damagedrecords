@@ -2,43 +2,18 @@
 @use 'colours';
 
 #homeContainer{
+
     #allArtistsHeading {
-        background-color: colours.$white;
+        background-color: colours.$teal;
         padding: 0.25em 0;
         margin: 0;
-    }
-    
-    h5 {
-        text-align: center;
-        font-family: globals.$heading5Font;
-        font-size: globals.$heading5Size;
-        color: globals.$heading5Colour;
-    
+
         a {
-            color: globals.$heading5Colour;
+            color: colours.$black;
         }
-    }
-    
-    h5:hover {
-        cursor: globals.$heading3Cursor;
-    }
-    
-    h2 {
-        text-align: center;
-        font-family: globals.$heading2Font;
-        font-size: globals.$heading2Size;
-        margin-top: 0.5em;
-    
-        a {
-            color: globals.$heading2Colour;
+
+        a:hover {
+            color: colours.$pink;
         }
-    }
-    
-    #newsListContainer {
-        // margin-bottom: 2em;
-    }
-    
-    #eventListContainer {
-        background-color: colours.$teal;
     }
 }

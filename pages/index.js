@@ -13,19 +13,18 @@ function Home({ artists, news, events }) {
       <div id={styles.homeContainer}> 
         <ImageSlider artists={artists} style={{width:"100%"}}/>
         <h5 id={styles.allArtistsHeading}><Link href="/artists">ALL ARTISTS</Link></h5>
-        <div className={globalStyles.newsContainer}>
+        <div className={globalStyles.darkContainer}>
           <div className={globalStyles.contentContainer}>
             <h2><Link href="/news">NEWS</Link></h2>
-            <NewsList id={styles.newsContainer} news={news} />
+            <NewsList news={news} />
             <h5><Link href="/news">ALL NEWS</Link></h5>
           </div>
         </div>
-        <div className={globalStyles.eventsContainer}>
+        <div className={globalStyles.whiteContainer}>
           <div className={globalStyles.contentContainer}>
-            <div id={styles.eventContent}></div>
-            <h2><Link href="/events">Upcoming Events</Link></h2>
-            <EventList id={styles.eventListContainer} events={events} />
-            <Link href="/events">ALL UPCOMING EVENTS</Link>
+              <h2><Link href="/events">Upcoming Events</Link></h2>
+              <EventList id={styles.eventListContainer} events={events} />
+              <Link href="/events">ALL UPCOMING EVENTS</Link>
           </div>
         </div> 
       </div>

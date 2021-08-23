@@ -36,7 +36,7 @@ async function handleGetRequest(req, res) {
             model: "Product"
         })
         const products = cart.products
-        console.log(products)
+        // console.log(products)
         // res.status(200).json(cart.products)
         res.status(200).json({ props: { products } })
     } catch(error){

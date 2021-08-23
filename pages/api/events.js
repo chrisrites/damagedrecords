@@ -51,7 +51,7 @@ export default async (req, res) => {
                 ]
               }
         }
-        console.log(events)
+        // console.log(events)
         // return both our single news item and our list
         res.status(200).json({ props: { events }})
     } catch (error) {
