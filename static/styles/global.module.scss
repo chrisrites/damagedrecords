@@ -5,22 +5,9 @@
 
     .darkContainer {
         background-color: colours.$background;
+        padding: 2em 0em;
 
         .contentContainer{
-            h2 {
-                text-align: center;
-                font-family: globals.$heading2Font;
-                font-size: globals.$heading2Size;
-                margin-top: 0.5em;
-            
-                a {
-                    color: colours.$white;
-                }
-    
-                a:hover {
-                    color: colours.$teal;
-                }
-            }
     
             #newsListContainer {
                 text-align: center;
@@ -73,6 +60,7 @@
     .whiteContainer {
         background-color: colours.$white;
         border: 8px solid colours.$teal;
+        padding: 2em 0em;
         
         .contentContainer{
             h2 {
