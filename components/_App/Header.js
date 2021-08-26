@@ -16,6 +16,8 @@ Router.onRouteChangeError = () => NProgress.done();
 function Header({ user, toggleOverlay }) {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [headerScrollPos, setHeaderScrollPos] = useState("0px");
+  const [transparentNav, setTransparentNav] = useState("rgba(12, 15, 10, 1)");
+
   const router = useRouter();
   const isRoot = user && user.role === 'root'
   const isAdmin = user && user.role === 'admin'
@@ -28,12 +30,15 @@ function Header({ user, toggleOverlay }) {
       let currentScrollPos = window.pageYOffset;
       if (prevScrollPos > currentScrollPos || currentScrollPos === 0) {
         setHeaderScrollPos("0px");
+        if(currentScrollPos === 0){
+          setTransparentNav("rgba(12, 15, 10, 1)");
+        }
       } else {
         setHeaderScrollPos("-70px");
         // document.getElementById("header").style.top = "-50px";
+        setTransparentNav("rgba(255, 32, 110, 0.5)");
       }
       setPrevScrollPos(currentScrollPos);
-      console.log(currentScrollPos);
     }
   });
 
@@ -43,9 +48,10 @@ function Header({ user, toggleOverlay }) {
 
   return (
     <div className={styles.headerBody} style={{ top: headerScrollPos }}>
-      <div id={styles.headerContainer}>
+      {/* <div id={styles.headerContainer} style={{ background: transparentNav ? "rgba(12, 15, 10, 0.5)" : "rgba(12, 15, 10, 1)" }}> */}
+      <div id={styles.headerContainer} style={{ background: transparentNav }}>
         <nav className={styles.navBar}>
-          <div id={styles.navBrand} className={isActive('/')}>
+          <div id={styles.navBrand} className={isActive('/')} >
             <Link href="/">
               <div id={styles.brandAlign}>
                 <div id={styles.navBrandContent}>

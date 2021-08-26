@@ -1,7 +1,13 @@
 @use 'globals';
 @use 'colours';
+@use 'breakpoints';
 
 .pageContainer {
+    padding-top: 50px;
+
+    @include breakpoints.small {
+        padding-top: 70px; 
+    }
 
     .darkContainer {
         background-color: colours.$background;
