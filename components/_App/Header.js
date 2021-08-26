@@ -26,13 +26,14 @@ function Header({ user, toggleOverlay }) {
     setPrevScrollPos(window.pageYOffset);
     window.onscroll = function () {
       let currentScrollPos = window.pageYOffset;
-      if (prevScrollPos > currentScrollPos) {
+      if (prevScrollPos > currentScrollPos || currentScrollPos === 0) {
         setHeaderScrollPos("0px");
       } else {
         setHeaderScrollPos("-70px");
         // document.getElementById("header").style.top = "-50px";
       }
       setPrevScrollPos(currentScrollPos);
+      console.log(currentScrollPos);
     }
   });
 

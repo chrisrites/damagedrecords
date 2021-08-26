@@ -16,9 +16,9 @@ function Home({ artists, news, events }) {
         <ImageSlider artists={artists} style={{width:"100%"}}/>
         <h5 id={styles.allArtistsHeading}>
           <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} />
-          <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} />
+          <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} style={{marginRight: "4px"}}/>
           <Link href="/artists">ALL ARTISTS</Link>
-          <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} />
+          <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} style={{marginLeft: "4px"}}/>
           <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} />
         </h5>
         <div className={globalStyles.darkContainer}>
@@ -27,11 +27,11 @@ function Home({ artists, news, events }) {
             <NewsList news={news} />
             <h5 id={styles.allNewsh5}>
               <FontAwesomeIcon icon={faChevronRight} className={styles.newsChevrons} />
-              <FontAwesomeIcon icon={faChevronRight} className={styles.newsChevrons} />
+              <FontAwesomeIcon icon={faChevronRight} className={styles.newsChevrons} style={{marginRight: "4px"}} />
               <Link href="/news">
                 ALL NEWS
               </Link>
-              <FontAwesomeIcon icon={faChevronLeft} className={styles.newsChevrons} />
+              <FontAwesomeIcon icon={faChevronLeft} className={styles.newsChevrons} style={{marginLeft: "4px"}}/>
               <FontAwesomeIcon icon={faChevronLeft} className={styles.newsChevrons} />
             </h5>
           </div>
@@ -42,9 +42,9 @@ function Home({ artists, news, events }) {
               <EventList id={styles.eventListContainer} events={events} />
               <h5 id={styles.allEventsh5}>
                 <FontAwesomeIcon icon={faChevronRight} className={styles.eventsChevrons} />
-                <FontAwesomeIcon icon={faChevronRight} className={styles.eventsChevrons} />
+                <FontAwesomeIcon icon={faChevronRight} className={styles.eventsChevrons} style={{marginRight: "4px"}}/>
                 <Link href="/events">ALL UPCOMING EVENTS</Link>
-                <FontAwesomeIcon icon={faChevronLeft} className={styles.eventsChevrons} />
+                <FontAwesomeIcon icon={faChevronLeft} className={styles.eventsChevrons} style={{marginLeft: "4px"}}/>
                 <FontAwesomeIcon icon={faChevronLeft} className={styles.eventsChevrons} />
               </h5>
           </div>
