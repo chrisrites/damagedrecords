@@ -29,12 +29,12 @@ function Header({ user, toggleOverlay }) {
     window.onscroll = function () {
       let currentScrollPos = window.pageYOffset;
       if (prevScrollPos > currentScrollPos || currentScrollPos === 0) {
-        setHeaderScrollPos("0px");
+        // setHeaderScrollPos("0px");
         if(currentScrollPos === 0){
           setTransparentNav("rgba(12, 15, 10, 1)");
         }
       } else {
-        setHeaderScrollPos("-70px");
+        // setHeaderScrollPos("-70px");
         // document.getElementById("header").style.top = "-50px";
         setTransparentNav("rgba(255, 32, 110, 0.5)");
       }
