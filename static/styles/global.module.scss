@@ -65,41 +65,36 @@
 
     .whiteContainer {
         background-color: colours.$white;
-        border: 8px solid colours.$teal;
+        border: 6px solid colours.$teal;
         padding: 2em 0em;
         
         .contentContainer{
-            h2 {
-                text-align: center;
-                font-family: globals.$heading2Font;
-                font-size: globals.$heading2Size;
-                margin-top: 0.5em;
-            
-                a {
-                    color: colours.$background;
-                }
-    
-                a:hover {
-                    border-bottom: 3px solid colours.$teal;
-                }
-            }
     
             #eventListContainer {
                 display: grid;
-                grid-template-columns: 2fr 1fr 1fr 1fr;
-                grid-template-rows: auto;
+                grid-template-columns: auto;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
                 grid-template-areas:
-                    "title date links artists";
+                    "title"
+                    "date"
+                    "links" 
+                    "artists";
             
                 text-align: center;
-                margin: 1em 0 2em 0;
+                margin: 2em 0 1em 0;
             
                 #title {
                     grid-area: title;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
             
                 #eventDate {
                     grid-area: date;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     color: colours.$background;
                     font-family: globals.$heading4Font;
                     font-size: globals.$heading4Size;
@@ -107,22 +102,39 @@
             
                 #relevantLinks {
                     grid-area: links;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
 
-                    h5 {
-                        font-family: globals.$relevantLinksFont;
-                        font-size: globals.$relevantLinksSize;
-                        color: colours.$black;
-                    }
-                    h5:hover {
-                        border-bottom: 2px solid colours.$teal;
+                    #relevantLinksBlock{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        h5 {
+                            margin: 0 4px;
+                            font-family: globals.$relevantLinksFont;
+                            font-size: globals.$relevantLinksSize;
+                            color: colours.$black;
+                            text-decoration: underline;
+                            text-decoration-color: colours.$teal;
+                        }
+    
+                        h5:hover {
+                            color: colours.$teal;
+                            text-decoration: none;
+                        }
                     }
                 }
 
                 #artists {
                     grid-area: artists;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     font-family: globals.$heading4Font;
                     font-size: globals.$heading4Size;
-                    color: colours.$black;
+                    color: colours.$background;
                     cursor: pointer;
                 }
 
@@ -139,37 +151,55 @@
                 }
 
                 h3:hover{
-                    color: colours.$background;
+                    text-decoration: underline;
+                    text-decoration-color: colours.$teal;
+                }
+
+                @include breakpoints.small {
+                    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+                    grid-template-rows: auto;
+                    grid-template-areas:
+                        "title date links artists";
+
+                    #relevantLinks {
+
+                        #relevantLinksBlock {
+                            display: block;
+
+                            h5 {
+                                margin: 2px 0;
+                            }
+                        }
+                    }
                 }
             }
         }
     } 
 
     .contentContainer {
-        //border: 2px solid red;
         display: inline-block;
         margin: 0 auto;
         text-align: left;
         width: 95%;
 
         /* Small devices (landscape phones, 576px and up) */
-        @media (min-width: 576px) {
-                width: 90%;
+        @include breakpoints.small {
+            width: 90%;
         }
     
         /* Medium devices (tablets, 768px and up) */
-        @media (min-width: 768px) {
-                width: 85%;
+        @include breakpoints.medium {
+            width: 85%;
         }
     
         /* Large devices (desktops, 992px and up) */
-        @media (min-width: 992px) {
-                width: 80%;
+        @include breakpoints.large {
+            width: 70%;
         }
     
         /* Extra large devices (large desktops, 1200px and up) */
-        @media (min-width: 1200px) {
-                width: 75%;
+        @include breakpoints.exLarge {
+            width: 65%
         }
     }
 }
