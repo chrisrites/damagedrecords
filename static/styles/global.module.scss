@@ -4,6 +4,9 @@
 
 .pageContainer {
     padding-top: 50px;
+    ::selection {
+        background: colours.$yellow; /* WebKit/Blink Browsers */
+    }
 
     @include breakpoints.small {
         padding-top: 70px; 
@@ -12,9 +15,46 @@
     .darkContainer {
         background-color: colours.$background;
         padding: 2em 0em;
+        ::selection {
+            background: colours.$teal; /* WebKit/Blink Browsers */
+        }
 
         .contentContainer{
     
+            #newsh2 {
+                text-align: center;
+                font-family: globals.$heading2Font;
+                font-size: globals.$heading2Size;
+                margin-top: 0.5em;
+            
+                a {
+                    color: colours.$white;
+                }
+        
+                a:hover {
+                    color: colours.$teal;
+                }
+            }
+
+            #allNewsh5 {
+                text-align: center;
+                font-family: globals.$heading5Font;
+                font-size: globals.$heading5Size;
+                margin-top: 0.5em;
+            
+                a {
+                    color: colours.$teal;
+                }
+        
+                a:hover {
+                    color: colours.$white;
+                }
+            }
+
+            .newsChevrons {
+                color: colours.$white;
+            }
+
             #newsListContainer {
                 text-align: center;
                 margin: 1em 0 2em 0;
@@ -42,7 +82,7 @@
                     font-family: globals.$paragraphFont;
                     font-size: globals.$paragraphSize;
                     color: colours.$white;
-                    margin-bottom: 0.5em;
+                    margin-bottom: 1em;
                 }
 
                 #relevantLinks {
@@ -67,27 +107,84 @@
         background-color: colours.$white;
         border: 6px solid colours.$teal;
         padding: 2em 0em;
+
+        ::selection {
+            background: colours.$yellow; /* WebKit/Blink Browsers */
+        }
         
         .contentContainer{
+
+            #eventsh2 {
+                text-align: center;
+                font-family: globals.$heading2Font;
+                font-size: globals.$heading2Size;
+                margin: 0.5em 0 1em 0;
+            
+                a {
+                    color: colours.$background;
+                }
+        
+                a:hover {
+                    text-decoration: underline;
+                    text-decoration-color: colours.$teal;
+                }
+
+                @include breakpoints.medium {
+                    margin: 0.5em 0 2em 0;
+                }
+            }
+        
+            #allEventsh5 {
+                text-align: center;
+                font-family: globals.$heading5Font;
+                font-size: globals.$heading5Size;
+                margin: 0.5em 0 0 0;
+            
+                a {
+                    color: colours.$background;
+                }
+        
+                a:hover {
+                    border-bottom: 2px solid colours.$teal;
+                }
+            }
+        
+            .eventsChevrons {
+                color: colours.$pink;
+            }
     
             #eventListContainer {
                 display: grid;
                 grid-template-columns: auto;
-                grid-template-rows: 1fr 1fr 1fr 1fr;
+                grid-template-rows: auto auto auto auto;
                 grid-template-areas:
                     "title"
                     "date"
                     "links" 
                     "artists";
-            
                 text-align: center;
-                margin: 2em 0 1em 0;
+                margin: 1em 3em 0em 3em;
+                border-bottom: 2px solid colours.$teal;
             
                 #title {
                     grid-area: title;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    margin-bottom: 0.5em;
+                }
+
+                // #title
+                h3 {
+                    font-family: globals.$heading3Font;
+                    font-size: globals.$heading3Size;
+                    color: colours.$pink;
+                    cursor: pointer;
+                }
+
+                h3:hover{
+                    text-decoration: underline;
+                    text-decoration-color: colours.$teal;
                 }
             
                 #eventDate {
@@ -98,6 +195,7 @@
                     color: colours.$background;
                     font-family: globals.$heading4Font;
                     font-size: globals.$heading4Size;
+                    margin-bottom: 0.5em;
                 }
             
                 #relevantLinks {
@@ -105,6 +203,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    margin-bottom: 0.5em;
 
                     #relevantLinksBlock{
                         display: flex;
@@ -116,12 +215,12 @@
                             font-family: globals.$relevantLinksFont;
                             font-size: globals.$relevantLinksSize;
                             color: colours.$black;
-                            text-decoration: underline;
+                            // text-decoration: underline;
                             text-decoration-color: colours.$teal;
                         }
     
                         h5:hover {
-                            color: colours.$teal;
+                            color: colours.$pink;
                             text-decoration: none;
                         }
                     }
@@ -136,30 +235,24 @@
                     font-size: globals.$heading4Size;
                     color: colours.$background;
                     cursor: pointer;
+                    margin-bottom: 1em;
                 }
 
                 #artists:hover {
                     color: colours.$pink;
                     font-weight: 900;
                 }
-            
-                h3 {
-                    font-family: globals.$heading3Font;
-                    font-size: globals.$heading3Size;
-                    color: colours.$pink;
-                    cursor: pointer;
-                }
-
-                h3:hover{
-                    text-decoration: underline;
-                    text-decoration-color: colours.$teal;
-                }
 
                 @include breakpoints.small {
                     grid-template-columns: 1.5fr 1fr 1fr 1fr;
-                    grid-template-rows: auto;
+                    grid-template-rows: 1fr;
                     grid-template-areas:
                         "title date links artists";
+                    padding-bottom: 1em;
+
+                    #title, #eventDate, #relevantLinks, #artists {
+                        margin-bottom: 0;
+                    }
 
                     #relevantLinks {
 
@@ -171,6 +264,18 @@
                             }
                         }
                     }
+                }
+            }
+
+            #eventListContainer:last-child {
+                border-bottom: none;
+
+                @include breakpoints.small {
+                    margin-bottom: 1em;
+                }
+
+                @include breakpoints.medium {
+                    margin-bottom: 1.5em;
                 }
             }
         }

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Segment } from 'semantic-ui-react'
 import stringifyDate from '../utils/stringifyDate'
 import globalStyles from '../static/styles/global.module.scss'
-import styles from '../static/styles/eventList.module.scss'
 
 function EventList({ events }) {
 
