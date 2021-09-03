@@ -23,29 +23,29 @@ function Home({ artists, news, events }) {
         </h5>
         <div className={globalStyles.darkContainer}>
           <div className={globalStyles.contentContainer}>
-            <h2 id={styles.newsh2}><Link href="/news">NEWS</Link></h2>
+            <h2 id={globalStyles.newsh2}><Link href="/news">NEWS</Link></h2>
             <NewsList news={news} />
-            <h5 id={styles.allNewsh5}>
-              <FontAwesomeIcon icon={faChevronRight} className={styles.newsChevrons} />
-              <FontAwesomeIcon icon={faChevronRight} className={styles.newsChevrons} style={{marginRight: "4px"}} />
+            <h5 id={globalStyles.allNewsh5}>
+              <FontAwesomeIcon icon={faChevronRight} className={globalStyles.newsChevrons} />
+              <FontAwesomeIcon icon={faChevronRight} className={globalStyles.newsChevrons} style={{marginRight: "4px"}} />
               <Link href="/news">
                 ALL NEWS
               </Link>
-              <FontAwesomeIcon icon={faChevronLeft} className={styles.newsChevrons} style={{marginLeft: "4px"}}/>
-              <FontAwesomeIcon icon={faChevronLeft} className={styles.newsChevrons} />
+              <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.newsChevrons} style={{marginLeft: "4px"}}/>
+              <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.newsChevrons} />
             </h5>
           </div>
         </div>
         <div className={globalStyles.whiteContainer}>
           <div className={globalStyles.contentContainer}>
-              <h2 id={styles.eventsh2}><Link href="/events">Upcoming Events</Link></h2>
-              <EventList id={styles.eventListContainer} events={events} />
-              <h5 id={styles.allEventsh5}>
-                <FontAwesomeIcon icon={faChevronRight} className={styles.eventsChevrons} />
-                <FontAwesomeIcon icon={faChevronRight} className={styles.eventsChevrons} style={{marginRight: "4px"}}/>
+              <h2 id={globalStyles.eventsh2}><Link href="/events">Upcoming Events</Link></h2>
+              <EventList  events={events} />
+              <h5 id={globalStyles.allEventsh5}>
+                <FontAwesomeIcon icon={faChevronRight} className={globalStyles.eventsChevrons} />
+                <FontAwesomeIcon icon={faChevronRight} className={globalStyles.eventsChevrons} style={{marginRight: "4px"}}/>
                 <Link href="/events">ALL UPCOMING EVENTS</Link>
-                <FontAwesomeIcon icon={faChevronLeft} className={styles.eventsChevrons} style={{marginLeft: "4px"}}/>
-                <FontAwesomeIcon icon={faChevronLeft} className={styles.eventsChevrons} />
+                <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.eventsChevrons} style={{marginLeft: "4px"}}/>
+                <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.eventsChevrons} />
               </h5>
           </div>
         </div> 

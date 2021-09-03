@@ -17,76 +17,7 @@
         }
     }
 
-    #newsh2 {
-        text-align: center;
-        font-family: globals.$heading2Font;
-        font-size: globals.$heading2Size;
-        margin-top: 0.5em;
-    
-        a {
-            color: colours.$white;
-        }
-
-        a:hover {
-            color: colours.$teal;
-        }
-    }
-
-    #allNewsh5 {
-        text-align: center;
-        font-family: globals.$heading5Font;
-        font-size: globals.$heading5Size;
-        margin-top: 0.5em;
-    
-        a {
-            color: colours.$teal;
-        }
-
-        a:hover {
-            color: colours.$white;
-        }
-    }
-
     .artistChevrons {
-        color: colours.$pink;
-    }
-
-    .newsChevrons {
-        color: colours.$white;
-    }
-
-    #eventsh2 {
-        text-align: center;
-        font-family: globals.$heading2Font;
-        font-size: globals.$heading2Size;
-        margin-top: 0.5em;
-    
-        a {
-            color: colours.$background;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            text-decoration-color: colours.$teal;
-        }
-    }
-
-    #allEventsh5 {
-        text-align: center;
-        font-family: globals.$heading5Font;
-        font-size: globals.$heading5Size;
-        margin: 2em 0 0 0;
-    
-        a {
-            color: colours.$background;
-        }
-
-        a:hover {
-            border-bottom: 2px solid colours.$teal;
-        }
-    }
-
-    .eventsChevrons {
         color: colours.$pink;
     }
 }

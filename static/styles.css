@@ -10,6 +10,10 @@ body {
     color: #ffffff;
 }
 
+::selection {
+    background: #fbff12; /* WebKit/Blink Browsers */
+}
+
 /* Overrides default styled accordion styles (too much bottom padding) */
 .ui.styled.accordion .content {
     margin: 0;
