@@ -10,8 +10,18 @@ body {
     color: #ffffff;
 }
 
-::selection {
-    background: #fbff12; /* WebKit/Blink Browsers */
+/* #imageSlider_sliderContainer__mOyrY{
+    #imageSlider_carouselElement__1iWsA{
+        
+    }
+} */
+
+.carousel-control-next {
+    
+    
+}
+.carousel-control-next-icon{
+    color: pink;
 }
 
 /* Overrides default styled accordion styles (too much bottom padding) */

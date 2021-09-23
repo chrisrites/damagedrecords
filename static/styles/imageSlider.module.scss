@@ -7,6 +7,8 @@
         
         cursor: pointer;
 
+        
+
         #carouselItem {
             
             #sliderLinks {
@@ -15,6 +17,14 @@
                     
                 }
             }
+        }
+    }
+}
+
+#imageSlider_sliderContainer__mOyrY{
+    #imageSlider_carouselElement__1iWsA{
+        .carousel-control-next{
+            color: pink;
         }
     }
 }

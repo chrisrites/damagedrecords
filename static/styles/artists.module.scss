@@ -1,0 +1,11 @@
+// @use 'globals';
+// @use 'colours';
+// @use 'breakpoints';
+
+#artistsContainer{
+    text-align: center;
+    
+    img {
+        width: 100%;
+    }
+}

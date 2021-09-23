@@ -36,7 +36,7 @@ function Home({ artists, news, events }) {
             </h5>
           </div>
         </div>
-        <div className={globalStyles.whiteContainer}>
+        <div className={globalStyles.tealContainer}>
           <div className={globalStyles.contentContainer}>
               <h2 id={globalStyles.eventsh2}><Link href="/events">Upcoming Events</Link></h2>
               <EventList  events={events} />
