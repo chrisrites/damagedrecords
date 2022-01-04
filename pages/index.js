@@ -38,7 +38,7 @@ function Home({ artists, news, events }) {
         </div>
         <div className={globalStyles.tealContainer}>
           <div className={globalStyles.contentContainer}>
-              <h2 id={globalStyles.eventsh2}><Link href="/events">Upcoming Events</Link></h2>
+              <h2 id={globalStyles.eventsh2}><Link href="/events">UPCOMING EVENTS</Link></h2>
               <EventList  events={events} />
               <h5 id={globalStyles.allEventsh5}>
                 <FontAwesomeIcon icon={faChevronRight} className={globalStyles.eventsChevrons} />

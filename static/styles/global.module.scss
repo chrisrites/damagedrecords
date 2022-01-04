@@ -26,6 +26,7 @@
                 text-align: center;
                 font-family: globals.$heading2Font;
                 font-size: globals.$heading2Size;
+                font-weight: 400;
                 line-height: globals.$heading2LineHeight;
                 margin-top: 0.5em;
             
@@ -50,7 +51,8 @@
                 }
         
                 a:hover {
-                    color: colours.$white;
+                    // color: colours.$white;
+                    border-bottom: 2px solid colours.$teal;
                 }
             }
 
@@ -66,6 +68,7 @@
                     font-family: globals.$heading3Font;
                     font-size: globals.$heading3Size;
                     line-height: globals.$heading3LineHeight;
+                    font-weight: 300;
                     color: colours.$pink;
                     cursor: pointer;
                 }
@@ -77,6 +80,7 @@
                 #heading4 {
                     font-family: globals.$heading4Font;
                     font-size: globals.$heading4Size;
+                    font-weight: 400;
                     line-height: globals.$heading4LineHeight;;
                     color: colours.$white;
                 }
@@ -112,6 +116,7 @@
                 font-family: globals.$heading1Font;
                 font-size: globals.$heading1Size;
                 line-height: globals.$heading1LineHeight;
+                font-weight: 400;
                 text-align: center;
                 // text-transform: uppercase;
             }
@@ -120,6 +125,7 @@
                 font-family: globals.$heading2Font;
                 font-size: globals.$heading2Size;
                 line-height: globals.$heading2LineHeight;
+                font-weight: 400;
                 color: colours.$pink;
                 cursor: pointer;
             }
@@ -168,17 +174,19 @@
                 text-align: center;
                 font-family: globals.$heading2Font;
                 font-size: globals.$heading2Size;
+                font-weight: 400;
                 line-height: globals.$heading3LineHeight;
                 margin: 0.5em 0 1em 0;
-                color: colours.$background;
+                // color: colours.$background;
             
                 a {
-                    color: colours.$background;
+                    color: colours.$grey;
                 }
         
                 a:hover {
-                    text-decoration: underline;
-                    text-decoration-color: colours.$white;
+                    // text-decoration: underline;
+                    // text-decoration-color: colours.$white;
+                    color: colours.$pink;
                 }
 
                 @include breakpoints.medium {
@@ -197,8 +205,8 @@
                     "artists";
                 background-color: colours.$white;
                 text-align: center;
-                border: 2px solid colours.$background;
-                border-radius: 10px;
+                border: 3px solid colours.$grey;
+                // border-radius: 10px;
                 margin: 2em 3em 0em 3em;
                 padding: 1.5em 0.5em;
                 // border-bottom: 2px solid colours.$teal;
@@ -212,15 +220,16 @@
                 }
 
                 // #title
-                h3 {
+                #titleH3 {
                     font-family: globals.$heading3Font;
                     font-size: globals.$heading3Size;
+                    font-weight: 700;
                     line-height: globals.$heading3LineHeight;
                     color: colours.$pink;
                     cursor: pointer;
                 }
 
-                h3:hover{
+                #titleH3:hover{
                     text-decoration: underline;
                     text-decoration-color: colours.$teal;
                 }
@@ -230,9 +239,10 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: colours.$background;
+                    color: colours.$grey;
                     font-family: globals.$heading4Font;
                     font-size: globals.$heading4Size;
+                    font-weight: 400;
                     line-height: globals.$heading4LineHeight;
                     margin-bottom: 0.5em;
                 }
@@ -253,10 +263,11 @@
                             margin: 0 4px;
                             font-family: globals.$relevantLinksFont;
                             font-size: globals.$relevantLinksSize;
+                            font-weight: 400;
                             line-height: globals.$relevantLinkLineHeight;
-                            color: colours.$background;
+                            color: colours.$grey;
                             // text-decoration: underline;
-                            text-decoration-color: colours.$teal;
+                            // text-decoration-color: colours.$teal;
                         }
     
                         h5:hover {
@@ -271,17 +282,20 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    font-family: globals.$heading4Font;
-                    font-size: globals.$heading4Size;
-                    line-height: globals.$heading4LineHeight;
-                    color: colours.$background;
-                    cursor: pointer;
                     // margin-bottom: 1em;
-                }
 
-                #artists:hover {
-                    color: colours.$pink;
-                    font-weight: 900;
+                    #artistsh4 {
+                        font-family: globals.$heading4Font;
+                        font-size: globals.$heading4Size;
+                        font-weight: 700;
+                        line-height: globals.$heading4LineHeight;
+                        color: colours.$grey;
+                        cursor: pointer;
+                    }
+
+                    #artistsh4:hover {
+                        color: colours.$pink;
+                    }
                 }
 
                 @include breakpoints.small {
@@ -300,7 +314,10 @@
                         #relevantLinksBlock {
                             display: block;
 
+                            // NEED TO SET SPECIFIC ID'S AND FONT FAMILIES/WEIGHTS TO EVENT RELEVANT LINKS & ALL NEWS, UPCOMING EVENTS.
+                            // THEY'RE GETTING FONT WEIGHT 700 FOR SOME REASON
                             h5 {
+
                                 margin: 2px 0;
                             }
                         }
@@ -312,11 +329,12 @@
                 text-align: center;
                 font-family: globals.$heading5Font;
                 font-size: globals.$heading5Size;
+                font-weight: 700;
                 line-height: globals.$heading5LineHeight;
                 margin: 2em 0 0 0;
             
                 a {
-                    color: colours.$background;
+                    color: colours.$grey;
                 }
         
                 a:hover {
