@@ -10,7 +10,7 @@ function EventList({ events }) {
         return (
             events.map((event, idx) => (
                 <div id={globalStyles.eventListContainer} key={idx}>
-                    <div id={globalStyles.title}><Link href={`/events/${event._id}`}><h3>{event.title}</h3></Link></div>
+                    <div id={globalStyles.title}><Link href={`/events/${event._id}`}><h3 id={globalStyles.titleH3}>{event.title}</h3></Link></div>
                     <div id={globalStyles.eventDate}><span>{stringifyDate(event.date)}</span></div>
                         {/* <p>{event.description}</p> */}
                     <div id={globalStyles.relevantLinks}>
@@ -22,7 +22,7 @@ function EventList({ events }) {
                     </div>
                     <div id={globalStyles.artists}>
                         {event.artists.map((artist, idx) => (
-                            <Link key={idx} href={`/artists/${artist.path}`}><h4>{artist.name}</h4></Link>
+                            <Link key={idx} href={`/artists/${artist.path}`}><h4 id={globalStyles.artistsh4}>{artist.name}</h4></Link>
                         ))}
                     </div>
                 </div>
