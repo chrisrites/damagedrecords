@@ -317,7 +317,6 @@
                             // NEED TO SET SPECIFIC ID'S AND FONT FAMILIES/WEIGHTS TO EVENT RELEVANT LINKS & ALL NEWS, UPCOMING EVENTS.
                             // THEY'RE GETTING FONT WEIGHT 700 FOR SOME REASON
                             h5 {
-
                                 margin: 2px 0;
                             }
                         }
@@ -383,7 +382,7 @@
     
         /* Extra large devices (large desktops, 1200px and up) */
         @include breakpoints.exLarge {
-            width: 65%
+            width: 65%;
         }
     }
 }
