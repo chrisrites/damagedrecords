@@ -45,6 +45,10 @@
                 
                 .active {
                     background: colours.$background;
+
+                    // span {
+                    //     color: colours.$white;
+                    // }
                 }
             }
 
@@ -150,7 +154,24 @@
                             font-size: 17px;
                             font-family: fonts.$montserrat;
                             font-weight: 700;
-                            transition: 1s;
+                            // transition: 1s;
+                            // color: colours.$white;
+                             
+                            :hover {
+                                color: colours.$pink;
+                            }
+
+                            &.scrolled {
+                                color: colours.$black;
+                            }
+                        }
+                    }
+
+                    &.active {
+                        .navItems {
+                            .navTitles {
+                                color: colours.$white;
+                            }
                         }
                     }
                 }

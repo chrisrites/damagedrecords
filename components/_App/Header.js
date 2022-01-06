@@ -17,7 +17,7 @@ function Header({ user, toggleOverlay }) {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [headerScrollPos, setHeaderScrollPos] = useState("0px");
   const [transparentNav, setTransparentNav] = useState("rgba(12, 15, 10, 1)");
-  const [navTitleColour, setNavTitleColour] = useState("#41EAD4");
+  const [navItemColour, setNavItemColour] = useState(null);
 
   const router = useRouter();
   const isRoot = user && user.role === 'root'
@@ -33,13 +33,13 @@ function Header({ user, toggleOverlay }) {
         // setHeaderScrollPos("0px");
         if(currentScrollPos === 0){
           setTransparentNav("rgba(12, 15, 10, 1)");
-          setNavTitleColour("#41EAD4");
+          setNavItemColour(null);
         }
       } else {
         // setHeaderScrollPos("-70px");
         // document.getElementById("header").style.top = "-50px";
         setTransparentNav("rgba(255, 32, 110, 0.5)");
-        setNavTitleColour("black");
+        setNavItemColour(styles.scrolled);
       }
       setPrevScrollPos(currentScrollPos);
     }
@@ -73,7 +73,7 @@ function Header({ user, toggleOverlay }) {
                     name="cart"
                   /> */}
                   {/* <FontAwesomeIcon icon={faStore} className={styles.faNavIcons} /> */}
-                  <span className={styles.navTitles} style={{ color: navTitleColour }}>Store</span>
+                  <span className={`${styles.navTitles} ${navItemColour}`}>Store</span>
                 </div>
               </Link>
             </li>
@@ -84,7 +84,7 @@ function Header({ user, toggleOverlay }) {
                     className={styles.semUINavIcons}
                     name="cart"
                   /> */}
-                  <span className={styles.navTitles} style={{ color: navTitleColour }}>Cart</span>
+                  <span className={`${styles.navTitles} ${navItemColour}`}>Cart</span>
                 </div>
               </Link>
             </li>
@@ -96,7 +96,7 @@ function Header({ user, toggleOverlay }) {
                       className={styles.semUINavIcons}
                       name="add square"
                     /> */}
-                    <span className={styles.navTitles} style={{ color: navTitleColour }}>Create</span>
+                    <span className={`${styles.navTitles} ${navItemColour}`}>Create</span>
                   </div>
                 </Link>
               </li>
@@ -109,7 +109,7 @@ function Header({ user, toggleOverlay }) {
                       className={styles.semUINavIcons}
                       name="user"
                     /> */}
-                    <span className={styles.navTitles} style={{ color: navTitleColour }}>Account</span>
+                    <span className={`${styles.navTitles} ${navItemColour}`}>Account</span>
                   </div>
                 </Link>
               </li>
@@ -120,7 +120,7 @@ function Header({ user, toggleOverlay }) {
                       className={styles.semUINavIcons}
                       name="sign out"
                     /> */}
-                    <span className={styles.navTitles} style={{ color: navTitleColour }}>Log Out</span>
+                    <span className={`${styles.navTitles} ${navItemColour}`}>Log Out</span>
                   </div>
                 </Link>
               </li>
@@ -134,7 +134,7 @@ function Header({ user, toggleOverlay }) {
                         className={styles.semUINavIcons}
                         name="sign in"
                       /> */}
-                      <span className={styles.navTitles} style={{ color: navTitleColour }}>Login</span>
+                      <span className={`${styles.navTitles} ${navItemColour}`}>Login</span>
                     </div>
                   </Link>
                 </li>
@@ -145,7 +145,7 @@ function Header({ user, toggleOverlay }) {
                         className={styles.semUINavIcons}
                         name="signup"
                       /> */}
-                      <span className={styles.navTitles} style={{ color: navTitleColour }}>Signup</span>
+                      <span className={`${styles.navTitles} ${navItemColour}`}>Signup</span>
                     </div>
                   </Link>
                 </li>
