@@ -1,6 +1,6 @@
 {
   "name": "damaged-records",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Damaged Records - A record label and store for DUI artists who posses a punk rock approach to marketing and selling their products",
   "main": "index.js",
   "scripts": {
