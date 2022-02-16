@@ -29,7 +29,7 @@ function Home({ artists, news, events }) {
               <FontAwesomeIcon icon={faChevronRight} className={globalStyles.newsChevrons} />
               <FontAwesomeIcon icon={faChevronRight} className={globalStyles.newsChevrons} style={{marginRight: "4px"}} />
               <Link href="/news">
-                ALL NEWSS
+                ALL NEWS
               </Link>
               <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.newsChevrons} style={{marginLeft: "4px"}}/>
               <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.newsChevrons} />
