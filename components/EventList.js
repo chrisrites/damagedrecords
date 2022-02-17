@@ -9,20 +9,20 @@ function EventList({ events }) {
     function mapEventsToSegment(){
         return (
             events.map((event, idx) => (
-                <div id={globalStyles.eventListContainer} key={idx}>
-                    <div id={globalStyles.title}><Link href={`/events/${event._id}`}><h3 id={globalStyles.titleH3}>{event.title}</h3></Link></div>
-                    <div id={globalStyles.eventDate}><span>{stringifyDate(event.date)}</span></div>
+                <div className={globalStyles.eventListContainer} key={idx}>
+                    <div className={globalStyles.title}><Link href={`/events/${event._id}`}><h3 className={globalStyles.titleH3}>{event.title}</h3></Link></div>
+                    <div className={globalStyles.eventDate}><span>{stringifyDate(event.date)}</span></div>
                         {/* <p>{event.description}</p> */}
-                    <div id={globalStyles.relevantLinks}>
-                        <div id={globalStyles.relevantLinksBlock}>
+                    <div className={globalStyles.relevantLinks}>
+                        <div className={globalStyles.relevantLinksBlock}>
                             {event.links.map((link, idx) => (
                                 <a key={idx} href={link.link}><h5>{link.linkName}</h5></a>
                             ))}
                         </div>
                     </div>
-                    <div id={globalStyles.artists}>
+                    <div className={globalStyles.artists}>
                         {event.artists.map((artist, idx) => (
-                            <Link key={idx} href={`/artists/${artist.path}`}><h4 id={globalStyles.artistsh4}>{artist.name}</h4></Link>
+                            <Link key={idx} href={`/artists/${artist.path}`}><h4 className={globalStyles.artistsh4}>{artist.name}</h4></Link>
                         ))}
                     </div>
                 </div>

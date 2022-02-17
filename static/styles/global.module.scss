@@ -60,11 +60,11 @@
                 color: colours.$white;
             }
 
-            #newsListContainer {
+            .newsListContainer {
                 text-align: center;
                 margin: 1em 0 2em 0;
 
-                #heading3 {
+                .heading3 {
                     font-family: globals.$heading3Font;
                     font-size: globals.$heading3Size;
                     line-height: globals.$heading3LineHeight;
@@ -73,28 +73,36 @@
                     cursor: pointer;
                 }
 
-                #heading3:hover {
+                .heading3:hover {
                     color: colours.$teal;
                 }
 
-                #heading4 {
+                .heading4 {
                     font-family: globals.$heading4Font;
                     font-size: globals.$heading4Size;
                     font-weight: 400;
-                    line-height: globals.$heading4LineHeight;;
+                    line-height: globals.$heading4LineHeight;
                     color: colours.$white;
                 }
 
-                #paragraph {
+                .paragraph {
                     text-align: justify;
                     margin: 0 2em;
                     font-family: globals.$paragraphFont;
                     font-size: globals.$paragraphSize;
                     color: colours.$white;
                     margin-bottom: 1em;
+
+                    a {
+                        color: colours.$pink;
+                    }
+    
+                    a:hover {
+                        color: colours.$teal;
+                    }
                 }
 
-                #relevantLinks {
+                .relevantLinks {
                     font-family: globals.$relevantLinksFont;
                     font-size: globals.$relevantLinksSize;
                     line-height: globals.$relevantLinkLineHeight;
@@ -194,7 +202,7 @@
                 }
             }
     
-            #eventListContainer {
+            .eventListContainer {
                 display: grid;
                 grid-template-columns: auto;
                 grid-template-rows: auto auto auto auto;
@@ -211,7 +219,7 @@
                 padding: 1.5em 0.5em;
                 // border-bottom: 2px solid colours.$teal;
             
-                #title {
+                .title {
                     grid-area: title;
                     display: flex;
                     align-items: center;
@@ -220,7 +228,7 @@
                 }
 
                 // #title
-                #titleH3 {
+                .titleH3 {
                     font-family: globals.$heading3Font;
                     font-size: globals.$heading3Size;
                     font-weight: 700;
@@ -229,12 +237,12 @@
                     cursor: pointer;
                 }
 
-                #titleH3:hover{
+                .titleH3:hover{
                     text-decoration: underline;
                     text-decoration-color: colours.$teal;
                 }
             
-                #eventDate {
+                .eventDate {
                     grid-area: date;
                     display: flex;
                     align-items: center;
@@ -247,14 +255,14 @@
                     margin-bottom: 0.5em;
                 }
             
-                #relevantLinks {
+                .relevantLinks {
                     grid-area: links;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     margin-bottom: 0.5em;
 
-                    #relevantLinksBlock{
+                .relevantLinksBlock{
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -277,14 +285,14 @@
                     }
                 }
 
-                #artists {
+                .artists {
                     grid-area: artists;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     // margin-bottom: 1em;
 
-                    #artistsh4 {
+                    .artistsh4 {
                         font-family: globals.$heading4Font;
                         font-size: globals.$heading4Size;
                         font-weight: 700;
@@ -293,7 +301,7 @@
                         cursor: pointer;
                     }
 
-                    #artistsh4:hover {
+                    .artistsh4:hover {
                         color: colours.$pink;
                     }
                 }

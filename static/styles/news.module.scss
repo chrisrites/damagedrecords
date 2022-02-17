@@ -1,0 +1,43 @@
+@use 'globals';
+@use 'colours';
+
+#mainFeature {
+    text-align: center;
+
+    #mainImage {
+        margin: auto;
+    }
+
+    #heading4 {
+        font-family: globals.$heading4Font;
+        font-size: globals.$heading4Size;
+        font-weight: 400;
+        line-height: globals.$heading4LineHeight;
+        color: colours.$white;
+    }
+
+    #paragraph {
+        text-align: justify;
+        margin: 0 2em;
+        font-family: globals.$paragraphFont;
+        font-size: globals.$paragraphSize;
+        color: colours.$white;
+        margin-bottom: 1em;
+    }
+
+    #relevantLinks {
+        font-family: globals.$relevantLinksFont;
+        font-size: globals.$relevantLinksSize;
+        line-height: globals.$relevantLinkLineHeight;
+        margin-top: 0.5em;
+
+        a {
+            color: colours.$yellow;
+            margin: 0 0.25em;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
