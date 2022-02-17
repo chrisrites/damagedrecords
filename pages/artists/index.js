@@ -1,4 +1,4 @@
-import connectDb from '../../utils/connectDb'
+// import connectDb from '../../utils/connectDb'
 // import Artist from '../../models/Artist'
 import Link from 'next/link'
 // import { Container, Segment, Image } from 'semantic-ui-react'

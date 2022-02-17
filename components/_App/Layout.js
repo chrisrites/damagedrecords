@@ -33,13 +33,13 @@ function Layout({ children, user }) {
         <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
         <title>Melted Wax Records</title>
       </Head>
-      <body>
+      {/* <body> */}
         <Header user={user} toggleOverlay={toggleOverlay} style={{zIndex:99}}/>
         <Overlay user={user} overlayHeight={overlayHeight} style={{zIndex:100}} toggleOverlay={toggleOverlay} />
         <div id="layout">
           {children}
         </div>
-      </body>
+      {/* </body> */}
     </div>
   );
 }
