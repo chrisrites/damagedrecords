@@ -7,17 +7,21 @@
         background-color: colours.$teal;
         padding: 0.25em 0;
         margin: 0;
+        font-family: globals.$heading5Font;
+                font-size: globals.$heading5Size;
+                line-height: globals.$heading5LineHeight;
 
         a {
             color: colours.$grey;
         }
 
         a:hover {
-            border-bottom: 2px solid colours.$grey;
+            // border-bottom: 2px solid colours.$grey;
+            color: colours.$white;
         }
     }
 
     .artistChevrons {
-        color: colours.$pink;
+        color: colours.$white;
     }
 }

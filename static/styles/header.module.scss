@@ -192,6 +192,11 @@
                 #menuToggleBtn {
                     cursor: pointer;
                     font-size: 18px;
+                    margin-right: 14px;
+
+                    @include breakpoints.small {
+                        margin-right: 0;
+                    }
                 }
             }
         }

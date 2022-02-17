@@ -13,7 +13,9 @@ function Home({ artists, news, events }) {
   return (
     <div className={globalStyles.pageContainer}>
       <div id={styles.homeContainer}> 
-        <ImageSlider artists={artists} style={{width:"100%"}}/>
+        <div className={globalStyles.sliderContainer}> 
+          <ImageSlider artists={artists} style={{width:"100%"}}/>
+        </div>
         <h5 id={styles.allArtistsHeading}>
           <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} />
           <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} style={{marginRight: "4px"}}/>
@@ -22,8 +24,8 @@ function Home({ artists, news, events }) {
           <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} />
         </h5>
         <div className={globalStyles.darkContainer}>
-          <div className={globalStyles.contentContainer}>
-            <h2 id={globalStyles.newsh2}><Link href="/news">NEWS</Link></h2>
+          <div className={globalStyles.contentContainer + " container"}>
+            <h2 className={globalStyles.newsh2}><Link href="/news">NEWS</Link></h2>
             <NewsList news={news} />
             <h5 id={globalStyles.allNewsh5}>
               <FontAwesomeIcon icon={faChevronRight} className={globalStyles.newsChevrons} />
@@ -37,8 +39,8 @@ function Home({ artists, news, events }) {
           </div>
         </div>
         <div className={globalStyles.tealContainer}>
-          <div className={globalStyles.contentContainer}>
-              <h2 id={globalStyles.eventsh2}><Link href="/events">UPCOMING EVENTS</Link></h2>
+          <div className={globalStyles.contentContainer + " container"}>
+              <h2 className={globalStyles.eventsh2}><Link href="/events">UPCOMING EVENTS</Link></h2>
               <EventList  events={events} />
               <h5 id={globalStyles.allEventsh5}>
                 <FontAwesomeIcon icon={faChevronRight} className={globalStyles.eventsChevrons} />

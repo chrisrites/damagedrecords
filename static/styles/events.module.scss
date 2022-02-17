@@ -1,0 +1,54 @@
+@use 'globals';
+@use 'colours';
+@use 'breakpoints';
+
+.eventsContainer {
+    padding-bottom: 10px;
+    
+    #mainEvent {
+        text-align: center;
+
+        #mainEventh2{
+            margin: 10px 0;
+        }
+
+        #mainEventDate {
+            margin: 0 0 10px 0;
+        }
+
+        #mainEventImg {
+            margin: auto;
+            margin-bottom: 15px; 
+
+            @include breakpoints.small {
+                max-width: 500px;
+            }
+    
+            @include breakpoints.large {
+                max-width: 700px;
+            }
+        }
+
+        #description {
+            // text-align: justify;
+            margin: 0 2em;
+            font-family: globals.$paragraphFont;
+            font-size: globals.$paragraphSize;
+            color: colours.$white;
+            margin-bottom: 10px;
+        }
+
+        #relevantEventLinks {
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #eventsh2 {
+        text-align: center;
+        color: colours.$black;
+        margin-bottom: 0;
+    }
+}

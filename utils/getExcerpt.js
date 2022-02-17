@@ -1,6 +1,6 @@
 function getExcerpt(str) {
     return (
-        str.substring(0, 175) + " ..."
+        str.substring(0, 115) + " ..."
     )
 }
 

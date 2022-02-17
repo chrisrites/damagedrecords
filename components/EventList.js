@@ -1,6 +1,6 @@
 // import React from 'react'
 import Link from 'next/link';
-import { Segment } from 'semantic-ui-react'
+// import { Segment } from 'semantic-ui-react'
 import stringifyDate from '../utils/stringifyDate'
 import globalStyles from '../static/styles/global.module.scss'
 
