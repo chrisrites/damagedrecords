@@ -1,15 +1,21 @@
-import React from "react"
-import axios from 'axios'
-import ProductList from '../components/Store/ProductList'
-import ProductPagination from '../components/Store/ProductPagination'
-import baseUrl from '../utils/baseUrl'
-import globalStyles from '../static/styles/global.module.scss'
+import React from 'react';
+import axios from 'axios';
+import ProductList from '../components/Store/ProductList';
+import ProductPagination from '../components/Store/ProductPagination';
+import baseUrl from '../utils/baseUrl';
+import globalStyles from '../static/styles/global.module.scss';
+import styles from '../static/styles/store.module.scss';
 
 function Store({ products, totalPages }) {
    return (
-        <div className={globalStyles.contentContainer}>
-            <ProductList products={products} />
-            <ProductPagination totalPages={totalPages} />
+        <div className={globalStyles.pageContainer}>
+            <div className={globalStyles.darkContainer}>
+                <div className={globalStyles.contentContainer + " " + styles.storeContainer + " container"}>
+                    <h2 className={globalStyles.newsh2} id={styles.storeh2}>Melted Store</h2>
+                    <ProductList products={products} />
+                    <ProductPagination totalPages={totalPages} />
+                </div>
+            </div>
         </div>
     )
 }

@@ -1,0 +1,9 @@
+@use 'colours';
+
+.accountContainer {
+    padding-top: 20px;
+
+    h2 {
+        color: colours.$white; 
+    }
+}

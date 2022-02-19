@@ -1,14 +1,20 @@
-import axios from 'axios'
-import ProductSummary from '../components/Product/ProductSummary'
-import ProductAttributes from '../components/Product/ProductAttributes'
-import baseUrl from '../utils/baseUrl'
+import axios from 'axios';
+import ProductSummary from '../components/Product/ProductSummary';
+import ProductAttributes from '../components/Product/ProductAttributes';
+import baseUrl from '../utils/baseUrl';
+import globalStyles from '../static/styles/global.module.scss';
+import styles from '../static/styles/product.module.scss';
 
 function Product({ product, user }) {
   return (
-    <>
-      <ProductSummary user={user} {...product} />
-      <ProductAttributes user={user} {...product} />
-    </>
+    <div className={globalStyles.pageContainer}>
+      <div className={globalStyles.darkContainer}>
+        <div className={globalStyles.contentContainer + " " + styles.productContainer + " container"}>
+          <ProductSummary user={user} {...product} />
+          <ProductAttributes user={user} {...product} />
+        </div>
+      </div>
+    </div>
   )
 }
 

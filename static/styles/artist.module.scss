@@ -4,27 +4,43 @@
 
 #artistContainer {
     // text-align: center;
-    #allArtistsHeading {
-        background-color: colours.$teal;
-        padding: 0.25em 0;
-        margin: 0;
+
+    h1 {
         text-align: center;
-        margin-bottom: 40px;
-
-        a {
-            color: colours.$black;
-        }
-
-        a:hover {
-            color: colours.$pink;
-        }
     }
+    // #allArtistsHeading {
+    //     background-color: colours.$teal;
+    //     padding: 0.25em 0;
+    //     margin: 0;
+    //     text-align: center;
+    //     margin-bottom: 40px;
 
-    .artistChevrons {
-        color: colours.$pink;
-    }
+    //     a {
+    //         color: colours.$black;
+    //     }
+
+    //     a:hover {
+    //         color: colours.$pink;
+    //     }
+    // }
+
+    // .artistChevrons {
+    //     color: colours.$pink;
+    // }
 
     img {
         width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .latestNewsh2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .upcomingEventsh2 {
+        text-align: center;
+        color: colours.$grey;
+        margin: 14px 0 0px 0;
     }
 }

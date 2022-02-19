@@ -1,12 +1,15 @@
-import axios from 'axios'
-import NewsList from '../../components/NewsList'
-import baseUrl from '../../utils/baseUrl'
-import stringifyDate from '../../utils/stringifyDate'
+import axios from 'axios';
+import NewsList from '../../components/NewsList';
+import baseUrl from '../../utils/baseUrl';
+import Link from 'next/link';
+import stringifyDate from '../../utils/stringifyDate';
 // import getExcerpt from '../../utils/getExcerpt';
-import { Image } from 'semantic-ui-react'
-import { mapRelevantLinks, mapArtistsLinks } from '../../utils/mapLinks'
-import globalStyles from '../../static/styles/global.module.scss'
-import styles from '../../static/styles/news.module.scss'
+import { Image } from 'semantic-ui-react';
+import { mapRelevantLinks, mapArtistsLinks } from '../../utils/mapLinks';
+import globalStyles from '../../static/styles/global.module.scss';
+import styles from '../../static/styles/news.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function News({ singleNews, newsItems }) {
 
@@ -15,6 +18,7 @@ function News({ singleNews, newsItems }) {
       <div className={globalStyles.darkContainer}>
         <div className={globalStyles.contentContainer  + " container"}>
           <div id={styles.mainFeature}>
+            <div className={globalStyles.breadcrumbs}><Link href="/"><span className={globalStyles.breadcrumbLink}>Home</span></Link><span><FontAwesomeIcon icon={faChevronRight} className={globalStyles.breadcrumbChevrons} /></span><span className={globalStyles.breadcrumbCurrent}>News</span></div>
             <h2 className={globalStyles.newsh2} id={styles.mainFeatureh2}>{singleNews.title}</h2>
             <Image id={styles.mainImage} src={singleNews.image}></Image>
             <h4 className={globalStyles.heading4}>{stringifyDate(singleNews.date)}</h4>

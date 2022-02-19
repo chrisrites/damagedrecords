@@ -1,13 +1,13 @@
-import ImageSlider from '../components/ImageSlider'
-import axios from 'axios'
-import Link from 'next/link'
-import baseUrl from '../utils/baseUrl'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import NewsList from '../components/NewsList'
-import EventList from '../components/EventList'
-import globalStyles from '../static/styles/global.module.scss'
-import styles from '../static/styles/index.module.scss'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import ImageSlider from '../components/ImageSlider';
+import axios from 'axios';
+import Link from 'next/link';
+import baseUrl from '../utils/baseUrl';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import NewsList from '../components/NewsList';
+import EventList from '../components/EventList';
+import globalStyles from '../static/styles/global.module.scss';
+import styles from '../static/styles/index.module.scss';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function Home({ artists, news, events }) {
   return (

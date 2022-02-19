@@ -1,8 +1,9 @@
-import React from 'react'
-import { Header, Button, Modal } from 'semantic-ui-react'
-import axios from 'axios'
-import baseUrl from '../../utils/baseUrl'
-import { useRouter } from 'next/router'
+import React from 'react';
+import { Header, Button, Modal } from 'semantic-ui-react';
+import axios from 'axios';
+import baseUrl from '../../utils/baseUrl';
+import { useRouter } from 'next/router';
+import styles from '../../static/styles/product.module.scss';
 
 function ProductAttributes({ description, _id, user }) {
   const [modal, setModal] = React.useState(false)
@@ -21,8 +22,8 @@ function ProductAttributes({ description, _id, user }) {
 
   return (
     <>
-      <Header as="h3">About this product</Header>
-      <p>{description}</p>
+      <Header><h3>About this product</h3></Header>
+      <p id={styles.description}>{description}</p>
       {isRootOrAdmin && (
         <>
           <Button 

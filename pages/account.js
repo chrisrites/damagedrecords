@@ -1,17 +1,25 @@
-import AccountHeader from '../components/Account/AccountHeader'
-import AccountOrders from '../components/Account/AccountOrders'
-import AccountPermissions from '../components/Account/AccountPermissions'
-import { parseCookies } from 'nookies'
-import axios from 'axios'
-import baseUrl from '../utils/baseUrl'
+import AccountHeader from '../components/Account/AccountHeader';
+import AccountOrders from '../components/Account/AccountOrders';
+import AccountPermissions from '../components/Account/AccountPermissions';
+import { parseCookies } from 'nookies';
+import axios from 'axios';
+import baseUrl from '../utils/baseUrl';
+import globalStyles from '../static/styles/global.module.scss';
+import styles from '../static/styles/account.module.scss';
 
 function Account({ user, orders }) {
 
-  return <>
-    <AccountHeader {...user} />
-    <AccountOrders orders={orders} />
-    {user.role === 'root' &&  <AccountPermissions currentUserId={user._id} />}
-  </>
+  return (
+    <div className={globalStyles.pageContainer}>
+      <div className={globalStyles.darkContainer}>
+        <div className={globalStyles.contentContainer + " " + styles.accountContainer + " container"}>
+          <AccountHeader {...user} />
+          <AccountOrders orders={orders} />
+          {user.role === 'root' &&  <AccountPermissions currentUserId={user._id} />}
+        </div>
+      </div>
+    </div>
+  )
 }
 
 // Account.getInitialProps = async ctx => {

@@ -4,6 +4,15 @@
 
 // GLOBALS
 
+.heading2 {
+    font-family: globals.$heading2Font;
+    font-size: globals.$heading2Size;
+    font-weight: 400;
+    line-height: globals.$heading2LineHeight;
+    margin: 10px 0;
+    color: colours.$white;
+}
+
 .heading4 {
     font-family: globals.$heading4Font;
     font-size: globals.$heading4Size;
@@ -56,175 +65,6 @@
         ::selection {
             background: colours.$teal; /* WebKit/Blink Browsers */
         }
-
-        .contentContainer{
-
-            // NEWS SECTION
-            .newsh2 {
-                text-align: center;
-                font-family: globals.$heading2Font;
-                font-size: globals.$heading2Size;
-                font-weight: 400;
-                line-height: globals.$heading2LineHeight;
-                margin-top: 0;
-            
-                a {
-                    color: colours.$white;
-                }
-        
-                a:hover {
-                    color: colours.$teal;
-                }
-            }
-
-            #allNewsh5 {
-                text-align: center;
-                font-family: globals.$heading5Font;
-                font-size: globals.$heading5Size;
-                line-height: globals.$heading5LineHeight;
-                margin: 0 0 10px 0;
-            
-                a {
-                    color: colours.$teal;
-                }
-        
-                a:hover {
-                    // color: colours.$white;
-                    border-bottom: 2px solid colours.$white;
-                }
-            }
-
-            .newsChevrons {
-                color: colours.$white;
-            }
-
-            .newsListContainer {
-                text-align: left;
-                // margin: 1em 0 2em 0;
-                max-width: 700px;
-                margin: 1em auto 2em auto;
-
-                .heading3 {
-                    font-family: globals.$heading3Font;
-                    font-size: globals.$heading3Size;
-                    line-height: globals.$heading3LineHeight;
-                    font-weight: 300;
-                    color: colours.$pink;
-                    cursor: pointer;
-                }
-
-                .heading3:hover {
-                    color: colours.$teal;
-                }
-
-                .articleCard {
-                    text-align: left;
-                    display: grid;
-                    grid-template-columns: auto auto;
-                    grid-gap: 20px;
-
-                    .articleThumbnail{
-                        // cursor: pointer;
-
-                        .thumbnail {
-                            width: 100px;
-                            height: auto;
-                        }
-                    }
-                    
-                    .articleThumbnail:hover {
-                        cursor: pointer;
-                    }
-
-                    .articleExcerpt {
-
-                        .heading4 {
-                            font-family: globals.$heading4Font;
-                            font-size: globals.$heading4Size;
-                            font-weight: 400;
-                            line-height: globals.$heading4LineHeight;
-                            color: colours.$white;
-                        }
-
-                        .paragraph {
-                            text-align: justify;
-                            font-family: globals.$paragraphFont;
-                            font-size: globals.$paragraphSize;
-                            color: colours.$white;
-        
-                            a {
-                                color: colours.$pink;
-                            }
-            
-                            a:hover {
-                                color: colours.$teal;
-                            }
-                        }
-                    }
-                }
-
-                // .relevantLinks {
-                //     font-family: globals.$relevantLinksFont;
-                //     font-size: globals.$relevantLinksSize;
-                //     line-height: globals.$relevantLinkLineHeight;
-                //     margin-top: 0.5em;
-
-                //     a {
-                //         color: colours.$yellow;
-                //         margin: 0 0.25em;
-                //     }
-
-                //     a:hover {
-                //         text-decoration: underline;
-                //     }
-                // }
-            } 
-
-            // ARTISTS PAGE
-            #artistsh1 {
-                font-family: globals.$heading1Font;
-                font-size: globals.$heading1Size;
-                line-height: globals.$heading1LineHeight;
-                font-weight: 400;
-                text-align: center;
-                // text-transform: uppercase;
-            }
-
-            #artistsh2 {
-                font-family: globals.$heading2Font;
-                font-size: globals.$heading2Size;
-                line-height: globals.$heading2LineHeight;
-                font-weight: 400;
-                color: colours.$pink;
-                cursor: pointer;
-            }
-
-            #artistsImg {
-                cursor: pointer;
-                margin-bottom: 40px;
-            }
-
-            // ARTIST (single) PAGE
-            #artistH1 {
-                text-align: center;
-                color: colours.$white;
-            }
-
-            #artistP {
-                text-align: center;
-                color: colours.$white;
-                font-family: globals.$paragraphFont;
-                font-size: globals.$paragraphSize;
-                margin: 0 2em;
-            }
-
-            #artistH5 {
-                text-align: center;
-                font-family: globals.$heading5Font;
-                font-size: globals.$heading5Size;
-                line-height: globals.$heading5LineHeight;
-            }
-        }
     }    
 
     .tealContainer {
@@ -235,203 +75,391 @@
         ::selection {
             background: colours.$yellow; /* WebKit/Blink Browsers */
         }
-        
-        .contentContainer{
-
-            // EVENTS SECTION PAGE
-            .eventsh2 {
-                text-align: center;
-                font-family: globals.$heading2Font;
-                font-size: globals.$heading2Size;
-                font-weight: 400;
-                line-height: globals.$heading3LineHeight;
-                margin-top: 12px;
-            
-                a {
-                    color: colours.$grey;
-                }
-        
-                a:hover {
-                    color: colours.$pink;
-                }
-
-                @include breakpoints.medium {
-                    // margin: 0.5em 0 1.5em 0;
-                }
-            }
-    
-            .eventListContainer {
-                display: grid;
-                grid-template-columns: auto;
-                grid-template-rows: auto auto auto auto;
-                grid-template-areas:
-                    "title"
-                    "date"
-                    "links" 
-                    "artists";
-                background-color: colours.$white;
-                text-align: center;
-                border: 3px solid colours.$grey;
-                // border-radius: 20px;
-                margin: auto;
-                margin-top: 2em;
-                padding: 1.5em 0.5em;
-                max-width: 700px;
-                // border-bottom: 2px solid colours.$teal;
-            
-                .title {
-                    grid-area: title;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-bottom: 0.5em;
-                }
-
-                // #title
-                .titleH3 {
-                    font-family: globals.$heading3Font;
-                    font-size: globals.$heading3Size;
-                    font-weight: 700;
-                    line-height: globals.$heading3LineHeight;
-                    color: colours.$pink;
-                    cursor: pointer;
-                }
-
-                .titleH3:hover{
-                    text-decoration: underline;
-                    text-decoration-color: colours.$teal;
-                }
-            
-                .eventDate {
-                    grid-area: date;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: colours.$grey;
-                    font-family: globals.$heading4Font;
-                    font-size: globals.$heading4Size;
-                    font-weight: 400;
-                    line-height: globals.$heading4LineHeight;
-                    margin-bottom: 0.5em;
-                }
-            
-                .relevantLinks {
-                    grid-area: links;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-bottom: 0.5em;
-
-                .relevantLinksBlock{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        h5 {
-                            margin: 0 4px;
-                            font-family: globals.$relevantLinksFont;
-                            font-size: globals.$relevantLinksSize;
-                            font-weight: 400;
-                            line-height: globals.$relevantLinkLineHeight;
-                            color: colours.$grey;
-                            // text-decoration: underline;
-                            // text-decoration-color: colours.$teal;
-                        }
-    
-                        h5:hover {
-                            color: colours.$pink;
-                            text-decoration: none;
-                        }
-                    }
-                }
-
-                .artists {
-                    grid-area: artists;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    // margin-bottom: 1em;
-
-                    .artistsh4 {
-                        font-family: globals.$heading4Font;
-                        font-size: globals.$heading4Size;
-                        font-weight: 700;
-                        line-height: globals.$heading4LineHeight;
-                        color: colours.$grey;
-                        cursor: pointer;
-                    }
-
-                    .artistsh4:hover {
-                        color: colours.$pink;
-                    }
-                }
-
-                @include breakpoints.small {
-                    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-                    grid-template-rows: 1fr;
-                    grid-template-areas:
-                        "title date links artists";
-                    padding-bottom: 1em;
-
-                    #title, #eventDate, #relevantLinks, #artists {
-                        margin-bottom: 0;
-                    }
-
-                    #relevantLinks {
-
-                        #relevantLinksBlock {
-                            display: block;
-
-                            // NEED TO SET SPECIFIC ID'S AND FONT FAMILIES/WEIGHTS TO EVENT RELEVANT LINKS & ALL NEWS, UPCOMING EVENTS.
-                            // THEY'RE GETTING FONT WEIGHT 700 FOR SOME REASON
-                            h5 {
-                                margin: 2px 0;
-                            }
-                        }
-                    }
-                }
-            }
-
-            #allEventsh5 {
-                text-align: center;
-                font-family: globals.$heading5Font;
-                font-size: globals.$heading5Size;
-                font-weight: 700;
-                line-height: globals.$heading5LineHeight;
-                margin: 20px 0 10px 0;
-            
-                a {
-                    color: colours.$grey;
-                }
-        
-                a:hover {
-                    border-bottom: 2px solid colours.$white;
-                }
-            }
-        
-            .eventsChevrons {
-                color: colours.$pink;
-            }
-
-            #eventListContainer:last-child {
-                // border-bottom: none;
-
-                @include breakpoints.small {
-                    margin-bottom: 1em;
-                }
-
-                @include breakpoints.medium {
-                    margin-bottom: 1.5em;
-                }
-            }
-        }
     } 
 
     .contentContainer {
-        display: inline-block;
+
+        // display: inline-block;
         margin: 0 auto;
         text-align: left;
         width: 95%;
+
+        .breadcrumbs {
+            text-align: left;
+
+            .breadcrumbLink {
+                color: colours.$teal;
+                font-family: globals.$heading3Font;
+                margin-right: 2px;
+                text-decoration: underline;
+            }
+
+            .breadcrumbChevrons {
+                color: colours.$teal;
+                font-size: 10px;
+                margin-right: 2px;
+            }
+
+            .breadcrumbCurrent {
+                color: colours.$teal;
+                font-family: globals.$heading3Font;
+                margin-right: 2px;
+            }
+        }
+
+        // NEWS SECTION
+        .newsh2 {
+            text-align: center;
+            font-family: globals.$heading2Font;
+            font-size: globals.$heading2Size;
+            font-weight: 400;
+            line-height: globals.$heading2LineHeight;
+            margin: 10px 0;
+        
+            a {
+                color: colours.$white;
+            }
+    
+            a:hover {
+                color: colours.$teal;
+            }
+        }
+
+        #allNewsh5 {
+            text-align: center;
+            font-family: globals.$heading5Font;
+            font-size: globals.$heading5Size;
+            line-height: globals.$heading5LineHeight;
+            margin: 0 0 10px 0;
+        
+            a {
+                color: colours.$teal;
+            }
+    
+            a:hover {
+                // color: colours.$white;
+                border-bottom: 2px solid colours.$white;
+            }
+        }
+
+        .newsChevrons {
+            color: colours.$white;
+        }
+
+        .newsListContainer {
+            text-align: left;
+            // margin: 1em 0 2em 0;
+            max-width: 700px;
+            margin: 1em auto 2em auto;
+
+            .heading3 {
+                font-family: globals.$heading3Font;
+                font-size: globals.$heading3Size;
+                line-height: globals.$heading3LineHeight;
+                font-weight: 300;
+                color: colours.$pink;
+                cursor: pointer;
+            }
+
+            .heading3:hover {
+                color: colours.$teal;
+            }
+
+            .articleCard {
+                text-align: left;
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-gap: 20px;
+
+                .articleThumbnail{
+                    // cursor: pointer;
+
+                    .thumbnail {
+                        width: 100px;
+                        height: auto;
+                    }
+                }
+                
+                .articleThumbnail:hover {
+                    cursor: pointer;
+                }
+
+                .articleExcerpt {
+
+                    .heading4 {
+                        font-family: globals.$heading4Font;
+                        font-size: globals.$heading4Size;
+                        font-weight: 400;
+                        line-height: globals.$heading4LineHeight;
+                        color: colours.$white;
+                    }
+
+                    .paragraph {
+                        text-align: justify;
+                        font-family: globals.$paragraphFont;
+                        font-size: globals.$paragraphSize;
+                        color: colours.$white;
+    
+                        a {
+                            color: colours.$pink;
+                        }
+        
+                        a:hover {
+                            color: colours.$teal;
+                        }
+                    }
+                }
+            }
+
+            // .relevantLinks {
+            //     font-family: globals.$relevantLinksFont;
+            //     font-size: globals.$relevantLinksSize;
+            //     line-height: globals.$relevantLinkLineHeight;
+            //     margin-top: 0.5em;
+
+            //     a {
+            //         color: colours.$yellow;
+            //         margin: 0 0.25em;
+            //     }
+
+            //     a:hover {
+            //         text-decoration: underline;
+            //     }
+            // }
+        } 
+
+        // ARTISTS PAGE
+        #artistsh1 {
+            font-family: globals.$heading1Font;
+            font-size: globals.$heading1Size;
+            line-height: globals.$heading1LineHeight;
+            font-weight: 400;
+            text-align: center;
+            // text-transform: uppercase;
+        }
+
+        #artistsh2 {
+            font-family: globals.$heading2Font;
+            font-size: globals.$heading2Size;
+            line-height: globals.$heading2LineHeight;
+            font-weight: 400;
+            color: colours.$pink;
+            cursor: pointer;
+        }
+
+        #artistsImg {
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+
+        // ARTIST (single) PAGE
+        #artistH1 {
+            text-align: center;
+            color: colours.$white;
+        }
+
+        #artistP {
+            text-align: center;
+            color: colours.$white;
+            font-family: globals.$paragraphFont;
+            font-size: globals.$paragraphSize;
+            margin: 0 2em;
+        }
+
+        #artistH5 {
+            text-align: center;
+            font-family: globals.$heading5Font;
+            font-size: globals.$heading5Size;
+            line-height: globals.$heading5LineHeight;
+        }
+
+        // EVENTS SECTION
+        .eventsh2 {
+            text-align: center;
+            font-family: globals.$heading2Font;
+            font-size: globals.$heading2Size;
+            font-weight: 400;
+            line-height: globals.$heading3LineHeight;
+            margin: 15px 0 10px 0;
+        
+            a {
+                color: colours.$grey;
+            }
+
+            a:hover {
+                color: colours.$pink;
+            }
+
+            @include breakpoints.medium {
+                // margin: 0.5em 0 1.5em 0;
+            }
+        }
+
+        .eventListContainer {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas:
+                "title"
+                "date"
+                "links" 
+                "artists";
+            background-color: colours.$white;
+            text-align: center;
+            border: 3px solid colours.$grey;
+            // border-radius: 20px;
+            margin: auto;
+            margin-top: 2em;
+            padding: 1.5em 0.5em;
+            max-width: 700px;
+            // border-bottom: 2px solid colours.$teal;
+        
+            .title {
+                grid-area: title;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5em;
+            }
+
+            // #title
+            .titleH3 {
+                font-family: globals.$heading3Font;
+                font-size: globals.$heading3Size;
+                font-weight: 700;
+                line-height: globals.$heading3LineHeight;
+                color: colours.$pink;
+                cursor: pointer;
+            }
+
+            .titleH3:hover{
+                text-decoration: underline;
+                text-decoration-color: colours.$teal;
+            }
+        
+            .eventDate {
+                grid-area: date;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: colours.$grey;
+                font-family: globals.$heading4Font;
+                font-size: globals.$heading4Size;
+                font-weight: 400;
+                line-height: globals.$heading4LineHeight;
+                margin-bottom: 0.5em;
+            }
+        
+            .relevantLinks {
+                grid-area: links;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.5em;
+
+            .relevantLinksBlock{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    h5 {
+                        margin: 0 4px;
+                        font-family: globals.$relevantLinksFont;
+                        font-size: globals.$relevantLinksSize;
+                        font-weight: 400;
+                        line-height: globals.$relevantLinkLineHeight;
+                        color: colours.$grey;
+                        // text-decoration: underline;
+                        // text-decoration-color: colours.$teal;
+                    }
+
+                    h5:hover {
+                        color: colours.$pink;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .artists {
+                grid-area: artists;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // margin-bottom: 1em;
+
+                .artistsh4 {
+                    font-family: globals.$heading4Font;
+                    font-size: globals.$heading4Size;
+                    font-weight: 700;
+                    line-height: globals.$heading4LineHeight;
+                    color: colours.$grey;
+                    cursor: pointer;
+                }
+
+                .artistsh4:hover {
+                    color: colours.$pink;
+                }
+            }
+
+            @include breakpoints.small {
+                grid-template-columns: 1.5fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+                grid-template-areas:
+                    "title date links artists";
+                padding-bottom: 1em;
+
+                #title, #eventDate, #relevantLinks, #artists {
+                    margin-bottom: 0;
+                }
+
+                #relevantLinks {
+
+                    #relevantLinksBlock {
+                        display: block;
+
+                        // NEED TO SET SPECIFIC ID'S AND FONT FAMILIES/WEIGHTS TO EVENT RELEVANT LINKS & ALL NEWS, UPCOMING EVENTS.
+                        // THEY'RE GETTING FONT WEIGHT 700 FOR SOME REASON
+                        h5 {
+                            margin: 2px 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        #allEventsh5 {
+            text-align: center;
+            font-family: globals.$heading5Font;
+            font-size: globals.$heading5Size;
+            font-weight: 700;
+            line-height: globals.$heading5LineHeight;
+            margin: 20px 0 10px 0;
+        
+            a {
+                color: colours.$grey;
+            }
+
+            a:hover {
+                border-bottom: 2px solid colours.$white;
+            }
+        }
+
+        .eventsChevrons {
+            color: colours.$pink;
+        }
+
+        #eventListContainer:last-child {
+            // border-bottom: none;
+
+            @include breakpoints.small {
+                margin-bottom: 1em;
+            }
+
+            @include breakpoints.medium {
+                margin-bottom: 1.5em;
+            }
+        }
+        // END EVENTS
 
         /* Small devices (landscape phones, 576px and up) */
         @include breakpoints.small {
@@ -454,5 +482,4 @@
         }
     }
 }
-
 

@@ -2,9 +2,13 @@
 // @use 'colours';
 // @use 'breakpoints';
 
-#artistsContainer{
+.artistsContainer{
     text-align: center;
     
+    h1 {
+        margin-top: 14px;
+    }
+
     img {
         width: 100%;
     }

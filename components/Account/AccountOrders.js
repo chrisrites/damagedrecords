@@ -49,9 +49,12 @@ function AccountOrders({ orders }) {
   }
 
   return <>
-    <Header as="h2">
-      <Icon name="folder open" />
-      Order History
+    
+    <Header>
+      <h2>
+        <Icon name="folder open" />
+        Order History
+      </h2>
     </Header>
     {orders.length === 0 ? (
       <Segment inverted tertiary color="grey" textAlign="center">

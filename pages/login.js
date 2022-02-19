@@ -1,10 +1,12 @@
-import React from 'react'
-import { Button, Form, Icon, Message, Segment } from 'semantic-ui-react'
-import Link from 'next/link'
-import catchErrors from '../utils/catchErrors'
-import baseUrl from '../utils/baseUrl'
-import axios from 'axios'
-import { handleLogin } from '../utils/auth'
+import React from 'react';
+import { Button, Form, Icon, Message, Segment } from 'semantic-ui-react';
+import Link from 'next/link';
+import catchErrors from '../utils/catchErrors';
+import baseUrl from '../utils/baseUrl';
+import axios from 'axios';
+import { handleLogin } from '../utils/auth';
+import globalStyles from '../static/styles/global.module.scss';
+import styles from '../static/styles/login.module.scss';
 
 const INITIAL_USER = {
   email: "",
@@ -44,64 +46,70 @@ function Login() {
     }
   }
 
-  return <>
-    <Message 
-      attached
-      icon="privacy"
-      header="Welcome Back!"
-      content="Login with email and password"
-      color="blue"
-    />
-    <Form 
-      error={Boolean(error)} 
-      loading={loading} 
-      onSubmit={handleSubmit}
-    >
-      <Message 
-        error
-        header="ERROR"
-        content={error}
-      />
-      <Segment>
-        <Form.Input 
-          fluid
-          icon="envelope"
-          iconPosition="left"
-          label="Email"
-          placeholder="Email"
-          name="email"
-          type="email"
-          value={user.email}
-          onChange={handleChange}
-        />
-        <Form.Input 
-          fluid
-          icon="lock"
-          iconPosition="left"
-          label="Password"
-          placeholder="Password"
-          name="password"
-          type="password"
-          value={user.password}
-          onChange={handleChange}
-        />
-        <Button 
-          disabled={disabled || loading}
-          icon="sign in"
-          type="submit"
-          color="orange"
-          content="Login"
-        />
-      </Segment>
-    </Form>
-    <Message attached="bottom" warning>
-      <Icon name="info"/>
-      New user?{" "}
-      <Link href="/signup">
-        <a>Sign up here</a>
-      </Link>{" "}instead
-    </Message>
-  </>;
+  return (
+    <div className={globalStyles.pageContainer}>
+      <div className={globalStyles.darkContainer}>
+        <div className={globalStyles.contentContainer + " " + styles.loginContainer + " container"}>
+          <Message 
+            attached
+            icon="privacy"
+            header="Welcome Back!"
+            content="Login with email and password"
+            color="blue"
+          />
+          <Form 
+            error={Boolean(error)} 
+            loading={loading} 
+            onSubmit={handleSubmit}
+          >
+            <Message 
+              error
+              header="ERROR"
+              content={error}
+            />
+            <Segment>
+              <Form.Input 
+                fluid
+                icon="envelope"
+                iconPosition="left"
+                label="Email"
+                placeholder="Email"
+                name="email"
+                type="email"
+                value={user.email}
+                onChange={handleChange}
+              />
+              <Form.Input 
+                fluid
+                icon="lock"
+                iconPosition="left"
+                label="Password"
+                placeholder="Password"
+                name="password"
+                type="password"
+                value={user.password}
+                onChange={handleChange}
+              />
+              <Button 
+                disabled={disabled || loading}
+                icon="sign in"
+                type="submit"
+                color="orange"
+                content="Login"
+              />
+            </Segment>
+          </Form>
+          <Message attached="bottom" warning>
+            <Icon name="info"/>
+            New user?{" "}
+            <Link href="/signup">
+              <a>Sign up here</a>
+            </Link>{" "}instead
+          </Message>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Login;

@@ -1,12 +1,14 @@
-import React from 'react'
-import axios from 'axios'
-import { Segment } from 'semantic-ui-react'
-import CartItemList from '../components/Cart/CartItemList'
-import CartSummary from '../components/Cart/CartSummary'
-import { parseCookies } from 'nookies'
-import cookie from 'js-cookie'
-import baseUrl from '../utils/baseUrl'
-import catchErrors from '../utils/catchErrors'
+import React from 'react';
+import axios from 'axios';
+import { Segment } from 'semantic-ui-react';
+import CartItemList from '../components/Cart/CartItemList';
+import CartSummary from '../components/Cart/CartSummary';
+import { parseCookies } from 'nookies';
+import cookie from 'js-cookie';
+import baseUrl from '../utils/baseUrl';
+import catchErrors from '../utils/catchErrors';
+import globalStyles from '../static/styles/global.module.scss';
+import styles from '../static/styles/cart.module.scss';
 
 
 function Cart({ products, user }) {
@@ -42,10 +44,16 @@ function Cart({ products, user }) {
   }
 
   return (
-    <Segment loading={loading}>
-      <CartItemList handleRemoveFromCart={handleRemoveFromCart} user={user} products={cartProducts} success={success}/>
-      <CartSummary products={cartProducts} handleCheckout={handleCheckout} success={success}/>
-    </Segment>
+    <div className={globalStyles.pageContainer}>
+      <div className={globalStyles.darkContainer}>
+        <div className={globalStyles.contentContainer + " " + styles.cartContainer + " container"}>
+          <Segment loading={loading}>
+            <CartItemList handleRemoveFromCart={handleRemoveFromCart} user={user} products={cartProducts} success={success}/>
+            <CartSummary products={cartProducts} handleCheckout={handleCheckout} success={success}/>
+          </Segment>
+        </div>
+      </div>
+    </div>
   )
 }
 
