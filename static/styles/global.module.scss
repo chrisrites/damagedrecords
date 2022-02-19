@@ -94,6 +94,10 @@
                 text-decoration: underline;
             }
 
+            .breadcrumbLink:hover {
+                cursor: pointer;
+            }
+
             .breadcrumbChevrons {
                 color: colours.$teal;
                 font-size: 10px;
