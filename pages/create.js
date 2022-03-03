@@ -45,8 +45,7 @@ function CreateProduct() {
     data.append('file', product.media)
     data.append('upload_preset', 'damaged')
     data.append('cloud_name', 'chrischartranddevelopment')
-    // const response = await axios.post(process.env.CLOUDINARY_URL, data)
-    const response = await axios.post("https://api.cloudinary.com/v1_1/chrischartranddevelopment/image/upload", data)
+    const response = await axios.post(process.env.CLOUDINARY_URL, data)
     const mediaUrl = response.data.url
     return mediaUrl
   }
