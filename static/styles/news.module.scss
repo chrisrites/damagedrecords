@@ -1,5 +1,6 @@
 @use 'globals';
 @use 'colours';
+@use 'breakpoints';
 
 #mainFeature {
     text-align: center;
@@ -10,8 +11,18 @@
 
     #mainImage {
         margin: auto;
-        width: 100%;
+        width: auto;
+        max-width: 100%;
         height: auto;
+
+        @include breakpoints.small {
+            
+        }
+    
+        @include breakpoints.medium {
+            width: auto;
+            max-height: 550px; 
+        }
     }
 
     #paragraph {

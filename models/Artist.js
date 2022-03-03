@@ -21,7 +21,17 @@ const ArtistSchema  = new mongoose.Schema({
         type: String,
         unique: true,
         required: true
-    }
+    },
+    links: [
+        {
+            link: {
+                type: String
+            },
+            linkName: {
+                type: String
+            }
+        }
+    ]
 })
 
 // Since we're using serverless configuration, we need to check to make sure the model has not already been generated

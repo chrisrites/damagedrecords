@@ -4,7 +4,7 @@ export function mapRelevantLinks(obj){
     return (
         obj.links.map((link, idx) => (
             // Use regular links for external websites
-            <a key={idx} href={link.link}>{link.linkName}</a>
+            <a key={idx} href={link.link} target="_blank">{link.linkName}</a>
         ))
     )
   }

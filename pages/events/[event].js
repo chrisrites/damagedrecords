@@ -37,12 +37,14 @@ function Event({ events }) {
           </div>
         </div>
       </div> 
-      <div className={globalStyles.tealContainer}>
-        <div className={globalStyles.contentContainer + " " + styles.eventsContainer + " container"}>
-          <h2 className={globalStyles.eventsh2} id={styles.eventsh2}>More Events</h2>
-          <EventList events={buildEventList()} />
+      {events.length > 1 &&
+        <div className={globalStyles.tealContainer}>
+          <div className={globalStyles.contentContainer + " " + styles.eventsContainer + " container"}>
+            <h2 className={globalStyles.eventsh2} id={styles.eventsh2}>More Events</h2>
+            <EventList events={buildEventList()} />
+          </div>
         </div>
-      </div>
+      }
     </div> 
   )
 }

@@ -3,6 +3,11 @@
 
 #homeContainer{
 
+    #sliderBackground {
+        background-color: aqua;
+        background-image: linear-gradient(colours.$black, colours.$teal);
+    }
+
     #allArtistsHeading {
         background-color: colours.$teal;
         padding: 0.25em 0;

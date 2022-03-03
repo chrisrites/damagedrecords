@@ -27,8 +27,13 @@ function News({ singleNews, newsItems }) {
               {mapRelevantLinks(singleNews)}
               {mapArtistsLinks(singleNews)}
             </div>
-            <h2 className={globalStyles.newsh2} id={styles.moreNewsh2}>More News</h2>
-            <NewsList news={newsItems} />
+            {newsItems.length > 0 &&
+              <>
+                <hr className={globalStyles.divider} />
+                <h2 className={globalStyles.newsh2} id={styles.moreNewsh2}>More News</h2>
+                <NewsList news={newsItems} />
+              </>
+            }
           </div>
         </div>
       </div>

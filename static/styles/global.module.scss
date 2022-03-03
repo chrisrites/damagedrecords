@@ -111,6 +111,10 @@
             }
         }
 
+        .card {
+            max-width: 100px;
+        }
+
         // NEWS SECTION
         .newsh2 {
             text-align: center;
@@ -267,7 +271,7 @@
             color: colours.$white;
             font-family: globals.$paragraphFont;
             font-size: globals.$paragraphSize;
-            margin: 0 2em;
+            margin: 20px 3em;
         }
 
         #artistH5 {
@@ -464,6 +468,11 @@
             }
         }
         // END EVENTS
+
+        .divider {
+            border-bottom: 4px solid colours.$teal;
+            margin-top: 30px;
+        }
 
         /* Small devices (landscape phones, 576px and up) */
         @include breakpoints.small {

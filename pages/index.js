@@ -10,11 +10,14 @@ import styles from '../static/styles/index.module.scss';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function Home({ artists, news, events }) {
+  
   return (
     <div className={globalStyles.pageContainer}>
       <div id={styles.homeContainer}> 
-        <div className={globalStyles.sliderContainer}> 
-          <ImageSlider artists={artists} style={{width:"100%"}}/>
+        <div id={styles.sliderBackground}> 
+          <div className={globalStyles.sliderContainer}> 
+            <ImageSlider artists={artists} style={{width:"100%"}}/>
+          </div>
         </div>
         <h5 id={styles.allArtistsHeading}>
           <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} />
@@ -23,34 +26,38 @@ function Home({ artists, news, events }) {
           <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} style={{marginLeft: "4px"}}/>
           <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} />
         </h5>
-        <div className={globalStyles.darkContainer}>
-          <div className={globalStyles.contentContainer + " container"}>
-            <h2 className={globalStyles.newsh2}><Link href="/news">NEWS</Link></h2>
-            <NewsList news={news} />
-            <h5 id={globalStyles.allNewsh5}>
-              <FontAwesomeIcon icon={faChevronRight} className={globalStyles.newsChevrons} />
-              <FontAwesomeIcon icon={faChevronRight} className={globalStyles.newsChevrons} style={{marginRight: "4px"}} />
-              <Link href="/news">
-                ALL NEWS
-              </Link>
-              <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.newsChevrons} style={{marginLeft: "4px"}}/>
-              <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.newsChevrons} />
-            </h5>
-          </div>
-        </div>
-        <div className={globalStyles.tealContainer}>
-          <div className={globalStyles.contentContainer + " container"}>
-              <h2 className={globalStyles.eventsh2}><Link href="/events">UPCOMING EVENTS</Link></h2>
-              <EventList  events={events} />
-              <h5 id={globalStyles.allEventsh5}>
-                <FontAwesomeIcon icon={faChevronRight} className={globalStyles.eventsChevrons} />
-                <FontAwesomeIcon icon={faChevronRight} className={globalStyles.eventsChevrons} style={{marginRight: "4px"}}/>
-                <Link href="/events">ALL UPCOMING EVENTS</Link>
-                <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.eventsChevrons} style={{marginLeft: "4px"}}/>
-                <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.eventsChevrons} />
+        {news.length > 0 && 
+          <div className={globalStyles.darkContainer}>
+            <div className={globalStyles.contentContainer + " container"}>
+              <h2 className={globalStyles.newsh2}><Link href="/news">NEWS</Link></h2>
+              <NewsList news={news} />
+              <h5 id={globalStyles.allNewsh5}>
+                <FontAwesomeIcon icon={faChevronRight} className={globalStyles.newsChevrons} />
+                <FontAwesomeIcon icon={faChevronRight} className={globalStyles.newsChevrons} style={{marginRight: "4px"}} />
+                <Link href="/news">
+                  ALL NEWS
+                </Link>
+                <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.newsChevrons} style={{marginLeft: "4px"}}/>
+                <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.newsChevrons} />
               </h5>
+            </div>
           </div>
-        </div> 
+        }
+        {events.length > 0 &&
+          <div className={globalStyles.tealContainer}>
+            <div className={globalStyles.contentContainer + " container"}>
+                <h2 className={globalStyles.eventsh2}><Link href="/events">UPCOMING EVENTS</Link></h2>
+                <EventList  events={events} />
+                <h5 id={globalStyles.allEventsh5}>
+                  <FontAwesomeIcon icon={faChevronRight} className={globalStyles.eventsChevrons} />
+                  <FontAwesomeIcon icon={faChevronRight} className={globalStyles.eventsChevrons} style={{marginRight: "4px"}}/>
+                  <Link href="/events">ALL UPCOMING EVENTS</Link>
+                  <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.eventsChevrons} style={{marginLeft: "4px"}}/>
+                  <FontAwesomeIcon icon={faChevronLeft} className={globalStyles.eventsChevrons} />
+                </h5>
+            </div>
+          </div> 
+        }
       </div>
     </div>
   )

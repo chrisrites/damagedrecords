@@ -1,8 +1,13 @@
-
+@use 'breakpoints';
 
 .storeContainer {
+    width: 75%; 
 
     #storeh2 {
         margin-bottom: 24px;
+    }
+
+    @include breakpoints.medium {
+       width: 100%;
     }
 }
