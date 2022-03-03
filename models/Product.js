@@ -15,7 +15,8 @@ const ProductSchema  = new mongoose.Schema({
     sku: {
         type: String,
         unique: true,
-        default: shortid.generate()
+        // default: shortid.generate()
+        default: shortid.generate
     },
     description: {
         type: String,
