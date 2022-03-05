@@ -42,16 +42,16 @@ function CartItemList({ products, user, handleRemoveFromCart, success }) {
       <Segment secondary color="teal" inverted textAlign="center" placeholder>
         <Header icon>
           <Icon name="shopping basket" />
-          No products in your cart.
+          No merch in your basket.
         </Header>
         <div>
           {user ? (
             <Button color="orange" onClick={() => router.push('/store')}>
-              View Products
+              View Merch
             </Button>
           ) : (
             <Button color="blue" onClick={() => router.push('/login')}>
-              Login to Add Products
+              Login to Purchase
             </Button>
           )}
         </div>
@@ -59,7 +59,7 @@ function CartItemList({ products, user, handleRemoveFromCart, success }) {
     )
   }
   
-  return <Item.Group divided items={mapCartProductsToItems(products)}/>
+  return <Item.Group divided relaxed items={mapCartProductsToItems(products)}/>
 }
 
 export default CartItemList

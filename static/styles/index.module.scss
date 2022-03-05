@@ -4,7 +4,7 @@
 #homeContainer{
 
     #sliderBackground {
-        background-color: aqua;
+        // background-color: aqua;
         background-image: linear-gradient(colours.$black, colours.$teal);
     }
 
@@ -13,8 +13,9 @@
         padding: 0.25em 0;
         margin: 0;
         font-family: globals.$heading5Font;
-                font-size: globals.$heading5Size;
-                line-height: globals.$heading5LineHeight;
+        font-size: globals.$heading5Size;
+        line-height: globals.$heading5LineHeight;
+        font-weight: 400;
 
         a {
             color: colours.$grey;
@@ -28,5 +29,9 @@
 
     .artistChevrons {
         color: colours.$white;
+    }
+
+    #eventListContainer {
+        margin-bottom: 30px;
     }
 }

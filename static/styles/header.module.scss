@@ -117,7 +117,7 @@
                 margin: 0;
 
 
-                @include breakpoints.large {
+                @include breakpoints.medium {
                     display: flex;
                 }
 
@@ -126,7 +126,7 @@
                     display: flex;
                     align-items: center;
                     margin: 0;
-                    padding: 0 1em;
+                    padding: 0 10px;
                     height: 100%;
                     // padding: 1em;
 
@@ -185,18 +185,23 @@
                 float: right;
                 height: 100%;
 
-                @include breakpoints.large {
+                @include breakpoints.medium {
                     display: none;
                 }
 
                 #menuToggleBtn {
                     cursor: pointer;
-                    font-size: 18px;
+                    font-size: 22px;
                     margin-right: 14px;
 
                     @include breakpoints.small {
                         margin-right: 0;
                     }
+                }
+
+                #menuToggleBtn:hover {
+                    // font-size: 24px;
+                    transform: scale(1.1);
                 }
             }
         }

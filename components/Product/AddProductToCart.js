@@ -65,7 +65,7 @@ function AddProductToCart({ user, productId }) {
         onClick: handleAddProductToCart
       } : {
         color: 'blue',
-        content: 'Sign Up To Purchase',
+        content: 'Login To Purchase',
         icon: 'signup',
         onClick: () => router.push('/signup')
       }} 

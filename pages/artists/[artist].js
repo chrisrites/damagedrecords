@@ -22,21 +22,23 @@ function ArtistProfile({ artist, events, news }) {
         <div id={styles.artistContainer}>
           <div className={globalStyles.darkContainer}>
             <div className={globalStyles.contentContainer}>
-              <div className={globalStyles.breadcrumbs}><Link href="/"><span className={globalStyles.breadcrumbLink}>Home</span></Link><span><FontAwesomeIcon icon={faChevronRight} className={globalStyles.breadcrumbChevrons} /></span><Link href="/artists"><span className={globalStyles.breadcrumbLink}>Artists</span></Link><span><FontAwesomeIcon icon={faChevronRight} className={globalStyles.breadcrumbChevrons} /></span><span className={globalStyles.breadcrumbCurrent}>{artst.name}</span></div>
-              <h1 className={globalStyles.heading2}>{artst.name}</h1>  
-              <div id={globalStyles.artistImg}> 
-                <Image src={artst.image}/>
-              </div>
-              {/* <h5 id={styles.allArtistsHeading}>
-                <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} />
-                <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} style={{marginRight: "4px"}}/>
-                <Link href="/artists">ALL ARTISTS</Link>
-                <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} style={{marginLeft: "4px"}}/>
-                <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} />
-              </h5> */}
-              <p id={globalStyles.artistP}>{artst.bio}</p>
-              <div className={globalStyles.relevantLinks} id={styles.socialLinks}>
-                {mapRelevantLinks(artst)}
+              <div id={styles.mainContent}>
+                <div className={globalStyles.breadcrumbs}><Link href="/"><span className={globalStyles.breadcrumbLink}>Home</span></Link><span><FontAwesomeIcon icon={faChevronRight} className={globalStyles.breadcrumbChevrons} /></span><Link href="/artists"><span className={globalStyles.breadcrumbLink}>Artists</span></Link><span><FontAwesomeIcon icon={faChevronRight} className={globalStyles.breadcrumbChevrons} /></span><span className={globalStyles.breadcrumbCurrent}>{artst.name}</span></div>
+                <h1 className={globalStyles.heading2}>{artst.name}</h1>  
+                <div id={globalStyles.artistImg}> 
+                  <Image src={artst.image}/>
+                </div>
+                {/* <h5 id={styles.allArtistsHeading}>
+                  <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} />
+                  <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} style={{marginRight: "4px"}}/>
+                  <Link href="/artists">ALL ARTISTS</Link>
+                  <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} style={{marginLeft: "4px"}}/>
+                  <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} />
+                </h5> */}
+                <p id={globalStyles.artistP}>{artst.bio}</p>
+                <div className={globalStyles.relevantLinks} id={styles.socialLinks}>
+                  {mapRelevantLinks(artst)}
+                </div>
               </div>
               {Object.keys(nws).length > 0 && 
                 <div>

@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Menu, Container, Image, Icon } from 'semantic-ui-react';
+// import { Menu, Container, Image, Icon } from 'semantic-ui-react';
+import { Image, Icon } from 'semantic-ui-react';
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import styles from '../../static/styles/header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStore } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { handleLogout } from '../../utils/auth'
 
 Router.onRouteChangeStart = () => NProgress.start();
@@ -120,7 +121,7 @@ function Header({ user, toggleOverlay }) {
                       className={styles.semUINavIcons}
                       name="sign out"
                     /> */}
-                    <span className={`${styles.navTitles} ${navItemColour}`}>Log Out</span>
+                    <span className={`${styles.navTitles} ${navItemColour}`}>Logout</span>
                   </div>
                 </Link>
               </li>
@@ -151,11 +152,18 @@ function Header({ user, toggleOverlay }) {
                 </li>
               </>)}
           </ul>
-          <div id={styles.menuToggle}><Icon
-            id={styles.menuToggleBtn}
-            name="barcode"
-            onClick={() => toggleOverlay("100%")}
-          /></div>
+          <div id={styles.menuToggle}>
+            {/* <Icon
+              id={styles.menuToggleBtn}
+              name="barcode"
+              onClick={() => toggleOverlay("100%")}
+            /> */}
+            <FontAwesomeIcon 
+              icon={faBars}
+              id={styles.menuToggleBtn}
+              onClick={() => toggleOverlay("100%")}
+            />
+          </div>
         </nav>
         </div>
     </div>

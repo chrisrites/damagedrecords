@@ -17,7 +17,11 @@
 
     .productCard:hover {
         cursor: pointer;
-        border: 3px solid colours.$teal;
+        // border: 3px solid colours.$teal;
+
+        img {
+            transform: scale(1.05);
+        }
     }
 
     @include breakpoints.medium {

@@ -26,5 +26,5 @@ export function handleLogout(){
     // We included the current time because we need to include SOMETHING as the second parameter for setItem
     window.localStorage.setItem('logout', Date.now())
     // Redirect to login page
-    Router.push('/login')
+    // Router.push('/login')
 }

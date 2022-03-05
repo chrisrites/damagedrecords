@@ -29,7 +29,7 @@ function Home({ artists, news, events }) {
         {news.length > 0 && 
           <div className={globalStyles.darkContainer}>
             <div className={globalStyles.contentContainer + " container"}>
-              <h2 className={globalStyles.newsh2}><Link href="/news">NEWS</Link></h2>
+              <h2 className={globalStyles.newsh2}><Link href="/news">News</Link></h2>
               <NewsList news={news} />
               <h5 id={globalStyles.allNewsh5}>
                 <FontAwesomeIcon icon={faChevronRight} className={globalStyles.newsChevrons} />
@@ -46,8 +46,10 @@ function Home({ artists, news, events }) {
         {events.length > 0 &&
           <div className={globalStyles.tealContainer}>
             <div className={globalStyles.contentContainer + " container"}>
-                <h2 className={globalStyles.eventsh2}><Link href="/events">UPCOMING EVENTS</Link></h2>
-                <EventList  events={events} />
+                <h2 className={globalStyles.eventsh2}><Link href="/events">Events</Link></h2>
+                <div id={styles.eventListContainer}>
+                  <EventList  events={events} />
+                </div>
                 <h5 id={globalStyles.allEventsh5}>
                   <FontAwesomeIcon icon={faChevronRight} className={globalStyles.eventsChevrons} />
                   <FontAwesomeIcon icon={faChevronRight} className={globalStyles.eventsChevrons} style={{marginRight: "4px"}}/>

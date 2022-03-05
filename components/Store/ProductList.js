@@ -20,11 +20,13 @@ function ProductList({ products }) {
   return (
     // <Row xs={2} sm={3} md={4} lg={5} className="justify-content-center g-4">
     <Row className="justify-content-center">
-        {products.map(product => (
-          <Col className="mb-4 d-flex align-items-stretch" xs={10} sm={6} md={4} lg={3}>
+        {products.map((product, idx) => (
+          <Col key={idx} className="mb-4 d-flex align-items-stretch" xs={10} sm={6} md={4} lg={3}>
             <Link href={`/product?_id=${product._id}`}>
               <Card className={styles.productCard}>
-                <Card.Img variant="top" src={product.mediaUrl} />
+                <div style={{overflow: "hidden"}}>
+                  <Card.Img variant="top" src={product.mediaUrl} />
+                </div>
                 <Card.Body>
                   <Card.Title style={{color: "#222222"}}>{product.name}</Card.Title>
                   <Card.Text style={{color: "#222222"}}>
