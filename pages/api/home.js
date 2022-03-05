@@ -13,7 +13,7 @@ export default async (req, res) => {
 
     try {
         artists = await Artist.find()
-        news = await NewsItem.find().sort({date: 'desc'}).limit(2)
+        news = await NewsItem.find().sort({date: 'desc'}).limit(3)
         // Get today's date
         const yesterday = new Date()
         // subtract 1 from it, resulting in yesterdays date

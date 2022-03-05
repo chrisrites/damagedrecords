@@ -25,7 +25,7 @@ function Store({ products, totalPages }) {
 export async function getServerSideProps(context){
     // const page = ctx.query.page ? ctx.query.page : "1"
     const page = context.query.page ? context.query.page : "1"
-    const size = 9
+    const size = 8
     // fetch data on the server
     const url = `${baseUrl}/api/products`
     const payload = { params: { page, size } }  

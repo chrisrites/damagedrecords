@@ -5,6 +5,10 @@
 .productContainer {
     padding-top: 20px;
 
+    .image {
+        margin-left: 0;
+    }
+
     #price {
         color: colours.$white;
         font-family: fonts.$rubik;
@@ -15,6 +19,17 @@
         color: colours.$white;
         font-family: fonts.$poppins;
         font-weight: 400;
+    }
+
+    .shoppingLinks {
+        color: colours.$white;
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .shoppingLinks:hover {
+        cursor: pointer;
+        color: colours.$pink;
     }
 
     #description {
