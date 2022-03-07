@@ -25,6 +25,10 @@ const ProductSchema  = new mongoose.Schema({
     mediaUrl: {
         type: String,
         required: true
+    },
+    artist: {
+        type: String,
+        required: true
     }
 })
 

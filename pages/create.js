@@ -10,7 +10,8 @@ const INITIAL_PRODUCT = {
   name: "",
   price: "",
   media: "",
-  description: ""
+  description: "",
+  artist: ""
 }
 
 function CreateProduct() {
@@ -58,8 +59,8 @@ function CreateProduct() {
       setError('')
       const mediaUrl = await handleImageUpload()
       const url = `${baseUrl}/api/product`
-      const { name, price, description } = product
-      const payload = { name, price, description, mediaUrl }
+      const { name, price, description, artist } = product
+      const payload = { name, price, description, mediaUrl, artist }
       const response = await axios.post(url, payload)
       setProduct(INITIAL_PRODUCT)
       setSuccess(true)
@@ -112,14 +113,23 @@ function CreateProduct() {
               />
               <Form.Field 
                 control={Input}
+                name="artist"
+                label="Artist *Must match Artist url"
+                placeholder="Artist"
+                value={product.artist}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Field 
+                control={Input}
                 name="media"
                 type="file"
                 label="Media"
                 accept="image/*"
                 content="Select Image"
+                width="6"
                 onChange={handleChange}
               />
-            </Form.Group>
             <Image src={mediaPreview} rounded centered size="small" />
             <Form.Field 
               control={TextArea}

@@ -1,11 +1,33 @@
 @use 'breakpoints';
 @use 'colours';
+@use 'fonts';
 
 .storeContainer {
     width: 75%; 
 
     #storeh2 {
-        margin-bottom: 24px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #filterContainer {
+        display: block;
+        text-align: right;
+        margin-bottom: 30px;
+
+        #filterSelect {
+            border: 2px solid colours.$teal;
+            background-color: colours.$background;
+            color: colours.$white;
+            padding: 6px;
+            font-family: fonts.$ubuntu;
+            font-size: 16px;
+
+            .filterOption {
+                font-family: fonts.$ubuntu;  
+                font-size: 60px;
+            }
+        }
     }
 
     .productCard {
