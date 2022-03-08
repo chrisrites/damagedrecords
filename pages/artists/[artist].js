@@ -42,6 +42,7 @@ function ArtistProfile({ artist, events, news }) {
               </div>
               {Object.keys(nws).length > 0 && 
                 <div>
+                  <hr className={globalStyles.divider} />
                   <h2 id={globalStyles.newsh2} className={styles.latestNewsh2}>{`Latest ${artst.name} News`}</h2>
                   <NewsList news={nws} />
                 </div>
