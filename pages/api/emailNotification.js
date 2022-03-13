@@ -11,7 +11,7 @@ export default async (req, res) => {
         subject: 'New Order Placed',
         name: 'Melted Wax Records',
         // text: 'You have a new order!  Please ship asap and mark order as shipped',
-        html: '<h1>You have a new order!</h1><p>Please ship asap and mark order as shipped</p>'
+        html: '<h1>You have a new order!</h1><img src="https://res.cloudinary.com/chrischartranddevelopment/image/upload/c_scale,w_228/v1647202668/epr6uehfm8cwacygsbuf.png"></img><p>Please ship asap and mark order as shipped</p>'
     };
 
     // Send order notification email

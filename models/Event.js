@@ -21,6 +21,18 @@ const EventSchema  = new mongoose.Schema({
     map: {
         type: String
     },
+    country: {
+        type: String
+    },
+    province: {
+        type: String
+    },
+    city: {
+        type: String
+    },
+    address: {
+        type: String
+    },
     price: {
         type: String
     },

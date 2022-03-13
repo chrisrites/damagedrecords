@@ -1,7 +1,9 @@
 import React from 'react'
 import StripeCheckout from 'react-stripe-checkout'
-import { Button, Segment, Divider } from 'semantic-ui-react'
+import Link from 'next/link';
+import { Button, Segment, Divider, Icon } from 'semantic-ui-react'
 import calculateCartTotal from '../../utils/calculateCartTotal'
+import globalStyles from '../../static/styles/global.module.scss'
 
 function CartSummary({ products, handleCheckout, success }) {
   const [cartAmount, setCartAmount] = React.useState(0)
@@ -33,12 +35,30 @@ function CartSummary({ products, handleCheckout, success }) {
       >
         <Button 
           disabled={isCartEmpty || success}
+          style={{display: success ? 'none' : 'block'}}
           icon="cart"
           color="teal"
           floated="right"
           content="Checkout"
         />
       </StripeCheckout>
+      {/* <Button 
+          style={{display: success ? 'block' : 'none'}}
+          // disabled={isCartEmpty || success}
+          icon="shopping bag"
+          color="blue"
+          floated="right"
+          content="View Order"
+          href="/account"
+      /> */}
+      <Link 
+        href="/account"
+      >
+        <div className={globalStyles.viewOrderBtn} style={{display: success ? 'block' : 'none'}}>
+          <Icon name="file alternate outline"></Icon>
+           <span>View Order</span>
+        </div>
+      </Link>
     </Segment>
   </>;
 }

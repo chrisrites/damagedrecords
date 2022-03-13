@@ -41,8 +41,20 @@
 .orderTotal {
     display: flex;
     justify-content: right;
-    color: colours.$black;
+    padding: 8px;
+    // color: colours.$black;
     margin-right: 20px;
+}
+
+// Cart Summary, View Order Btn
+.viewOrderBtn {
+    display: block;
+    float: right;
+    background-color: rgb(56, 56, 255);
+    border-radius: 5px;
+    color: white;
+    padding: 7px 14px;
+    cursor: pointer;
 }
 
 .shippingContainer {
@@ -433,10 +445,10 @@
                         // text-decoration-color: colours.$teal;
                     }
 
-                    h5:hover {
-                        color: colours.$pink;
-                        text-decoration: none;
-                    }
+                    // h5:hover {
+                    //     color: colours.$pink;
+                    //     text-decoration: none;
+                    // }
                 }
             }
 

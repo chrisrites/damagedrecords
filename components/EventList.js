@@ -15,9 +15,10 @@ function EventList({ events }) {
                         {/* <p>{event.description}</p> */}
                     <div className={globalStyles.relevantLinks}>
                         <div className={globalStyles.relevantLinksBlock}>
-                            {event.links.map((link, idx) => (
+                            {/* {event.links.map((link, idx) => (
                                 <a key={idx} href={link.link}><h5>{link.linkName}</h5></a>
-                            ))}
+                            ))} */}
+                            <h5 className={globalStyles.artistsh4}>{event.city}</h5>
                         </div>
                     </div>
                     <div className={globalStyles.artists}>
