@@ -1,10 +1,12 @@
 import React from 'react';
 import { Form, Input, TextArea, Button, Image, Message, Header, Icon } from 'semantic-ui-react';
 import axios from 'axios';
+import AccountHeader from '../components/Account/AccountHeader';
+import Orders from '../components/Admin/Orders';
 import baseUrl from '../utils/baseUrl';
 import catchErrors from '../utils/catchErrors';
 import globalStyles from '../static/styles/global.module.scss';
-import styles from '../static/styles/create.module.scss';
+import styles from '../static/styles/admin.module.scss';
 
 const INITIAL_PRODUCT = {
   name: "",
@@ -14,7 +16,7 @@ const INITIAL_PRODUCT = {
   artist: ""
 }
 
-function CreateProduct() {
+function Admin({ user, orders}) {
   const [product, setProduct] = React.useState(INITIAL_PRODUCT)
   const [mediaPreview, setMediaPreview] = React.useState("")
   const [success, setSuccess] = React.useState(false)
@@ -51,6 +53,7 @@ function CreateProduct() {
     return mediaUrl
   }
 
+  // Handle Create submit
   async function handleSubmit(event){
     try {
       // prevent the form submission from refreshing the page
@@ -75,8 +78,9 @@ function CreateProduct() {
     <div className={globalStyles.pageContainer}>
       <div className={globalStyles.darkContainer}>
         <div className={globalStyles.contentContainer + " " + styles.createContainer + " container"}>
+          <AccountHeader {...user} />
           <Header as="h2" block>
-            <Icon name="add" color="orange" />
+            <Icon name="add" color="blue" />
             Create New Product
           </Header>
           <Form inverted loading={loading} error={Boolean(error)} success={success} onSubmit={handleSubmit}>
@@ -148,10 +152,25 @@ function CreateProduct() {
               type="submit"
             />
           </Form>
+
+          {/* ORDERS */}
+          <Orders orders={orders} />
         </div>
       </div>
     </div>
   )
 }
 
-export default CreateProduct;
+// Account.getInitialProps = async ctx => {
+export async function getServerSideProps(ctx) {
+  // const { token } = parseCookies(ctx)
+  // if(!token){
+  //   return { props: { orders: [] }}
+  // }
+  // const payload = { headers: { Authorization: token }}
+  const url = `${baseUrl}/api/adminOrders`
+  const response = await axios.get(url)
+  return response.data
+}
+
+export default Admin;

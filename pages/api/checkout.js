@@ -51,7 +51,8 @@ export default async (req, res) => {
             user: userId,
             email: paymentData.email,
             total: cartTotal, 
-            products: cart.products
+            products: cart.products,
+            shipped: false
         }).save()
         // Clear products in cart
         await Cart.findOneAndUpdate(

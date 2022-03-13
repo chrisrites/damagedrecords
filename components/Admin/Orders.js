@@ -1,10 +1,29 @@
-import { Header, Accordion, Label, Segment, Icon, Button, List, Image } from 'semantic-ui-react'
-import { useRouter } from 'next/router'
-import formatDate from '../../utils/formatDate'
-import globalStyles from '../../static/styles/global.module.scss'
+import axios from 'axios';
+import { Header, Accordion, Label, Segment, Icon, Button, List, Image } from 'semantic-ui-react';
+import { useRouter } from 'next/router';
+import baseURL from '../../utils/baseUrl';
+import formatDate from '../../utils/formatDate';
+import globalStyles from '../../static/styles/global.module.scss';
+// import Order from '../../models/Order';
+// import toggleShipping from '../../utils/toggleShipping';
+// import { OrderReturns } from 'stripe/lib/resources';
 
 function AccountOrders({ orders }) {
   const router = useRouter()
+
+  async function toggleShipping(id) { 
+    const url = `${baseURL}/api/adminOrders`
+    console.log("Front End Order#:" + id)
+    const payload = { id }
+    await axios.put(url, payload)
+
+    // const url = `${baseUrl}/api/product`
+    // const payload = { params: { _id } }
+    // await axios.put(url, payload)
+    // router.push('/store')
+
+    // console.log("Toggled")
+  }; 
 
   function mapOrdersToPanels(orders) {
     return orders.map(order => ({
@@ -21,6 +40,7 @@ function AccountOrders({ orders }) {
                 icon="mail"
                 basic
                 horizontal
+                // style={{ marginLeft: '1em' }}
               />
               <List style={{ marginBottom: "0" }}>
                 {order.products.map(p => (
@@ -43,14 +63,10 @@ function AccountOrders({ orders }) {
               <span className={globalStyles.orderTotal}>Total: ${order.total}</span>
             </List.Header>
             <div className={globalStyles.shippingContainer}>
-              <div className={globalStyles.shippingContainerInline}> 
-                <h4 className={globalStyles.shippingStatusLabel}>Shipping Status:</h4>
-                {order.shipped ? 
-                  <h5 className={globalStyles.shippingStatus} style={{color: '#00cc00'}}>Shipped</h5>
-                :
-                  <h5 className={globalStyles.shippingStatus} style={{color: 'red'}}>Processing</h5>
-                }
-              </div>
+                <div className={globalStyles.shippingContainerInline}>
+                    <h4 className={globalStyles.shippingStatusLabel}>Mark as shipped?</h4>
+                    <input className={globalStyles.shippedCheckBox} type="checkbox" name="shipped" onChange={() => toggleShipping(order._id)}></input>
+                </div>
             </div>
           </>
         )
@@ -59,24 +75,22 @@ function AccountOrders({ orders }) {
   }
 
   return <>
-    
-    <Header>
-      <h2>
-        <Icon name="folder open" />
-        Order History
-      </h2>
+
+    <Header as="h2" block>
+        <Icon name="shipping" color="green" />
+        New Orders
     </Header>
     {orders.length === 0 ? (
       <Segment inverted tertiary color="grey" textAlign="center">
         <Header icon>
           <Icon name="copy outline" />
-          No past orders
+          No new orders
         </Header>
-        <div>
+        {/* <div>
           <Button onClick={() => router.push('/store')} color="orange">
             View Products
           </Button>
-        </div>
+        </div> */}
       </Segment>
     ) : (
       <Accordion 

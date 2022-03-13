@@ -7,6 +7,7 @@ import styles from '../../static/styles/product.module.scss';
 
 function ProductAttributes({ description, _id, user }) {
   const [modal, setModal] = React.useState(false)
+  const [modalSize, setModalSize] = React.useState('tiny')
   // next/router is a react hook therefore must be executed at the top 
   const router = useRouter()
   const isRoot = user && user.role === 'root'
@@ -32,7 +33,13 @@ function ProductAttributes({ description, _id, user }) {
             content="Delete Product"
             onClick={() => setModal(true)}
           />
-          <Modal open={modal} dimmer="blurring">
+          <Modal 
+            open={modal} 
+            dimmer="blurring" 
+            closeIcon={true}
+            onClose={() => setModal(false)}
+            size={modalSize}
+          >
             <Modal.Header>Confirm Delete</Modal.Header>
             <Modal.Content>
               <p style={{color: "black"}}>Are you sure you want to delete this product?</p>

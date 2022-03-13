@@ -90,14 +90,14 @@ function Header({ user, toggleOverlay }) {
               </Link>
             </li>
             {isRootOrAdmin &&
-              <li className={`${styles.navLi} ${isActive('/create')}`}>
-                <Link href="/create">
+              <li className={`${styles.navLi} ${isActive('/admin')}`}>
+                <Link href="/admin">
                   <div className={styles.navItems}>
                     {/* <Icon
                       className={styles.semUINavIcons}
                       name="add square"
                     /> */}
-                    <span className={`${styles.navTitles} ${navItemColour}`}>Create</span>
+                    <span className={`${styles.navTitles} ${navItemColour}`}>Admin</span>
                   </div>
                 </Link>
               </li>
