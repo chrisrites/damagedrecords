@@ -42,9 +42,9 @@ function Overlay({ user, overlayHeight, toggleOverlay }) {
                         <div className={styles.overlayLinks} onClick={() => toggleOverlay("0%")}>
                             <Link href="/login">Login</Link>
                         </div>
-                        <div className={styles.overlayLinks} onClick={() => toggleOverlay("0%")}>
+                        {/* <div className={styles.overlayLinks} onClick={() => toggleOverlay("0%")}>
                             <Link href="/signup">Signup</Link>
-                        </div>
+                        </div> */}
                     </>)}
             </div>
         </div >

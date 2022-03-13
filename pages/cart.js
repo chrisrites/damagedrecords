@@ -28,6 +28,8 @@ function Cart({ products, user }) {
   }
 
   async function handleCheckout(paymentData) {
+    let orderProcessed = false
+
     try{
       setLoading(true)
       const url = `${baseUrl}/api/checkout`
@@ -36,10 +38,21 @@ function Cart({ products, user }) {
       const headers = { headers: { Authorization: token } }
       await axios.post(url, payload, headers)
       setSuccess(true)
+      orderProcessed = true;
     } catch(error){
       catchErrors(error, window.alert)
     }finally{
       setLoading(false)
+    }
+    if(orderProcessed) {
+      // console.log("Front End MADE IT")
+      try{
+        const url = `${baseUrl}/api/emailNotification`
+        // console.log("Front End MADE IT")
+        await axios.post(url)
+      } catch(error){
+        catchErrors(error, window.alert)
+      }
     }
   }
 
