@@ -37,6 +37,39 @@
     }
 }
 
+// Account/Admin
+.orderTotal {
+    display: flex;
+    justify-content: right;
+    color: colours.$black;
+    margin-right: 20px;
+}
+
+.shippingContainer {
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
+
+    .shippingContainerInline {
+        // display: inline;
+
+        .shippingStatusLabel {
+            color: colours.$black;
+            display: inline;
+            margin-right: 6px;
+        }
+    
+        // Account
+        .shippingStatus {
+            display: inline;
+        }
+        // Admin
+    }
+}
+// END Account/Admin
+
+
+
 .pageContainer {
     padding-top: 50px;
     ::selection {

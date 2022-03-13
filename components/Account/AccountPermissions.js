@@ -21,7 +21,7 @@ function AccountPermissions() {
   }
   return (
     <div style={{margin: '2em 0'}}>
-      <Header as='h2'>
+      <Header as='h2' style={{color: 'white'}}>
         <Icon name='settings' />
         User Permissions
       </Header>

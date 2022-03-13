@@ -25,7 +25,7 @@ function Overlay({ user, overlayHeight, toggleOverlay }) {
                 </div>
                 {isRootOrAdmin &&
                     <div className={styles.overlayLinks} onClick={() => toggleOverlay("0%")}>
-                        <Link href="/create">Create</Link>
+                        <Link href="/admin">Admin</Link>
                     </div>
                 }
                 {user ? (<>

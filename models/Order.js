@@ -28,6 +28,11 @@ const OrderSchema = new mongoose.Schema({
     total: {
         type: Number,
         required: true
+    },
+    shipped: {
+        type: Boolean,
+        required: true,
+        default: false
     }
 }, {
     timestamps: true
