@@ -59,6 +59,7 @@ export default async (req, res) => {
             { _id: cart._id },
             { $set: { products: [] } }
         )
+
         // Send back a 200 response
         res.status(200).send("Checkout successful")
     } catch(error) {

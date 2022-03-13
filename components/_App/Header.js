@@ -139,17 +139,13 @@ function Header({ user, toggleOverlay }) {
                     </div>
                   </Link>
                 </li>
-                <li className={`${styles.navLi} ${isActive('/signup')}`}>
+                {/* <li className={`${styles.navLi} ${isActive('/signup')}`}>
                   <Link href="/signup">
                     <div className={styles.navItems}>
-                      {/* <Icon
-                        className={styles.semUINavIcons}
-                        name="signup"
-                      /> */}
                       <span className={`${styles.navTitles} ${navItemColour}`}>Signup</span>
                     </div>
                   </Link>
-                </li>
+                </li> */}
               </>)}
           </ul>
           <div id={styles.menuToggle}>

@@ -13,7 +13,6 @@ function AccountOrders({ orders }) {
 
   async function toggleShipping(id) { 
     const url = `${baseURL}/api/adminOrders`
-    console.log("Front End Order#:" + id)
     const payload = { id }
     await axios.put(url, payload)
 
