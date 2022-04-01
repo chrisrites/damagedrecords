@@ -22,10 +22,10 @@ function CartSummary({ products, handleCheckout, success }) {
     <Segment clearing size="large">
       <strong style={{color:"black"}}>Sub Total:</strong> <span style={{color:"black"}}>${cartAmount}</span>
       <StripeCheckout
-        name="Damaged Records"
+        name="Melted Wax Records"
         amount={stripeAmount}
         image={products.length > 0 ? products[0].product.mediaUrl : ""}
-        currency="USD"
+        currency="CAD"
         shippingAddress={true}
         billingAddress={true}
         zipCode={true}

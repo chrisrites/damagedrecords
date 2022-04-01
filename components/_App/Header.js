@@ -6,8 +6,8 @@ import Router, { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import styles from '../../static/styles/header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { handleLogout } from '../../utils/auth'
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { handleLogout } from '../../utils/auth';
 
 Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();
@@ -149,11 +149,6 @@ function Header({ user, toggleOverlay }) {
               </>)}
           </ul>
           <div id={styles.menuToggle}>
-            {/* <Icon
-              id={styles.menuToggleBtn}
-              name="barcode"
-              onClick={() => toggleOverlay("100%")}
-            /> */}
             <FontAwesomeIcon 
               icon={faBars}
               id={styles.menuToggleBtn}
