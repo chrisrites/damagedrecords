@@ -5,6 +5,7 @@ import { redirectUser } from '../utils/auth'
 import baseUrl from '../utils/baseUrl'
 import axios from "axios";
 import Router from "next/router";
+import { PayPalScriptProvider } from'@paypal/react-paypal-js'
 
 class MyApp extends App {
   
@@ -62,9 +63,16 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-    <Layout {...pageProps}>
-      <Component {...pageProps} />
-    </Layout>
+      <PayPalScriptProvider 
+        options={{ 
+          "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID,
+          "currency": "CAD" 
+        }}
+      >
+        <Layout {...pageProps}>
+          <Component {...pageProps} />
+        </Layout>
+      </PayPalScriptProvider>
     );
   }
 }

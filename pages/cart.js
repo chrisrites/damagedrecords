@@ -27,14 +27,14 @@ function Cart({ products, user }) {
     setCartProducts(response.data)
   }
 
-  async function handleCheckout(paymentData) {
+  async function handleCheckout(currentUserEmail) {
     let orderProcessed = false
 
     try{
       setLoading(true)
       const url = `${baseUrl}/api/checkout`
       const token = cookie.get('token')
-      const payload = { paymentData }
+      const payload = { currentUserEmail }
       const headers = { headers: { Authorization: token } }
       await axios.post(url, payload, headers)
       setSuccess(true)
@@ -45,10 +45,8 @@ function Cart({ products, user }) {
       setLoading(false)
     }
     if(orderProcessed) {
-      // console.log("Front End MADE IT")
       try{
         const url = `${baseUrl}/api/emailNotification`
-        // console.log("Front End MADE IT")
         await axios.post(url)
       } catch(error){
         catchErrors(error, window.alert)
@@ -62,7 +60,7 @@ function Cart({ products, user }) {
         <div className={globalStyles.contentContainer + " " + styles.cartContainer + " container"}>
           <Segment loading={loading}>
             <CartItemList handleRemoveFromCart={handleRemoveFromCart} user={user} products={cartProducts} success={success}/>
-            <CartSummary products={cartProducts} handleCheckout={handleCheckout} success={success}/>
+            <CartSummary products={cartProducts} handleCheckout={handleCheckout} currentUserEmail={user.email} success={success} />
           </Segment>
         </div>
       </div>

@@ -8,9 +8,10 @@ function calculateCartTotal(products){
     }, 0)
     // Remove any rounding errors
     const cartTotal = ((total * 100) / 100).toFixed(2)
-    const stripeTotal = Number((total * 100).toFixed(2))
+    // const stripeTotal = Number((total * 100).toFixed(2))
 
-    return { cartTotal, stripeTotal }
+    // return { cartTotal, stripeTotal }
+    return { cartTotal }
 }
 
 export default calculateCartTotal
