@@ -78,17 +78,7 @@ function Header({ user, toggleOverlay }) {
                 </div>
               </Link>
             </li>
-            <li className={`${styles.navLi} ${isActive('/cart')}`}>
-              <Link href="/cart">
-                <div className={styles.navItems}>
-                  {/* <Icon
-                    className={styles.semUINavIcons}
-                    name="cart"
-                  /> */}
-                  <span className={`${styles.navTitles} ${navItemColour}`}>Cart</span>
-                </div>
-              </Link>
-            </li>
+            
             {isRootOrAdmin &&
               <li className={`${styles.navLi} ${isActive('/admin')}`}>
                 <Link href="/admin">
@@ -103,6 +93,17 @@ function Header({ user, toggleOverlay }) {
               </li>
             }
             {user ? (<>
+              <li className={`${styles.navLi} ${isActive('/cart')}`}>
+                <Link href="/cart">
+                  <div className={styles.navItems}>
+                    {/* <Icon
+                      className={styles.semUINavIcons}
+                      name="cart"
+                    /> */}
+                    <span className={`${styles.navTitles} ${navItemColour}`}>Cart</span>
+                  </div>
+                </Link>
+              </li>
               <li className={`${styles.navLi} ${isActive('/account')}`}>
                 <Link href="/account">
                   <div className={styles.navItems}>
