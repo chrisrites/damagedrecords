@@ -42,6 +42,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
                   {
                       description: "Melted Wax Records order",
                       amount: {
+                          currency_code: "CAD",
                           value: cartAmount
                       }
                   }
