@@ -35,14 +35,14 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
     <PayPalButtons 
       className={cartStyles.payPalButtons}
       disabled={isCartEmpty || success}
-      forceReRender={[cartAmount]}
+      // forceReRender={[cartAmount]}
       createOrder = {(data, actions) => {
           return actions.order.create({
               purchase_units: [
                   {
                       description: "Melted Wax Records order",
                       amount: {
-                          currency_code: "CAD",
+                          // currency_code: "CAD",
                           value: cartAmount
                       }
                   }
