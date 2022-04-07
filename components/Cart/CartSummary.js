@@ -18,6 +18,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
     setCartAmount(cartTotal)
     setIsCartEmpty(products.length === 0)
     console.log("PAYPAL_ENV_VAR: " + process.env.REACT_APP_PAYPAL_CLIENT_ID)
+    console.log("CLOUDINARY_ENV_VAR: " + process.env.CLOUDINARY_URL)
   }, [products])
 
   return <>
