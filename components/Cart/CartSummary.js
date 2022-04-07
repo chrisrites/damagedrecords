@@ -17,6 +17,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
     const { cartTotal } = calculateCartTotal(products)
     setCartAmount(cartTotal)
     setIsCartEmpty(products.length === 0)
+    console.log("PAYPAL_ENV_VAR: " + process.env.REACT_APP_PAYPAL_CLIENT_ID)
   }, [products])
 
   return <>
@@ -61,7 +62,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
         console.error("Error: ", err)
       }}
       onClick = {() => {
-        console.log("On Click Cart Amount: " + cartAmount)
+        // console.log("PAYPAL_ENV_VAR: " + process.env.REACT_APP_PAYPAL_CLIENT_ID)
       }}
     />
   </>;
