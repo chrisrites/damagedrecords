@@ -63,10 +63,11 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <PayPalScriptProvider 
+      <PayPalScriptProvider
+        deferLoading={false}
         options={{ 
           "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID,
-          "currency": "CAD" 
+          "currency": "CAD"
         }}
       >
         <Layout {...pageProps}>
