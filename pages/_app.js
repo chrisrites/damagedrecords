@@ -66,7 +66,7 @@ class MyApp extends App {
       <PayPalScriptProvider
         deferLoading={false}
         options={{ 
-          "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID,
+          "client-id": "AaHdCaMRG8nztlMTHgWLajyd5EHAiS_FpfPmSNE3BhQfCKcj5tmjljLW8ovVIJom0Kf8NkxJcFscWqEO",
           "currency": "CAD"
         }}
       >
