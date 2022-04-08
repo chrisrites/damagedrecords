@@ -6,7 +6,7 @@ import calculateCartTotal from '../../utils/calculateCartTotal'
 import globalStyles from '../../static/styles/global.module.scss'
 import cartStyles from '../../static/styles/cart.module.scss'
 // import PaypalCheckoutButton from  '../PaypalCheckoutButton'
-import { PayPalButtons } from '@paypal/react-paypal-js'
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
 
 function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
   const [cartAmount, setCartAmount] = useState(0)
@@ -32,38 +32,46 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
         </div>
       </Link>
     </Segment>
-    <PayPalButtons 
-      className={cartStyles.payPalButtons}
-      disabled={isCartEmpty || success}
-      forceReRender={[cartAmount]}
-      createOrder = {(data, actions) => {
-          return actions.order.create({
-              purchase_units: [
-                  {
-                      description: "Melted Wax Records order",
-                      amount: {
-                          // currency_code: "CAD",
-                          value: cartAmount
-                      }
-                  }
-              ]
-          })
+    <PayPalScriptProvider
+      deferLoading={false}
+      options={{ 
+        "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID,
+        "currency": "CAD"
       }}
-      onApprove = {async (data, actions) => {
-        handleCheckout(currentUserEmail)
-      }}
-      onCancel = {() => {
-        // Display cancel message modal or redirect user to cancel page or even back to cart
-        alert("The PayPal transaction has been cancelled")
-      }}
-      onError = {(err) => {
-        // setError(err)
-        console.error("Error: ", err)
-      }}
-      onClick = {() => {
-        // console.log("PAYPAL_ENV_VAR: " + process.env.REACT_APP_PAYPAL_CLIENT_ID)
-      }}
-    />
+    >
+      <PayPalButtons 
+        className={cartStyles.payPalButtons}
+        disabled={isCartEmpty || success}
+        forceReRender={[cartAmount]}
+        createOrder = {(data, actions) => {
+            return actions.order.create({
+                purchase_units: [
+                    {
+                        description: "Melted Wax Records order",
+                        amount: {
+                            // currency_code: "CAD",
+                            value: cartAmount
+                        }
+                    }
+                ]
+            })
+        }}
+        onApprove = {async (data, actions) => {
+          handleCheckout(currentUserEmail)
+        }}
+        onCancel = {() => {
+          // Display cancel message modal or redirect user to cancel page or even back to cart
+          alert("The PayPal transaction has been cancelled")
+        }}
+        onError = {(err) => {
+          // setError(err)
+          console.error("Error: ", err)
+        }}
+        onClick = {() => {
+          // console.log("PAYPAL_ENV_VAR: " + process.env.REACT_APP_PAYPAL_CLIENT_ID)
+        }}
+      />
+    </PayPalScriptProvider>
   </>;
 }
 
