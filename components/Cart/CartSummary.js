@@ -1,12 +1,11 @@
 import { useEffect, useState }from 'react'
 // import StripeCheckout from 'react-stripe-checkout'
 import Link from 'next/link';
-import { Button, Segment, Divider, Icon } from 'semantic-ui-react'
+import { Segment, Divider, Icon } from 'semantic-ui-react'
 import calculateCartTotal from '../../utils/calculateCartTotal'
 import globalStyles from '../../static/styles/global.module.scss'
 import cartStyles from '../../static/styles/cart.module.scss'
-// import PaypalCheckoutButton from  '../PaypalCheckoutButton'
-import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
+import { PayPalButtons } from '@paypal/react-paypal-js'
 
 function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
   const [cartAmount, setCartAmount] = useState(0)
@@ -32,13 +31,6 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
         </div>
       </Link>
     </Segment>
-    <PayPalScriptProvider
-      deferLoading={false}
-      options={{ 
-        "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID,
-        "currency": "CAD"
-      }}
-    >
       <PayPalButtons 
         className={cartStyles.payPalButtons}
         disabled={isCartEmpty || success}
@@ -71,7 +63,6 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
           // console.log("PAYPAL_ENV_VAR: " + process.env.REACT_APP_PAYPAL_CLIENT_ID)
         }}
       />
-    </PayPalScriptProvider>
   </>;
 }
 
