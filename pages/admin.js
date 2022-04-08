@@ -28,6 +28,7 @@ function Admin({ user, orders}) {
     // Object.values returns an array of the values in our product object.  Then the every function goes through each value and we're using the Boolean function to check if they have values (if they're truthy)
     const isProduct = Object.values(product).every(el => Boolean(el))
     isProduct ? setDisabled(false) : setDisabled(true)
+    console.log("CLOUDINARY ENV: " + process.env.CLOUDINARY_URL)
   }, [product])
 
   function handleChange(event){
