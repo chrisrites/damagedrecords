@@ -7,7 +7,7 @@ function Footer() {
     
     return (
         <div className={styles.footerBody}>
-            <div className={globalStyles.darkContainer}>
+            <div id={styles.footerContainer} className={globalStyles.darkContainer}>
                 <div className="container">
                     <div id={styles.footerRow} className="row">
                         <div className={`col-12 col-md-6 ${styles.footerCol} ${styles.footerColLeft}`}>
