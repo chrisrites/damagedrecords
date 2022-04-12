@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Head from "next/head";
 import Header from "./Header";
+import Footer from "./Footer";
 import HeadContent from "./HeadContent";
 import Overlay from './Overlay';
 
@@ -39,6 +40,7 @@ function Layout({ children, user }) {
         <div id="layout">
           {children}
         </div>
+        <Footer />
       {/* </body> */}
     </div>
   );

@@ -1,0 +1,91 @@
+@use 'breakpoints';
+@use 'colours';
+@use 'fonts';
+
+.footerBody {
+
+    #footerRow {
+
+        .footerCol {
+            font-family: fonts.$montserrat;
+            font-size: 12pt;
+        }
+    
+        .footerColLeft {
+            margin-top: 40px;
+    
+            #footerLogo {
+                text-align: left;
+    
+                #footerLogoIcon {
+                    font-size: 84pt;
+                }
+
+                @media(max-width: 768px) {
+                    margin-bottom: 20px;
+                }
+
+                // @include breakpoints.medium {
+                //     #footerLogoIcon {
+                //         font-size: 120pt;
+                //     } 
+                // }
+            }
+    
+            #contactContainer {
+                text-align: left;
+    
+                a {
+                    color: colours.$pink;
+                }
+        
+                a:hover {
+                    text-decoration: underline;
+                }
+    
+                @include breakpoints.medium {
+                    position: absolute;
+                    bottom: 0px;
+                }
+            } 
+
+            @include breakpoints.medium {
+                margin-bottom: 40px;
+            }
+        }
+    
+        .footerColRight {
+            text-align: left; 
+            margin-bottom: 40px;
+            margin-top: 20px;
+
+            a {
+                color: colours.$white;
+                margin-right: 6px;
+            }
+    
+            a:hover {
+                color: colours.$pink;
+                cursor: pointer;
+            }
+    
+            .icons {
+                font-size: 23pt;
+            }
+
+            h5 {
+                font-size: 13pt;
+            }
+    
+            @include breakpoints.medium {
+                margin-top: 40px;
+                text-align: right; 
+    
+                a {
+                    margin-left: 6px;
+                }
+            }
+        }
+    }
+    
+}
