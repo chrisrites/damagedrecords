@@ -32,6 +32,29 @@ function Events({ events }) {
                 <h4 className={globalStyles.heading4} id={styles.mainEventDate}>{stringifyDate(events[0].date)}</h4>
                 <Image id={styles.mainEventImg} src={events[0].image} />
                 <p id={styles.description}>{events[0].description}</p>
+                <div id={styles.showInfo}>
+                  <h6>Event Info</h6>
+                  <div id={styles.subInfo}>
+                    {events[0].date ? <p className={styles.infoItem}>Date: {stringifyDate(events[0].date)}</p> : ''}
+                    {events[0].venue ? <p className={styles.infoItem}>Venue: {events[0].venue}</p> : ''}
+                    {events[0].address || events[0].city || events[0].province || events[0].country ?
+                      <div className={styles.infoItem}>
+                        <span>Address:</span>
+                        <address>
+                          {events[0].address ? <span>{events[0].address}</span> : ''}
+                          {events[0].city ? <><br /><span>{events[0].city}</span></> : ''}
+                          {events[0].province ? <><br /><span>{events[0].province}</span></> : ''}
+                          {events[0].country ? <><br /><span>{events[0].country}</span></> : ''}
+                        </address>
+                      </div>
+                    :
+                      ''
+                    }
+                      {events[0].price ? <p className={styles.infoItem}>Price: {events[0].price}</p> : ''}
+                      {events[0].doors ? <p span className={styles.infoItem}>Doors: {events[0].doors}</p> : ''}
+                      {events[0].age ? <p className={styles.infoItem}>{events[0].age}</p> : ''}
+                  </div>
+                </div>
                 <div className={globalStyles.relevantLinks} id={styles.relevantEventLinks}>
                   {mapRelevantLinks(events[0])}
                   {mapArtistsLinks(events[0])}

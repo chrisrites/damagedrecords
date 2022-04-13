@@ -31,7 +31,7 @@ function Event({ events }) {
             <Image id={styles.mainEventImg} src={events[0].image} />
             <p id={styles.description}>{events[0].description}</p>
             <div id={styles.showInfo}>
-              <h6>Event Info:</h6>
+              <h6>Event Info</h6>
               <div id={styles.subInfo}>
                 {events[0].date ? <p className={styles.infoItem}>Date: {stringifyDate(events[0].date)}</p> : ''}
                 {events[0].venue ? <p className={styles.infoItem}>Venue: {events[0].venue}</p> : ''}

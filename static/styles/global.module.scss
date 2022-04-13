@@ -106,7 +106,8 @@
 
     .darkContainer {
         background-color: colours.$background;
-        padding: 1em 0em;
+        padding: 40px 0;
+
         ::selection {
             background: colours.$teal; /* WebKit/Blink Browsers */
         }
@@ -116,7 +117,7 @@
         background-color: colours.$teal;
         // background-image: linear-gradient(colours.$background, colours.$teal);
         // border: 4px solid colours.$white;
-        padding: 1em 0em;
+        padding: 40px 0;
 
         ::selection {
             background: colours.$yellow; /* WebKit/Blink Browsers */
@@ -168,7 +169,7 @@
             font-size: globals.$heading2Size;
             font-weight: 400;
             line-height: globals.$heading2LineHeight;
-            margin: 10px 0;
+            margin: 0 0 26px 0;
         
             a {
                 color: colours.$white;
@@ -185,7 +186,7 @@
             font-size: globals.$heading5Size;
             line-height: globals.$heading5LineHeight;
             font-weight: 400;
-            margin: 0 0 10px 0;
+            margin: 35px 0 0 0;
         
             a {
                 color: colours.$teal;
@@ -336,7 +337,7 @@
             font-size: globals.$heading2Size;
             font-weight: 400;
             line-height: globals.$heading3LineHeight;
-            margin: 15px 0 10px 0;
+            margin: 0 0 40px 0;
         
             a {
                 color: colours.$grey;
@@ -505,7 +506,7 @@
             font-size: globals.$heading5Size;
             font-weight: 400;
             line-height: globals.$heading5LineHeight;
-            margin: 20px 0 10px 0;
+            margin: 35px 0 0 0;
         
             a {
                 color: colours.$grey;

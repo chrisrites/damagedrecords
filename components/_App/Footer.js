@@ -19,6 +19,9 @@ function Footer() {
                             </div>
                             <div id={styles.contactContainer}>
                                 {/* <p><address>Pembroke, ON, Canada</address></p> */}
+                                <h5>
+                                    Contact 
+                                </h5>
                                 <p>For general questions, comments & concerns, don't hesitate to reach out at: <a href="mailto:info@meltedwaxrecords.com">info@meltedwaxrecords.com</a></p> 
                             </div>
                         </div>

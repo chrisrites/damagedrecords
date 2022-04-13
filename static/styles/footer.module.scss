@@ -38,7 +38,11 @@
         
                 #contactContainer {
                     text-align: left;
-        
+
+                    h5 {
+                        font-size: 13pt;
+                    }
+                    
                     a {
                         color: colours.$pink;
                     }
@@ -50,6 +54,10 @@
                     @include breakpoints.medium {
                         position: absolute;
                         bottom: 0px;
+
+                        p {
+                            padding-right: 50px;
+                        }
                     }
                 } 
     
@@ -84,6 +92,7 @@
                 @include breakpoints.medium {
                     margin-top: 40px;
                     text-align: right; 
+                    padding-left: 50px;
         
                     a {
                         margin-left: 6px;
