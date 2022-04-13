@@ -9,7 +9,7 @@
 
         h1 {
             text-align: center;
-            margin-bottom: 20px;
+            margin: 30px 0;
         }
         // #allArtistsHeading {
         //     background-color: colours.$teal;
@@ -61,15 +61,19 @@
     }
 
     
-
     .latestNewsh2 {
         text-align: center;
-        margin-bottom: 20px;
+        margin-top: 30px;
+        margin-bottom: 25px;
     }
 
     .upcomingEventsh2 {
         text-align: center;
         color: colours.$grey;
-        margin: 14px 0 0px 0;
+        margin-bottom: 30px;
+    }
+
+    #artistEventsh2 {
+        color: colours.$black; 
     }
 }

@@ -24,7 +24,7 @@ function ArtistProfile({ artist, events, news }) {
             <div className={globalStyles.contentContainer}>
               <div id={styles.mainContent}>
                 <div className={globalStyles.breadcrumbs}><Link href="/"><span className={globalStyles.breadcrumbLink}>Home</span></Link><span><FontAwesomeIcon icon={faChevronRight} className={globalStyles.breadcrumbChevrons} /></span><Link href="/artists"><span className={globalStyles.breadcrumbLink}>Artists</span></Link><span><FontAwesomeIcon icon={faChevronRight} className={globalStyles.breadcrumbChevrons} /></span><span className={globalStyles.breadcrumbCurrent}>{artst.name}</span></div>
-                <h1 className={globalStyles.heading2}>{artst.name}</h1>  
+                <h1 className={globalStyles.eventsh2}>{artst.name}</h1>  
                 <div id={globalStyles.artistImg}> 
                   <Image src={artst.image}/>
                 </div>
@@ -43,7 +43,7 @@ function ArtistProfile({ artist, events, news }) {
               {Object.keys(nws).length > 0 && 
                 <div>
                   <hr className={globalStyles.divider} />
-                  <h2 id={globalStyles.newsh2} className={styles.latestNewsh2}>{`Latest ${artst.name} News`}</h2>
+                  <h2 className={`${styles.latestNewsh2} ${globalStyles.eventsh2}`}>{`Latest ${artst.name} News`}</h2>
                   <NewsList news={nws} />
                 </div>
                }
@@ -52,7 +52,7 @@ function ArtistProfile({ artist, events, news }) {
           {Object.keys(evnts).length > 0 && 
             <div className={globalStyles.tealContainer}>
               <div className={globalStyles.contentContainer}>
-                <h2 id={globalStyles.eventsh2} className={styles.upcomingEventsh2}>{`Upcoming ${artst.name} Events`}</h2>
+                <h2 id={styles.artistEventsh2} className={`${globalStyles.eventsh2} ${styles.upcomingEventsh2}`}>{`Upcoming ${artst.name} Events`}</h2>
                 <EventList events={evnts} />
               </div>
             </div>
