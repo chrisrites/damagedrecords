@@ -38,6 +38,7 @@ function ArtistProfile({ artist, events, news }) {
                 <p id={globalStyles.artistP}>{artst.bio}</p>
                 <div className={globalStyles.relevantLinks} id={styles.socialLinks}>
                   {mapRelevantLinks(artst)}
+                  <Link href="/store">Merch</Link>
                 </div>
               </div>
               {Object.keys(nws).length > 0 && 
