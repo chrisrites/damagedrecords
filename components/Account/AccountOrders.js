@@ -15,7 +15,7 @@ function AccountOrders({ orders }) {
       content: {
         content: (
           <>
-            <List.Header as="h3">
+            <List.Header as="h3" style={{ marginBottom: "0" }}>
               <Label  
                 content={order.email}
                 icon="mail"
@@ -23,26 +23,32 @@ function AccountOrders({ orders }) {
                 horizontal
               />
               <List style={{ marginBottom: "0" }}>
-                {order.products.map(p => (
-                  <List.Item key={p.product._id}>
+                {order.products.map((p, idx) => (
+                  <List.Item key={idx}>
                     <Image style={{marginTop: "10px"}} avatar src={p.product.mediaUrl} />
                     <List.Content>
-                      <List.Header>{p.product.name}</List.Header>  
-                      <List.Description>
+                      <List.Header>{p.product.name}</List.Header> 
+                      {p.size &&
+                        <List.Description style={{margin: "4px 0"}}>
+                          Size: {p.size}
+                        </List.Description>
+                      } 
+                      <List.Description style={{margin: "4px 0"}}>
                         {p.quantity} x {p.product.price}
                       </List.Description>
                     </List.Content>
-                    <List.Content floated="right">
+                    {/* <List.Content floated="right">
                       <Label style={{width: "100px", textAlign: 'center'}} tag color="red" size="tiny">
                         {p.product.sku}
                       </Label>
-                    </List.Content>
+                    </List.Content> */}
                   </List.Item>
                 ))}
               </List>
               <span className={globalStyles.orderTotal}>Total: ${order.total}</span>
             </List.Header>
-            <div className={globalStyles.shippingContainer}>
+            <h4 className={globalStyles.orderNumber}>Order # {order.orderNumber.toUpperCase()}</h4>
+            <div className={globalStyles.shippingContainer}> 
               <div className={globalStyles.shippingContainerInline}> 
                 <h4 className={globalStyles.shippingStatusLabel}>Shipping Status:</h4>
                 {order.shipped ? 
