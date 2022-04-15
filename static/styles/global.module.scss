@@ -50,17 +50,24 @@
 .viewOrderBtn {
     display: block;
     float: right;
-    background-color: rgb(56, 56, 255);
+    background-color: #426eff;
     border-radius: 5px;
     color: white;
     padding: 7px 14px;
     cursor: pointer;
 }
 
+.orderNumber {
+    color: colours.$black;
+    display: block;
+    text-align: right;
+    margin: 0 27px 6px 0;
+}
+
 .shippingContainer {
     display: flex;
     justify-content: right;
-    margin-right: 20px;
+    margin-right: 27px;
 
     .shippingContainerInline {
         // display: inline;

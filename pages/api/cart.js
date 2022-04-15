@@ -46,7 +46,7 @@ async function handleGetRequest(req, res) {
 }
 
 async function handlePutRequest(req, res) {
-    const { quantity, productId } = req.body
+    const { quantity, productId, size } = req.body
     if (!("authorization" in req.headers)) {
         return res.status(401).send("No authorization token")
     }
@@ -55,8 +55,19 @@ async function handlePutRequest(req, res) {
         // Get user cart based on userId
         const cart = await Cart.findOne({ user: userId })
         // Check if product already exists in cart
-        // instead of the 'every' funcntion, we use 'some' which will stop as soon as it meeets its given condition instead of search through every element
-        const productExists = cart.products.some(doc => ObjectId(productId).equals(doc.product))
+        // instead of the 'every' function, we use 'some' which will stop as soon as it meeets its given condition instead of search through every element
+
+        // const productExists = cart.products.some(doc => ObjectId(productId).equals(doc.product))
+
+        // const productExists = cart.products.find({
+        //     $and: [ { product: { $eq: ObjectId(productId) } }, 
+        //         { size: { $exists: true, $eq: size } }
+        //     ]
+        // })
+
+        const productExists = cart.products.some( doc => ObjectId(productId).equals(doc.product) && doc.size === size )
+
+        console.log("Product Exists Val: " + productExists)
         // If so, increment quantity by number provided to request
         if(productExists) {
             await Cart.findOneAndUpdate(
@@ -66,7 +77,7 @@ async function handlePutRequest(req, res) {
             )
         } else {
             // If not, add new product with given quantity
-            const newProduct = { quantity, product: productId }
+            const newProduct = { quantity, product: productId, size }
             await Cart.findOneAndUpdate(
                 { _id: cart._id },
                 // Use addToSet instead of push to add an element only once and ensure it's unique
@@ -76,7 +87,7 @@ async function handlePutRequest(req, res) {
         res.status(200).send("Cart updated")
     } catch(error){
         console.error(error)
-        res.status(403).send('Please login again')
+        res.status(403).send('Cart update error')
     }
 }
 
@@ -89,7 +100,8 @@ async function handleDeleteRequest(req, res){
         const { userId } = jwt.verify(req.headers.authorization, process.env.JWT_SECRET)
         const cart = await Cart.findOneAndUpdate(
             { user: userId },
-            { $pull: { products: { product: productId } } },
+            // { $pull: { products: { product: productId } } },
+            { $pull: { products: { _id: productId } } },
             { new: true }
         ).populate({
             path: "products.product",

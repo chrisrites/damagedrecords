@@ -36,7 +36,7 @@ function Store({ products, totalPages }) {
                 setCurrentTotalPages(res.data.props.totalPages)
             });
         } catch(err) {
-            console.log(err)
+            console.error(err)
         }
     }
 

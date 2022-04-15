@@ -21,7 +21,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
   return <>
     <Divider />
     <Segment clearing size="large">
-      <strong style={{color:"black"}}>Sub Total:</strong><span style={{color:"black"}}>${cartAmount}</span>
+      <strong style={{color:"black"}}>Sub Total: </strong><span style={{color:"black"}}>${cartAmount} (CAD)</span>
       <Link 
         href="/account"
       >
@@ -49,6 +49,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
             })
         }}
         onApprove = {async (data, actions) => {
+          // console.log("PayPal Data: " + data)
           handleCheckout(currentUserEmail)
         }}
         onCancel = {() => {

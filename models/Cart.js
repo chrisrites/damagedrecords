@@ -18,6 +18,9 @@ const CartSchema = new mongoose.Schema({
             product: {
                 type: ObjectId,
                 ref: "Product"
+            },
+            size: {
+                type: String
             }
         }
     ]

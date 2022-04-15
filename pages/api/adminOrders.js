@@ -36,8 +36,6 @@ async function handleGetOrders (req, res) {
 async function handleMarkShipped (req, res) {
     const { id } = req.body
 
-    console.log("Order ID: " + id)
-
     try {
         await Order.findOneAndUpdate(
             { _id: id },
