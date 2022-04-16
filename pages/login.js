@@ -53,7 +53,7 @@ function Login() {
           <Message 
             attached
             icon="privacy"
-            header="Welcome Back!"
+            header="Welcome Back"
             content="Login with email and password"
             color="blue"
           />
