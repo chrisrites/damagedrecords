@@ -37,7 +37,6 @@ function CartItemList({ products, user, handleRemoveFromCart, success }) {
         header="Success!"
         content="Your order and payment has been accepted"
         icon="star outline"
-        green
       />
     )
   }
