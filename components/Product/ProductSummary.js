@@ -33,6 +33,7 @@ function ProductSummary({ name, mediaUrl, _id, price, sku, user, size }) {
                     <option key={y} value={x}>{x}</option> 
                   ))}
                 </select>
+                <br/>
               </>
             }
             <AddProductToCart user={user} productId={_id} size={selectSize ? selectSize : undefined} />
