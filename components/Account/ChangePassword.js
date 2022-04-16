@@ -47,7 +47,7 @@ function ChangePassword({ email }) {
           <Message 
             success
             header="Success!"
-            content="Your password has been changed"
+            content="Your password has been changed."
             icon="star outline"
           />
         )
