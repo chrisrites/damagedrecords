@@ -10,7 +10,7 @@ function AccountHeader({ role, email, name, createdAt }) {
         ribbon
         icon="privacy"
         style={{ textTransform: 'capitalize' }}
-        content={role}
+        content={role === "user" ? "Customer" : role}
       />
       <Header inverted textAlign="center" as="h1" icon>
         <Icon name="user" />

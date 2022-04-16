@@ -24,7 +24,7 @@ function Store({ products, totalPages }) {
     // Passing null to this function acts to reset the filter.  ie it re-gets all the products
     async function filterProducts(filter){
         const page = 1
-        const size = filter ? 99 : 8;
+        const size = filter ? 99 : 12;
         
         
         // fetch data on the server
@@ -66,7 +66,7 @@ function Store({ products, totalPages }) {
 export async function getServerSideProps(context){
     // const page = ctx.query.page ? ctx.query.page : "1"
     const page = context.query.page ? context.query.page : "1"
-    const size = 8
+    const size = 12
     const filter = null
     // fetch data on the server
     const url = `${baseUrl}/api/products`
