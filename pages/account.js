@@ -1,6 +1,7 @@
 import AccountHeader from '../components/Account/AccountHeader';
 import AccountOrders from '../components/Account/AccountOrders';
 import AccountPermissions from '../components/Account/AccountPermissions';
+import ChangePassword from '../components/Account/ChangePassword'
 import { parseCookies } from 'nookies';
 import axios from 'axios';
 import baseUrl from '../utils/baseUrl';
@@ -15,7 +16,9 @@ function Account({ user, orders }) {
         <div className={globalStyles.contentContainer + " " + styles.accountContainer + " container"}>
           <AccountHeader {...user} />
           <AccountOrders orders={orders} />
-          {user.role === 'root' &&  <AccountPermissions currentUserId={user._id} />}
+          {/* {user.role === 'root' &&  <AccountPermissions currentUserId={user._id} />} */}
+          {user.role === 'root' &&  <AccountPermissions />}
+          <ChangePassword {...user} />
         </div>
       </div>
     </div>
