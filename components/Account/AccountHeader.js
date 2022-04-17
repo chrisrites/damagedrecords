@@ -16,7 +16,7 @@ function AccountHeader({ role, email, name, createdAt }) {
         <Icon name="user" />
         {name}
         <Header.Subheader>{email}</Header.Subheader>
-        <Header.Subheader>Joined {formatDate(createdAt)}</Header.Subheader>
+        <Header.Subheader>Registered {formatDate(createdAt)}</Header.Subheader>
       </Header>
     </Segment>
   )

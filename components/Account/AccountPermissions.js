@@ -31,7 +31,7 @@ function AccountPermissions() {
             <Table.HeaderCell />
             <Table.HeaderCell>Name</Table.HeaderCell>
             <Table.HeaderCell>Email</Table.HeaderCell>
-            <Table.HeaderCell>Joined</Table.HeaderCell>
+            <Table.HeaderCell>Registered</Table.HeaderCell>
             <Table.HeaderCell>Updated</Table.HeaderCell>
             <Table.HeaderCell>Role</Table.HeaderCell>
           </Table.Row>
