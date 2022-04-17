@@ -18,7 +18,6 @@ export default async (req, res) => {
             path: "products.product",
             model: "Product"
         })
-        console.log("APT cart contents: " + cart)
         // Calculate cart totals again from cart products
         const { cartTotal, stripeTotal } = calculateCartTotal(cart.products)
 

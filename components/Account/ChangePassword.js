@@ -97,7 +97,7 @@ function ChangePassword({ email }) {
                 />
                 <Button 
                     disabled={loading}
-                    icon="sign in"
+                    icon="pencil alternate"
                     type="submit"
                     color="orange"
                     content="Change Password"
