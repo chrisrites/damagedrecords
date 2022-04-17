@@ -32,10 +32,9 @@ function AddProductToCart({ user, productId, size }) {
       const url = `${baseUrl}/api/cart`
       // if (size) {
       const payload = { quantity, productId, size }
-      console.log("API Size: " + size)
-      console.log(payload)
       const token = cookie.get('token')
       const headers = { headers: { Authorization: token } }
+      console.log('Fake console log')
       await axios.put(url, payload, headers)
       setSuccess(true)
     } catch(error) {
