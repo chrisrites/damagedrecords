@@ -91,7 +91,7 @@ function Login() {
                 onChange={handleChange}
               />
               <Button 
-                disabled={disabled || loading}
+                // disabled={disabled || loading}
                 icon="sign in"
                 type="submit"
                 color="orange"
