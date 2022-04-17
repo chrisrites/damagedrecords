@@ -31,7 +31,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
         </div>
       </Link>
     </Segment>
-      {/* <PayPalButtons 
+      <PayPalButtons 
         className={cartStyles.payPalButtons}
         disabled={isCartEmpty || success}
         forceReRender={[cartAmount]}
@@ -63,7 +63,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
         onClick = {() => {
           // console.log("PAYPAL_ENV_VAR: " + process.env.REACT_APP_PAYPAL_CLIENT_ID)
         }}
-      /> */}
+      />
   </>;
 }
 
