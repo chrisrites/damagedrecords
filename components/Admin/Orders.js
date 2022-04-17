@@ -42,8 +42,8 @@ function AccountOrders({ orders }) {
                 // style={{ marginLeft: '1em' }}
               />
               <List style={{ marginBottom: "0" }}>
-                {order.products.map(p => (
-                  <List.Item key={p.product._id}>
+                {order.products.map((p, idx) => (
+                  <List.Item key={idx}>
                     <Image style={{marginTop: "10px"}} avatar src={p.product.mediaUrl} />
                     <List.Content>
                       <List.Header>{p.product.name}</List.Header> 
