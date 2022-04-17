@@ -16,8 +16,8 @@ function Account({ user, orders }) {
         <div className={globalStyles.contentContainer + " " + styles.accountContainer + " container"}>
           <AccountHeader {...user} />
           <AccountOrders orders={orders} />
-          {/* {user.role === 'root' &&  <AccountPermissions currentUserId={user._id} />} */}
-          {user.role === 'root' &&  <AccountPermissions />}
+          {user.role === 'root' &&  <AccountPermissions currentUserId={user._id} />}
+          {/* {user.role === 'root' &&  <AccountPermissions />} */}
           <ChangePassword {...user} />
         </div>
       </div>
