@@ -1,20 +1,14 @@
 import React from 'react';
 import axios from 'axios'
-import { Button, Form, Icon, Message, Segment } from 'semantic-ui-react';
+import { Button, Form, Message, Segment } from 'semantic-ui-react';
 // import Link from 'next/link';
 import baseUrl from '../../utils/baseUrl';
 import catchErrors from '../../utils/catchErrors';
 import globalStyles from '../../static/styles/global.module.scss';
 import loginStyles from '../../static/styles/login.module.scss';
 
-// const INITIAL_USER = {
-//     email: "",
-//     password: ""
-//   }
-
 function ChangePassword({ email }) {
     const [newPassword, setNewPassword] = React.useState("")
-    // const [disabled, setDisabled] = React.useState(true)
     const [loading, setLoading] = React.useState(false)
     const [success, setSuccess] = React.useState(false)
     const [error, setError] = React.useState('')
@@ -73,17 +67,6 @@ function ChangePassword({ email }) {
                 content={error}
             />
             <Segment>
-                {/* <Form.Input 
-                    fluid
-                    icon="envelope"
-                    iconPosition="left"
-                    label="Email"
-                    placeholder="Email"
-                    name="email"
-                    type="email"
-                    value={user.email}
-                    // onChange={handleChange}
-                /> */}
                 <Form.Input 
                     fluid
                     icon="lock"
@@ -104,12 +87,6 @@ function ChangePassword({ email }) {
                 />
             </Segment>
             </Form>
-            {/* <Message attached="bottom" warning>
-                <Icon name="info"/>New user?{" "}
-                <Link href="/signup">
-                    <a>Sign up here</a>
-                </Link>{" "}instead
-            </Message> */}
         </div>
     )
 }
