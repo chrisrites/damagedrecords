@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 // import { Menu, Container, Image, Icon } from 'semantic-ui-react';
-import { Image, Icon } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router';
 import NProgress from 'nprogress';
