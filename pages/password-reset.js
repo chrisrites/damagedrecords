@@ -4,29 +4,25 @@ import Link from 'next/link';
 import catchErrors from '../utils/catchErrors';
 import baseUrl from '../utils/baseUrl';
 import axios from 'axios';
-import { handleLogin } from '../utils/auth';
+// import { handleLogin } from '../utils/auth';
 import globalStyles from '../static/styles/global.module.scss';
 import styles from '../static/styles/login.module.scss';
 
-const INITIAL_USER = {
-  email: "",
-  password: ""
-}
-
-function Login() {
-  const [user, setUser] = React.useState(INITIAL_USER)
+function passwordReset() {
+  const [email, setEmail] = React.useState("")
   const [disabled, setDisabled] = React.useState(true)
   const [loading, setLoading] = React.useState(false)
   const [error, setError] = React.useState('')
+  const [success, setSuccess] = React.useState(false)
 
   React.useEffect(() => {
-    const isUser = Object.values(user).every(el => Boolean(el))
-    isUser ? setDisabled(false) : setDisabled(true)
-  }, [user])
+    email ? setDisabled(false) : setDisabled(true)
+  }, [email])
 
   function handleChange(event){
-    const { name, value } = event.target
-    setUser(prevState => ({ ...prevState, [name]: value }))
+    const { value } = event.target
+    // setEmail(prevState => ({ ...prevState, [name]: value }))
+    setEmail(value)
   }
 
   async function handleSubmit(event){
@@ -34,10 +30,10 @@ function Login() {
     try{
       setLoading(true)
       setError('')
-      const url = `${baseUrl}/api/login`
-      const payload = { ...user }
+      const url = `${baseUrl}/api/passwordReset`
+      const payload = { email }
       const response = await axios.post(url, payload)
-      handleLogin(response.data)
+      setSuccess(true)
       // Make a request to signup user
     } catch(error){
       catchErrors(error, setError)
@@ -50,13 +46,19 @@ function Login() {
     <div className={globalStyles.pageContainer}>
       <div className={globalStyles.darkContainer}>
         <div className={globalStyles.contentContainer + " " + styles.loginContainer + " container"}>
-          <Message 
-            attached
-            icon="privacy"
-            header="Welcome Back"
-            content="Login with email and password"
-            color="blue"
-          />
+          {success ?
+            <Message 
+                success
+                header="Success."
+                content="Your password has been reset and emailed to you.  Once logged back in, set a new password in the Account page"
+                icon="star outline"/>
+            :<Message 
+                attached
+                icon="privacy"
+                header="Forgot your password?"
+                content="Enter your email address and we will reset your password"
+                color="blue"/>
+            }
           <Form 
             error={Boolean(error)} 
             loading={loading} 
@@ -76,26 +78,16 @@ function Login() {
                 placeholder="Email"
                 name="email"
                 type="email"
-                value={user.email}
+                value={email}
                 onChange={handleChange}
-              />
-              <Form.Input 
-                fluid
-                icon="lock"
-                iconPosition="left"
-                label="Password"
-                placeholder="Password"
-                name="password"
-                type="password"
-                value={user.password}
-                onChange={handleChange}
+                disabled={success}
               />
               <Button 
-                disabled={disabled || loading}
-                icon="sign in"
+                disabled={disabled || loading || success}
+                icon="key"
                 type="submit"
-                color="orange"
-                content="Login"
+                color="red"
+                content="Reset Password"
               />
             </Segment>
           </Form>
@@ -104,10 +96,7 @@ function Login() {
             New user?{" "}
             <Link href="/signup">
               <a>Sign up here</a>
-            </Link>{" "}instead.{" "}
-            <Link href="/password-reset">
-              <a>Forgot password</a>
-            </Link>?
+            </Link>{" "}instead.
           </Message>
         </div>
       </div>
@@ -115,4 +104,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default passwordReset;

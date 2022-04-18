@@ -36,26 +36,24 @@ function ChangePassword({ email }) {
         }
       }
 
-      if(success) {
-        return (
-          <Message 
-            success
-            header="Success."
-            content="Your password has been changed."
-            icon="star outline"
-          />
-        )
-      }
-
     return (
         <div className={globalStyles.contentContainer + " " + loginStyles.loginContainer + " container"}>
-            <Message 
-                attached
-                icon="privacy"
-                header="Change Your Password"
-                content="Enter new password to change"
-                color="blue"
-            />
+            {success ?
+                <Message 
+                    success
+                    header="Success."
+                    content="Your password has been changed."
+                    icon="star outline"
+                />
+            :
+                <Message 
+                    attached
+                    icon="privacy"
+                    header="Change Your Password"
+                    content="Enter new password to change"
+                    color="blue"
+                />
+            }
             <Form 
                 error={Boolean(error)} 
                 loading={loading} 
@@ -77,9 +75,10 @@ function ChangePassword({ email }) {
                     type="password"
                     value={newPassword}
                     onChange={updatePasswordState}
+                    disabled={success}
                 />
                 <Button 
-                    disabled={loading}
+                    disabled={loading || success}
                     icon="pencil alternate"
                     type="submit"
                     color="orange"
