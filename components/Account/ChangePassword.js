@@ -1,11 +1,10 @@
 import React from 'react';
 import axios from 'axios'
-import { Button, Form, Message, Segment } from 'semantic-ui-react';
+import { Button, Form, Message, Segment, Header, Icon } from 'semantic-ui-react';
 // import Link from 'next/link';
 import baseUrl from '../../utils/baseUrl';
 import catchErrors from '../../utils/catchErrors';
 import globalStyles from '../../static/styles/global.module.scss';
-import loginStyles from '../../static/styles/login.module.scss';
 
 function ChangePassword({ email }) {
     const [newPassword, setNewPassword] = React.useState("")
@@ -37,7 +36,13 @@ function ChangePassword({ email }) {
       }
 
     return (
-        <div className={globalStyles.contentContainer + " " + loginStyles.loginContainer + " container"}>
+        <div className={globalStyles.contentContainer + " " + globalStyles.changePasswordContainer + " container"}>
+            <Header>
+                <h2>
+                    <Icon name="key" />
+                    Change Password
+                </h2>
+            </Header>
             {success ?
                 <Message 
                     success
@@ -48,9 +53,9 @@ function ChangePassword({ email }) {
             :
                 <Message 
                     attached
-                    icon="privacy"
-                    header="Change Your Password"
-                    content="Enter new password to change"
+                    // icon="privacy"
+                    // header="Change Your Password"
+                    content="Enter your new password below"
                     color="blue"
                 />
             }
@@ -85,7 +90,7 @@ function ChangePassword({ email }) {
                     content="Change Password"
                 />
             </Segment>
-            </Form>
+            </Form> 
         </div>
     )
 }
