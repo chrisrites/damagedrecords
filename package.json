@@ -1,7 +1,7 @@
 {
-  "name": "damaged-records",
+  "name": "melted-wax-records",
   "version": "1.0.1",
-  "description": "Damaged Records - A record label and store for DUI artists who posses a punk rock approach to marketing and selling their products",
+  "description": "A record label site and web store for independent musicians and artists.",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "Christopher Chartrand",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
