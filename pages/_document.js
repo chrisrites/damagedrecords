@@ -4,8 +4,10 @@ class MyDocument extends Document {
 
 	render() {
 		return (
-			<Html>
+			<Html lang="en">
 				<Head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                    <meta charSet="utf-8" />
 					{/* Stylesheets */}
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&family=Montserrat&family=Merriweather&family=Noto+Sans+JP:wght@300&family=Rubik&family=Ubuntu:wght@400;500&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />

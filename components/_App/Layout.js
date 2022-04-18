@@ -16,7 +16,6 @@ function Layout({ children, user }) {
     <div id="melted-wax">
       <Head>
         <HeadContent />
-        
         <title>Melted Wax Records</title>
       </Head>
       {/* <body> */}
