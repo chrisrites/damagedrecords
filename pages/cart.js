@@ -77,7 +77,6 @@ export async function getServerSideProps(ctx) {
   const url = `${baseUrl}/api/cart`
   const payload = { headers: { Authorization: token }}
   const response = await axios.get(url, payload)
-  // return { products: response.data }
   return response.data
 }
 

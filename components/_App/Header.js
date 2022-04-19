@@ -31,14 +31,11 @@ function Header({ user, toggleOverlay }) {
     window.onscroll = function () {
       let currentScrollPos = window.pageYOffset;
       if (prevScrollPos > currentScrollPos || currentScrollPos === 0) {
-        // setHeaderScrollPos("0px");
         if(currentScrollPos === 0){
           setTransparentNav("rgba(12, 15, 10, 1)");
           setNavItemColour(null);
         }
       } else {
-        // setHeaderScrollPos("-70px");
-        // document.getElementById("header").style.top = "-50px";
         setTransparentNav("rgba(255, 32, 110, 0.5)");
         setNavItemColour(styles.scrolled);
       }
@@ -52,7 +49,6 @@ function Header({ user, toggleOverlay }) {
 
   return (
     <div className={styles.headerBody} style={{ top: headerScrollPos }}>
-      {/* <div id={styles.headerContainer} style={{ background: transparentNav ? "rgba(12, 15, 10, 0.5)" : "rgba(12, 15, 10, 1)" }}> */}
       <div id={styles.headerContainer} style={{ background: transparentNav }}>
         <nav className={styles.navBar}>
           <div id={styles.navBrand} className={isActive('/')} >
@@ -140,13 +136,6 @@ function Header({ user, toggleOverlay }) {
                     </div>
                   </Link>
                 </li>
-                {/* <li className={`${styles.navLi} ${isActive('/signup')}`}>
-                  <Link href="/signup">
-                    <div className={styles.navItems}>
-                      <span className={`${styles.navTitles} ${navItemColour}`}>Signup</span>
-                    </div>
-                  </Link>
-                </li> */}
               </>)}
           </ul>
           <div id={styles.menuToggle}>

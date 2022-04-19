@@ -1,4 +1,3 @@
-// import products from '../../static/products.json'
 import connectDb from '../../utils/connectDb'
 import Event from '../../models/Event'
 
@@ -51,7 +50,6 @@ export default async (req, res) => {
                 ]
               }
         }
-        // console.log(events)
         // return both our single news item and our list
         res.status(200).json({ props: { events }})
     } catch (error) {

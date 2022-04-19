@@ -36,8 +36,6 @@ async function handleGetRequest(req, res) {
             model: "Product"
         })
         const products = cart.products
-        // console.log(products)
-        // res.status(200).json(cart.products)
         res.status(200).json({ props: { products } })
     } catch(error){
         console.error(error)
@@ -56,18 +54,7 @@ async function handlePutRequest(req, res) {
         const cart = await Cart.findOne({ user: userId })
         // Check if product already exists in cart
         // instead of the 'every' function, we use 'some' which will stop as soon as it meeets its given condition instead of search through every element
-
-        // const productExists = cart.products.some(doc => ObjectId(productId).equals(doc.product))
-
-        // const productExists = cart.products.find({
-        //     $and: [ { product: { $eq: ObjectId(productId) } }, 
-        //         { size: { $exists: true, $eq: size } }
-        //     ]
-        // })
-
         const productExists = cart.products.some( doc => ObjectId(productId).equals(doc.product) && doc.size === size )
-
-        console.log("Product Exists Val: " + productExists)
         // If so, increment quantity by number provided to request
         if(productExists) {
             await Cart.findOneAndUpdate(
@@ -100,7 +87,6 @@ async function handleDeleteRequest(req, res){
         const { userId } = jwt.verify(req.headers.authorization, process.env.JWT_SECRET)
         const cart = await Cart.findOneAndUpdate(
             { user: userId },
-            // { $pull: { products: { product: productId } } },
             { $pull: { products: { _id: productId } } },
             { new: true }
         ).populate({

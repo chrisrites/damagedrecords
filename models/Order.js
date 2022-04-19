@@ -8,7 +8,6 @@ const OrderSchema = new mongoose.Schema({
     orderNumber: {
         type: String,
         unique: true,
-        // default: shortid.generate()
         default: shortid.generate
     },
     user: {

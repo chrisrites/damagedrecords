@@ -1,4 +1,3 @@
-// import products from '../../static/products.json'
 import connectDb from '../../utils/connectDb'
 import Artist from '../../models/Artist'
 import NewsItem from '../../models/NewsItem'
@@ -19,7 +18,6 @@ export default async (req, res) => {
         // subtract 1 from it, resulting in yesterdays date
         yesterday.setDate(yesterday.getDate()-1)
         events = await Event.find({ date: { $gte: yesterday}  }).sort({date: 'asc'}).limit(3)
-        // res.status(200).json({ artists, news, events })
         res.status(200).json({ props: { artists, news, events }})
     } catch (error) {
         console.error(error)

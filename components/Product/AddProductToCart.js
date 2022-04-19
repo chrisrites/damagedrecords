@@ -30,7 +30,6 @@ function AddProductToCart({ user, productId, size }) {
     try {
       setLoading(true)
       const url = `${baseUrl}/api/cart`
-      // if (size) {
       const payload = { quantity, productId, size }
       const token = cookie.get('token')
       const headers = { headers: { Authorization: token } }

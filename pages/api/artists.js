@@ -1,4 +1,3 @@
-// import products from '../../static/products.json'
 import connectDb from '../../utils/connectDb'
 import Artist from '../../models/Artist'
 

@@ -2,8 +2,6 @@ import connectDb from '../../utils/connectDb'
 import User from '../../models/User'
 import bcrypt from 'bcryptjs' 
 import shortid from 'shortid'
-// import isLength from 'validator/lib/isLength'
-// import jwt from 'jsonwebtoken'
 import sgMail from '@sendgrid/mail'
 
 sgMail.setApiKey(process.env.EMAIL_API_KEY);
@@ -20,11 +18,8 @@ export default async (req, res) => {
         if(!user){ 
             return res.status(404).send('No user exists with that email address')
         }
-        // if (!isLength(newPassword, { min:6 })) {
-        //     return res.status(422).send('Password must be at least 6 characters in length')
-        // }
         
-        // const newPassword = 'test1234'
+        // create a new password
         const newPassword = shortid.generate()
 
         // hash their password

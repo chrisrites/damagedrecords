@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios'
 import { Button, Form, Message, Segment, Header, Icon } from 'semantic-ui-react';
-// import Link from 'next/link';
 import baseUrl from '../../utils/baseUrl';
 import catchErrors from '../../utils/catchErrors';
 import globalStyles from '../../static/styles/global.module.scss';
@@ -25,8 +24,6 @@ function ChangePassword({ email }) {
           const url = `${baseUrl}/api/changePassword`
           const payload = { email, newPassword }
           const response = await axios.post(url, payload)
-        //   handleLogin(response.data)
-          // Make a request to signup user
           setSuccess(true)
         } catch(error){
           catchErrors(error, setError)
@@ -45,6 +42,7 @@ function ChangePassword({ email }) {
             </Header>
             {success ?
                 <Message 
+                    attached
                     success
                     header="Success."
                     content="Your password has been changed."
@@ -53,8 +51,6 @@ function ChangePassword({ email }) {
             :
                 <Message 
                     attached
-                    // icon="privacy"
-                    // header="Change Your Password"
                     content="Enter your new password below"
                     color="blue"
                 />

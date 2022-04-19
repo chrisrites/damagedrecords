@@ -1,13 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import router, { useRouter } from 'next/router'
 import axios from 'axios';
 import ProductList from '../components/Store/ProductList';
 import ProductPagination from '../components/Store/ProductPagination';
 import baseUrl from '../utils/baseUrl';
 import globalStyles from '../static/styles/global.module.scss';
 import styles from '../static/styles/store.module.scss';
-// import { set } from 'nprogress';
 
 function Store({ products, totalPages }) {
     const [currentProducts, setCurrentProducts] = useState([]);
@@ -64,7 +62,6 @@ function Store({ products, totalPages }) {
 // This is a NEXT.JS function to fetch data on the server (we don't have to wait until our component is mounted like using the useEffect hook)
 // Store.getInitialProps = async ctx => {
 export async function getServerSideProps(context){
-    // const page = ctx.query.page ? ctx.query.page : "1"
     const page = context.query.page ? context.query.page : "1"
     const size = 12
     const filter = null
@@ -73,11 +70,6 @@ export async function getServerSideProps(context){
     const payload = { params: { page, size, filter } }  
     const response = await axios.get(url, payload);
     return response.data
-    // return { 
-    //     props: { response }
-    // }
-    // return response data as an object
-    // note: this object will be merged with existing props
 }
 
 export default Store;

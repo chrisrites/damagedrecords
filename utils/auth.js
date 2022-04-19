@@ -4,7 +4,6 @@ import Router from 'next/router'
 export function handleLogin(token){
     cookie.set('token', token)
     Router.push('/store')
-    // Router.push('/account')
 }
 
 export function redirectUser(ctx, location) {

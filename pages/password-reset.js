@@ -4,7 +4,6 @@ import Link from 'next/link';
 import catchErrors from '../utils/catchErrors';
 import baseUrl from '../utils/baseUrl';
 import axios from 'axios';
-// import { handleLogin } from '../utils/auth';
 import globalStyles from '../static/styles/global.module.scss';
 
 function passwordReset() {
@@ -20,7 +19,6 @@ function passwordReset() {
 
   function handleChange(event){
     const { value } = event.target
-    // setEmail(prevState => ({ ...prevState, [name]: value }))
     setEmail(value)
   }
 

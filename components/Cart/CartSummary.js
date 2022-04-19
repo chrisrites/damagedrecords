@@ -1,5 +1,4 @@
 import { useEffect, useState }from 'react'
-// import StripeCheckout from 'react-stripe-checkout'
 import Link from 'next/link';
 import { Segment, Divider, Icon } from 'semantic-ui-react'
 import calculateCartTotal from '../../utils/calculateCartTotal'
@@ -9,7 +8,6 @@ import { PayPalButtons } from '@paypal/react-paypal-js'
 
 function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
   const [cartAmount, setCartAmount] = useState(0)
-  // const [stripeAmount, setStripeAmount] = React.useState(0)
   const [isCartEmpty, setIsCartEmpty] = useState(false)
 
   useEffect(() => {
@@ -49,7 +47,6 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
             })
         }}
         onApprove = {async (data, actions) => {
-          // console.log("PayPal Data: " + data)
           handleCheckout(currentUserEmail)
         }}
         onCancel = {() => {
@@ -60,9 +57,9 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
           // setError(err)
           console.error("Error: ", err)
         }}
-        onClick = {() => {
-          // console.log("PAYPAL_ENV_VAR: " + process.env.REACT_APP_PAYPAL_CLIENT_ID)
-        }}
+        // onClick = {() => {
+        //   console.log("PAYPAL_ENV_VAR: " + process.env.REACT_APP_PAYPAL_CLIENT_ID)
+        // }}
       />
   </>;
 }

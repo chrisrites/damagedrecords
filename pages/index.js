@@ -69,9 +69,9 @@ export async function getServerSideProps() {
   // fetch data on the server
   const url = `${baseUrl}/api/home`  
   const response = await axios.get(url);
-  return response.data
   // return response data as an object
   // note: this object will be merged with existing props
+  return response.data
 }
 
 export default Home;
