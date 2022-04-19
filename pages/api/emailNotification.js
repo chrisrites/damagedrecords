@@ -17,7 +17,6 @@ export default async (req, res) => {
     // Send order notification email
     try {
         await sgMail.send(msg);
-        // console.log("Backend MADE IT")
         res.json({ message: `Email has been sent` })
     } catch (error) {
         res.status(500).json({ error: 'Error sending email' })

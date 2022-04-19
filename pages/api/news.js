@@ -1,4 +1,3 @@
-// import products from '../../static/products.json'
 import connectDb from '../../utils/connectDb'
 import NewsItem from '../../models/NewsItem'
 
@@ -33,7 +32,6 @@ export default async (req, res) => {
         }
 
         // return both our single news item and our list
-        // res.status(200).json({ singleNews, newsItems })
         res.status(200).json({ props: { singleNews, newsItems }})
     } catch (error) {
         console.error(error)

@@ -22,7 +22,6 @@ export default async (req, res) => {
 
 async function handleGetOrders (req, res) {
     try {
-        // const { userId } = jwt.verify(req.headers.authorization, process.env.JWT_SECRET)
         const orders = await Order.find({ shipped: false }).sort({ createdAt: 'desc' }).populate({
             path: 'products.product',
             model: "Product"

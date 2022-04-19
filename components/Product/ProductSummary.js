@@ -1,13 +1,11 @@
 import { useState } from 'react'
-import { Item, Label, Button, Icon } from 'semantic-ui-react';
-import { useRouter } from 'next/router';
+import { Item, Icon } from 'semantic-ui-react';
 import Link from 'next/link';
 import AddProductToCart from './AddProductToCart';
 import globalStyles from '../../static/styles/global.module.scss';
 import styles from '../../static/styles/product.module.scss';
 
 function ProductSummary({ name, mediaUrl, _id, price, sku, user, size }) {
-  const router = useRouter()
   const [selectSize, setSelectSize] = useState(size ? size[0] : '')
 
   const handleSelectSizeChange = (e) => {

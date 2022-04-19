@@ -34,7 +34,6 @@
         }
 
         #description {
-            // text-align: justify;
             font-family: globals.$paragraphFont;
             font-size: globals.$paragraphSize;
             color: colours.$white;
@@ -71,11 +70,9 @@
         }
 
         #subInfo {
-            // margin-left: 8px;
 
             address {
                 margin-bottom: 0;
-                // margin-left: 20px;
             }
 
             .infoItem {

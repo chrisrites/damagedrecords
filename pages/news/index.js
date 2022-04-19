@@ -3,7 +3,6 @@ import NewsList from '../../components/NewsList';
 import baseUrl from '../../utils/baseUrl';
 import Link from 'next/link';
 import stringifyDate from '../../utils/stringifyDate';
-// import getExcerpt from '../../utils/getExcerpt';
 import { Image } from 'semantic-ui-react';
 import { mapRelevantLinks, mapArtistsLinks } from '../../utils/mapLinks';
 import globalStyles from '../../static/styles/global.module.scss';

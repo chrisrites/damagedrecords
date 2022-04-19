@@ -1,12 +1,9 @@
 import axios from 'axios';
-import { Header, Accordion, Label, Segment, Icon, Button, List, Image } from 'semantic-ui-react';
+import { Header, Accordion, Label, Segment, Icon, List, Image } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
 import baseURL from '../../utils/baseUrl';
 import formatDate from '../../utils/formatDate';
 import globalStyles from '../../static/styles/global.module.scss';
-// import Order from '../../models/Order';
-// import toggleShipping from '../../utils/toggleShipping';
-// import { OrderReturns } from 'stripe/lib/resources';
 
 function AccountOrders({ orders }) {
   const router = useRouter()
@@ -15,13 +12,6 @@ function AccountOrders({ orders }) {
     const url = `${baseURL}/api/adminOrders`
     const payload = { id }
     await axios.put(url, payload)
-
-    // const url = `${baseUrl}/api/product`
-    // const payload = { params: { _id } }
-    // await axios.put(url, payload)
-    // router.push('/store')
-
-    // console.log("Toggled")
   }; 
 
   function mapOrdersToPanels(orders) {
@@ -39,7 +29,6 @@ function AccountOrders({ orders }) {
                 icon="mail"
                 basic
                 horizontal
-                // style={{ marginLeft: '1em' }}
               />
               <List style={{ marginBottom: "0" }}>
                 {order.products.map((p, idx) => (
@@ -92,11 +81,6 @@ function AccountOrders({ orders }) {
           <Icon name="copy outline" />
           No new orders
         </Header>
-        {/* <div>
-          <Button onClick={() => router.push('/store')} color="orange">
-            View Products
-          </Button>
-        </div> */}
       </Segment>
     ) : (
       <Accordion 

@@ -3,7 +3,6 @@
 @use 'fonts';
 
 .headerBody {
-    // border: 2px solid yellow;
     z-index: 99;
     position: fixed;
     left: 0;
@@ -45,10 +44,6 @@
                 
                 .active {
                     background: colours.$background;
-
-                    // span {
-                    //     color: colours.$white;
-                    // }
                 }
             }
 
@@ -57,27 +52,21 @@
             }
 
             #navBrand {
-                // border: 2px solid red;
                 display: inline-block;
-                // padding: 1em;
                 height: 100%;
-                // border-right: 0.5px solid rgb(143, 143, 143);
                 padding: 0 1em;
 
                 #brandAlign {
-                    // border: 2px solid purple;
                     display: flex;
                     align-items: center;
                     height: 100%;
 
                     #navBrandContent {
-                        // border: 2px solid yellow;
                         display: flex;
                         align-items: center;
                         cursor: pointer;
 
                         #brandLogo {
-                            // border: 2px solid green;
                             opacity: 1;
                             display: inline;
                             height: 30px;
@@ -91,7 +80,6 @@
                         }
 
                         #brandTitle {
-                            // border: 2px solid purple;
                             opacity: 1;
                             display: inline;
                             font-family: fonts.$futura-pt-cond;
@@ -108,9 +96,7 @@
             }
 
             .navUl {
-                // border: 2px solid blue;
                 display: none;
-                // align-items: center;
                 float: right;
                 list-style: none;
                 height: 100%;
@@ -122,20 +108,14 @@
                 }
 
                 .navLi {
-                    // border: 2px solid rgb(255, 0, 255);
                     display: flex;
                     align-items: center;
                     margin: 0;
                     padding: 0 10px;
                     height: 100%;
-                    // padding: 1em;
 
                     .navItems {
-                        // border: 2px solid rgb(0, 255, 234);
-                        // display: flex;
-                        // align-items: center;
                         cursor: pointer;
-                        // color: colours.$teal;
 
                         :hover {
                             color: colours.$pink;
@@ -154,8 +134,6 @@
                             font-size: 17px;
                             font-family: fonts.$montserrat;
                             font-weight: 700;
-                            // transition: 1s;
-                            // color: colours.$white;
                              
                             :hover {
                                 color: colours.$pink;
@@ -178,7 +156,6 @@
             }
 
             #menuToggle {
-                // border: 1px blue solid;
                 visibility: visible;
                 display: flex;
                 align-items: center;
@@ -200,7 +177,6 @@
                 }
 
                 #menuToggleBtn:hover {
-                    // font-size: 24px;
                     transform: scale(1.1);
                 }
             }

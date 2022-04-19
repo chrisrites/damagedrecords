@@ -1,5 +1,4 @@
 import Link from 'next/link';
-// import Router, { useRouter } from 'next/router';
 import styles from '../../static/styles/overlay.module.scss';
 import { handleLogout } from '../../utils/auth'
 
@@ -42,9 +41,6 @@ function Overlay({ user, overlayHeight, toggleOverlay }) {
                         <div className={styles.overlayLinks} onClick={() => toggleOverlay("0%")}>
                             <Link href="/login">Login</Link>
                         </div>
-                        {/* <div className={styles.overlayLinks} onClick={() => toggleOverlay("0%")}>
-                            <Link href="/signup">Signup</Link>
-                        </div> */}
                     </>)}
             </div>
         </div >

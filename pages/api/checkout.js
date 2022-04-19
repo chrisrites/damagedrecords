@@ -1,11 +1,7 @@
-// import Stripe from 'stripe'
-// import uuidv4 from 'uuid/v4'
 import jwt from 'jsonwebtoken'
 import Cart from '../../models/Cart'
 import Order from '../../models/Order'
 import calculateCartTotal from '../../utils/calculateCartTotal'
-
-// const stripe = Stripe(process.env.STRIPE_SECRET_KEY)
 
 export default async (req, res) => {
     const { currentUserEmail } = req.body
@@ -19,35 +15,7 @@ export default async (req, res) => {
             model: "Product"
         })
         // Calculate cart totals again from cart products
-        const { cartTotal, stripeTotal } = calculateCartTotal(cart.products)
-
-        // Get email for payment data, see if email linked with existing Stripe customer
-        // const prevCustomer = await stripe.customers.list({
-        //     email: paymentData.email,
-        //     limit: 1
-        // }) 
-        // const isExistingCustomer =  prevCustomer.data.length > 0
-        // If not existing customer, create them with their email 
-        // let newCustomer
-        // if(!isExistingCustomer) {
-        //     newCustomer = await stripe.customers.create({
-        //         email: paymentData.email,
-        //         source: paymentData.id
-        //     })
-        // }
-        // const customer = (isExistingCustomer && prevCustomer.data[0].id) || newCustomer.id
-        // Create charge with total, send receipt email
-        // const charge = await stripe.charges.create({
-        //     currency: "usd",
-        //     amount: stripeTotal,
-        //     receipt_email: paymentData.email,
-        //     customer,
-        //     description: `Checkout | ${paymentData.email} | ${paymentData.id}`
-        // }, {
-            // ensure a payment doesn't execute twice
-        //     idempotency_key: uuidv4()
-        // })
-
+        const { cartTotal } = calculateCartTotal(cart.products)
         // Add order data to database
         await new Order({
             user: userId,

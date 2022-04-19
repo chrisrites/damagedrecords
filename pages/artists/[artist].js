@@ -28,13 +28,6 @@ function ArtistProfile({ artist, events, news }) {
                 <div id={globalStyles.artistImg}> 
                   <Image src={artst.image}/>
                 </div>
-                {/* <h5 id={styles.allArtistsHeading}>
-                  <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} />
-                  <FontAwesomeIcon icon={faChevronRight} className={styles.artistChevrons} style={{marginRight: "4px"}}/>
-                  <Link href="/artists">ALL ARTISTS</Link>
-                  <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} style={{marginLeft: "4px"}}/>
-                  <FontAwesomeIcon icon={faChevronLeft} className={styles.artistChevrons} />
-                </h5> */}
                 <p id={globalStyles.artistP}>{artst.bio}</p>
                 <div className={globalStyles.relevantLinks} id={styles.socialLinks}>
                   {mapRelevantLinks(artst)}
@@ -67,7 +60,6 @@ export async function getStaticPaths(){
   connectDb()
 
   const artists = await Artist.find()
-  // console.log("HERE ARE YOUR ARTISTS " + artists)
 
   const paths = artists.map(artst => ({
     params: { artist: artst.url }
