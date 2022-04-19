@@ -4,7 +4,7 @@ import Order from '../../models/Order'
 import calculateCartTotal from '../../utils/calculateCartTotal'
 
 export default async (req, res) => {
-    const { currentUserEmail } = req.body
+    const { currentUserEmail, orderID } = req.body
 
     try{
         // Verify and get user id from token
@@ -23,6 +23,7 @@ export default async (req, res) => {
             email: currentUserEmail,
             total: cartTotal, 
             products: cart.products,
+            orderID: orderID,
             shipped: false
         }).save()
         // Clear products in cart

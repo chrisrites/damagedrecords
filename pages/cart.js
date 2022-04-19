@@ -27,14 +27,14 @@ function Cart({ products, user }) {
     setCartProducts(response.data)
   }
 
-  async function handleCheckout(currentUserEmail) {
+  async function handleCheckout(currentUserEmail, orderID) {
     let orderProcessed = false
 
     try{
       setLoading(true)
       const url = `${baseUrl}/api/checkout`
       const token = cookie.get('token')
-      const payload = { currentUserEmail }
+      const payload = { currentUserEmail, orderID }
       const headers = { headers: { Authorization: token } }
       await axios.post(url, payload, headers)
       setSuccess(true)

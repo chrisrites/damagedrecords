@@ -1,15 +1,9 @@
 import mongoose from 'mongoose'
-import shortid from 'shortid'
 
 // ObjectId is a special kind of data type that mongodb uses to essentially link documents together.  Like a user and their shopping cart document for example
 const { ObjectId, Number } = mongoose.Schema.Types
 
 const OrderSchema = new mongoose.Schema({
-    orderNumber: {
-        type: String,
-        unique: true,
-        default: shortid.generate
-    },
     user: {
         type: ObjectId,
         // We need to provide a reference to what model are we referencing with this ObjectId
@@ -43,6 +37,9 @@ const OrderSchema = new mongoose.Schema({
     total: {
         type: Number,
         required: true
+    },
+    orderID: {
+        type: String
     },
     shipped: {
         type: Boolean,

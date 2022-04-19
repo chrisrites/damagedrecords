@@ -47,7 +47,7 @@ function AccountOrders({ orders }) {
               </List>
               <span className={globalStyles.orderTotal}>Total: ${order.total}</span>
             </List.Header>
-            <h4 className={globalStyles.orderNumber}>Order #{order.orderNumber.toUpperCase()}</h4>
+            <h4 className={globalStyles.orderNumber}>Order ID: {order.orderID}</h4>
             <div className={globalStyles.shippingContainer}> 
               <div className={globalStyles.shippingContainerInline}> 
                 <h4 className={globalStyles.shippingStatusLabel}>Shipping Status:</h4>
