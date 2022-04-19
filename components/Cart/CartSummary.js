@@ -37,7 +37,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
             return actions.order.create({
                 purchase_units: [
                     {
-                        description: `Melted Wax Records order ID: ${data.orderID}`,
+                        description: "Melted Wax Records order",
                         amount: {
                             // currency_code: "CAD",
                             value: cartAmount
@@ -48,6 +48,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
         }}
         onApprove = {async (data, actions) => {
           handleCheckout(currentUserEmail, data.orderID)
+          return actions.order.capture()
         }}
         onCancel = {() => {
           // Display cancel message modal or redirect user to cancel page or even back to cart
