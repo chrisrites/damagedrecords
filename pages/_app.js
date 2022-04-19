@@ -65,8 +65,8 @@ class MyApp extends App {
     return (
       <PayPalScriptProvider
         options={{ 
-          // "client-id": process.env.PAYPAL_CLIENT_ID,
-          "client-id": "AaHdCaMRG8nztlMTHgWLajyd5EHAiS_FpfPmSNE3BhQfCKcj5tmjljLW8ovVIJom0Kf8NkxJcFscWqEO",
+          "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+          // "client-id": "AaHdCaMRG8nztlMTHgWLajyd5EHAiS_FpfPmSNE3BhQfCKcj5tmjljLW8ovVIJom0Kf8NkxJcFscWqEO",
           "currency": "CAD"
         }}
       >
