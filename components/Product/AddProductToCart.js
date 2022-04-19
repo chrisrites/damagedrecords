@@ -6,7 +6,7 @@ import baseUrl from '../../utils/baseUrl'
 import catchErrors from '../../utils/catchErrors'
 import cookie from 'js-cookie'
 
-function AddProductToCart({ user, productId, size }) {
+function AddProductToCart({ user, productId, size, price, artist }) {
   const [quantity, setQuantity] = React.useState(1)
   const [loading, setLoading] = React.useState(false)
   const [success, setSuccess] = React.useState(false)
@@ -30,7 +30,7 @@ function AddProductToCart({ user, productId, size }) {
     try {
       setLoading(true)
       const url = `${baseUrl}/api/cart`
-      const payload = { quantity, productId, size }
+      const payload = { quantity, productId, size, price, artist }
       const token = cookie.get('token')
       const headers = { headers: { Authorization: token } }
       await axios.put(url, payload, headers)

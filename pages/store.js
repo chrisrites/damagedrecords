@@ -7,7 +7,7 @@ import baseUrl from '../utils/baseUrl';
 import globalStyles from '../static/styles/global.module.scss';
 import styles from '../static/styles/store.module.scss';
 
-function Store({ products, totalPages }) {
+function Store({ products, totalPages, artistsList }) {
     const [currentProducts, setCurrentProducts] = useState([]);
     const [currentTotalPages, setCurrentTotalPages] = useState(0);
 
@@ -23,8 +23,6 @@ function Store({ products, totalPages }) {
     async function filterProducts(filter){
         const page = 1
         const size = filter ? 99 : 12;
-        
-        
         // fetch data on the server
         const url = `${baseUrl}/api/products`
         const payload = { params: { page, size, filter } }  
@@ -45,10 +43,10 @@ function Store({ products, totalPages }) {
                     <h2 className={globalStyles.newsh2} id={styles.storeh2}>Melted Store</h2>
                     <div id={styles.filterContainer}>   
                         <select id={styles.filterSelect} name="filter" onChange={(e) => filterProducts(e.target.value)}>
-                            <option className={styles.filterOption} value="">All Artists</option>  
-                            <option className={styles.filterOption} value="aciidz">Aciidz</option>
-                            <option className={styles.filterOption} value="choirz">Choirz</option>
-                            <option className={styles.filterOption} value="zuku">ZUKU</option>
+                            <option key="fdVSf$%^7Hfg" className={styles.filterOption} value="">All Artists</option>  
+                            {artistsList.map((artist, idx) => (
+                                <option key={idx} className={styles.filterOption} value={artist}>{artist}</option>
+                            ))}
                         </select>
                     </div>
                     <ProductList products={currentProducts} />

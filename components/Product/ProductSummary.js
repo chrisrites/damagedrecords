@@ -5,7 +5,7 @@ import AddProductToCart from './AddProductToCart';
 import globalStyles from '../../static/styles/global.module.scss';
 import styles from '../../static/styles/product.module.scss';
 
-function ProductSummary({ name, mediaUrl, _id, price, sku, user, size }) {
+function ProductSummary({ name, mediaUrl, _id, price, sku, user, size, artist }) {
   const [selectSize, setSelectSize] = useState(size ? size[0] : '')
 
   const handleSelectSizeChange = (e) => {
@@ -34,7 +34,7 @@ function ProductSummary({ name, mediaUrl, _id, price, sku, user, size }) {
                 <br/>
               </>
             }
-            <AddProductToCart user={user} productId={_id} size={selectSize ? selectSize : undefined} />
+            <AddProductToCart user={user} productId={_id} size={selectSize ? selectSize : undefined} price={price} artist={artist} />
           </Item.Extra>
           <Item.Extra>
           {user && 

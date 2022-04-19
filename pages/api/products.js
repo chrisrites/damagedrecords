@@ -5,6 +5,10 @@ connectDb()
 
 export default async (req, res) => {
     const { page, size, filter } = req.query
+
+    // get all artist names for Store artist select box
+    const artistsList = await Product.distinct("artist")
+    
     // Convert query string values to numbers
     const pageNum = Number(page)
     const pageSize = Number(size)
@@ -31,5 +35,5 @@ export default async (req, res) => {
         products = await Product.find().skip(skips).limit(pageSize)
       
     }
-    res.status(200).json({ props: { products, totalPages }})
+    res.status(200).json({ props: { products, totalPages, artistsList }})
 }

@@ -44,7 +44,7 @@ async function handleGetRequest(req, res) {
 }
 
 async function handlePutRequest(req, res) {
-    const { quantity, productId, size } = req.body
+    const { quantity, productId, size, price, artist } = req.body
     if (!("authorization" in req.headers)) {
         return res.status(401).send("No authorization token")
     }
@@ -64,7 +64,7 @@ async function handlePutRequest(req, res) {
             )
         } else {
             // If not, add new product with given quantity
-            const newProduct = { quantity, product: productId, size }
+            const newProduct = { quantity, product: productId, size, price, artist }
             await Cart.findOneAndUpdate(
                 { _id: cart._id },
                 // Use addToSet instead of push to add an element only once and ensure it's unique

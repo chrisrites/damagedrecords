@@ -118,7 +118,7 @@ function Admin({ user, orders}) {
               <Form.Field 
                 control={Input}
                 name="artist"
-                label="Artist *Must match Artist url"
+                label="Artist *Should match Artist name in db"
                 placeholder="Artist"
                 value={product.artist}
                 onChange={handleChange}

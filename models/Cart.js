@@ -21,6 +21,12 @@ const CartSchema = new mongoose.Schema({
             },
             size: {
                 type: String
+            },
+            price: {
+                type: Number
+            },
+            artist: {
+                type: String
             }
         }
     ]
