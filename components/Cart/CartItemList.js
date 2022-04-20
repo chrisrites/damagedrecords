@@ -35,7 +35,7 @@ function CartItemList({ products, user, handleRemoveFromCart, success }) {
       <Message 
         success
         header="Success!"
-        content="Your order and payment has been accepted"
+        content="Your order and payment have been processed.  You will receive an email confirmation.  Please check your spam folder if you don't see it"
         icon="star outline"
       />
     )

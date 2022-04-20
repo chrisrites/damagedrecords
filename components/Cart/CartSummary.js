@@ -6,7 +6,7 @@ import globalStyles from '../../static/styles/global.module.scss'
 import cartStyles from '../../static/styles/cart.module.scss'
 import { PayPalButtons } from '@paypal/react-paypal-js'
 
-function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
+function CartSummary({ products, handleCheckout, success, currentUserEmail, orderNumber, setOrderNumber }) {
   const [cartAmount, setCartAmount] = useState(0)
   const [isCartEmpty, setIsCartEmpty] = useState(false)
 
@@ -14,6 +14,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
     const { cartTotal } = calculateCartTotal(products)
     setCartAmount(cartTotal)
     setIsCartEmpty(products.length === 0)
+    setOrderNumber(Date.now())
   }, [products])
 
   return <>
@@ -37,7 +38,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
             return actions.order.create({
                 purchase_units: [
                     {
-                        description: "Melted Wax Records order",
+                        description: "Melted Wax Records Order#: " + orderNumber,
                         amount: {
                             // currency_code: "CAD",
                             value: cartAmount
@@ -47,15 +48,17 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail }) {
             })
         }}
         onApprove = {async (data, actions) => {
-          handleCheckout(currentUserEmail, data.orderID)
-          return actions.order.capture()
+          return actions.order.capture().then((details) => {
+            // See what's in 'details', or see what more options actions.order.create has.  
+            // Need to connect MWR order and paypal orders more clearly
+            handleCheckout(currentUserEmail, orderNumber)
+          });
         }}
         onCancel = {() => {
           // Display cancel message modal or redirect user to cancel page or even back to cart
           alert("The PayPal transaction has been cancelled")
         }}
         onError = {(err) => {
-          // setError(err)
           console.error("Error: ", err)
         }}
         // onClick = {() => {

@@ -15,6 +15,7 @@ function Cart({ products, user }) {
   const [cartProducts, setCartProducts] = React.useState(products)
   const [success, setSuccess] = React.useState(false)
   const [loading, setLoading] = React.useState(false)
+  const [orderNumber, setOrderNumber] = React.useState()
 
   async function handleRemoveFromCart(productId){
     const url = `${baseUrl}/api/cart`
@@ -45,9 +46,19 @@ function Cart({ products, user }) {
       setLoading(false)
     }
     if(orderProcessed) {
+      // Email order notificationn to MWR
       try{
         const url = `${baseUrl}/api/emailNotification`
-        await axios.post(url)
+        const payload = { orderNumber }
+        await axios.post(url, payload)
+      } catch(error){
+        catchErrors(error, window.alert)
+      }
+      // Email order connfirmation to Customer
+      try{
+        const url = `${baseUrl}/api/emailCustomer`
+        const payload = { orderNumber, user }
+        await axios.post(url, payload)
       } catch(error){
         catchErrors(error, window.alert)
       }
@@ -60,7 +71,7 @@ function Cart({ products, user }) {
         <div className={globalStyles.contentContainer + " " + styles.cartContainer + " container"}>
           <Segment loading={loading}>
             <CartItemList handleRemoveFromCart={handleRemoveFromCart} user={user} products={cartProducts} success={success}/>
-            <CartSummary products={cartProducts} handleCheckout={handleCheckout} currentUserEmail={user.email} success={success} />
+            <CartSummary products={cartProducts} handleCheckout={handleCheckout} currentUserEmail={user.email} success={success} orderNumber={orderNumber} setOrderNumber={setOrderNumber} />
           </Segment>
         </div>
       </div>
