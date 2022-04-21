@@ -45,7 +45,9 @@ function AccountOrders({ orders }) {
                   </List.Item>
                 ))}
               </List>
-              <span className={globalStyles.orderTotal}>Total: ${order.total}</span>
+              <span className={globalStyles.orderTotal}>Sub Total: ${order.cartAmount.toFixed(2)}</span>
+              <span className={globalStyles.orderTotal}>Shipping: ${order.shippingAmount.toFixed(2)}</span>
+              <span className={globalStyles.orderTotal} style={{marginBottom: "16px"}}>Total: ${order.total.toFixed(2)} (CAD)</span>
             </List.Header>
             <h4 className={globalStyles.orderNumber}>Order #: {order.orderID}</h4>
             <div className={globalStyles.shippingContainer}> 

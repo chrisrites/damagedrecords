@@ -3,7 +3,6 @@
 @use 'breakpoints';
 
 // GLOBALS
-
 .heading2 {
     font-family: globals.$heading2Font;
     font-size: globals.$heading2Size;
@@ -41,9 +40,10 @@
 .orderTotal {
     display: flex;
     justify-content: right;
-    padding: 8px;
+    padding: 0 8px;
     color: colours.$black;
     margin-right: 20px;
+    font-size: 15px;
 }
 
 
@@ -54,7 +54,20 @@
 }
 
 
-// Cart Summary, View Order Btn
+// Cart Summary
+
+.cartTotals {
+    color: colours.$black;
+    // margin-right: 20px;
+    font-size: 15px;
+    margin: 0 0 4px 0;
+    padding: 0;
+}
+
+#cartTotal {
+    margin-top: 8px;
+}
+
 .viewOrderBtn {
     display: block;
     float: right;

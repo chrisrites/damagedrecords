@@ -38,6 +38,14 @@ const OrderSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    cartAmount: {
+        type: Number,
+        required: true
+    },
+    shippingAmount: {
+        type: Number,
+        required: true
+    },
     orderID: {
         type: String
     },

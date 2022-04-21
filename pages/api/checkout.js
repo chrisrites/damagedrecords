@@ -1,10 +1,10 @@
 import jwt from 'jsonwebtoken'
 import Cart from '../../models/Cart'
 import Order from '../../models/Order'
-import calculateCartTotal from '../../utils/calculateCartTotal'
+// import calculateCartTotal from '../../utils/calculateCartTotal'
 
 export default async (req, res) => {
-    const { currentUserEmail, orderID } = req.body
+    const { currentUserEmail, orderID, totalAmount, cartAmount, shippingAmount } = req.body
 
     try{
         // Verify and get user id from token
@@ -15,13 +15,16 @@ export default async (req, res) => {
             model: "Product"
         })
         // Calculate cart totals again from cart products
-        const { cartTotal } = calculateCartTotal(cart.products)
+        // const { cartTotal } = calculateCartTotal(cart.products)
+
         // Add order data to database
         await new Order({
             user: userId,
             // email: paymentData.email,
             email: currentUserEmail,
-            total: cartTotal, 
+            total: totalAmount, 
+            cartAmount: cartAmount,
+            shippingAmount: shippingAmount,
             products: cart.products,
             orderID: orderID,
             shipped: false
