@@ -1,21 +1,82 @@
+import { useState } from 'react'
 import axios from 'axios';
-import { Header, Accordion, Label, Segment, Icon, List, Image } from 'semantic-ui-react';
-import { useRouter } from 'next/router';
+import { Form, Header, Input, Button, Message, Accordion, Label, Segment, Icon, List, Image } from 'semantic-ui-react';
+import catchErrors from '../../utils/catchErrors';
 import baseURL from '../../utils/baseUrl';
 import formatDate from '../../utils/formatDate';
 import globalStyles from '../../static/styles/global.module.scss';
 
 function AccountOrders({ orders }) {
-  const router = useRouter()
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
+  const [orderShipped, setOrderShipped] = useState([])
+  const [trackingNumbers, setTrackingNumbers] = useState([])
+  const [numberPosted, setNumberPosted] = useState([])
 
-  async function toggleShipping(id) { 
+  async function toggleShipping(id, idx) { 
     const url = `${baseURL}/api/adminOrders`
     const payload = { id }
     await axios.put(url, payload)
+
+    let newArr = [...orderShipped]
+    newArr[idx] = true
+
+    setOrderShipped(newArr)
   }; 
 
+  function handleChange(event){
+    const { value, id } = event.target
+    // copy state array into new array
+    let newArr = [...trackingNumbers]; 
+    newArr[id] = value; 
+  
+    console.log("Tracking Number:" + newArr[id])
+    console.log("Index: " + id)
+    for(let i=0;i < newArr.length; i++){
+      console.log("Array Index: " + i)
+    }
+    setTrackingNumbers(newArr);
+  }
+
+  function orderHasShipped(idx) {
+    let newArr = [...orderShipped]
+    if(newArr[idx]) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  async function postTracking(orderId, idx, email, orderNumber){
+    const newArray = [...trackingNumbers];
+    const trackingNumber = newArray[idx]
+    try{
+      setLoading(true)
+      setError('')
+      const url = `${baseURL}/api/postTrackingNumber`
+      const payload = { orderId, trackingNumber, email, orderNumber }
+      await axios.put(url, payload)
+    } catch(error){
+      catchErrors(error, setError)
+    }finally {
+      setLoading(false)
+      let newNumberPosted = [...numberPosted];
+      newNumberPosted[idx] = true
+      setNumberPosted(newNumberPosted)
+    } 
+  }
+
+  function trackingNumberPosted(idx) {
+    let newArr = [...numberPosted]
+    if(newArr[idx]) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   function mapOrdersToPanels(orders) {
-    return orders.map(order => ({
+    return orders.map((order, idx) => ({
       key: order._id,
       title: {
         content: <Label color="blue" content={formatDate(order.createdAt)} />
@@ -60,9 +121,43 @@ function AccountOrders({ orders }) {
             <div className={globalStyles.shippingContainer}>
                 <div className={globalStyles.shippingContainerInline}>
                     <h4 className={globalStyles.shippingStatusLabel}>Mark as shipped?</h4>
-                    <input className={globalStyles.shippedCheckBox} type="checkbox" name="shipped" onChange={() => toggleShipping(order._id)}></input>
+                    <input className={globalStyles.shippedCheckBox} type="checkbox" name="shipped" onChange={() => toggleShipping(order._id, idx)} disabled={orderHasShipped(idx)} ></input><br/>
                 </div>
             </div>
+            {orderHasShipped(idx) && 
+              <div className={globalStyles.trackingNumberContainer}>
+                <Form 
+                  loading={loading} 
+                  error={Boolean(error)} 
+                  onSubmit={() => postTracking(order._id, idx, order.email, order.orderID)}
+                >
+                  <Message 
+                    error
+                    header="ERROR"
+                    content={error}
+                  />
+                  <Form.Group width="equal">
+                    <Form.Field 
+                      control={Input}
+                      label="Tracking Number"
+                      placeholder=""
+                      id={idx}
+                      onChange={handleChange}
+                      disabled={trackingNumberPosted(idx) || loading}
+                    />
+                  </Form.Group>
+                  <Form.Field 
+                    control={Button}
+                    disabled={trackingNumberPosted(idx) || loading}
+                    color="blue"
+                    icon="send"
+                    content="Submit"
+                    type="submit"
+                    style={{marginTop: "4px"}}
+                  />
+                </Form>
+              </div>
+            }
           </>
         )
       }

@@ -36,7 +36,7 @@ export default async (req, res) => {
             subject: 'Password Changed',
             name: 'Melted Wax Records',
             // text: 'You have a new order!  Please ship asap and mark order as shipped',
-            html: '<h1>Password changed confirmation</h1><p>Your password has been changed to: ' + newPassword + '<br/><br/><p>Once logged in you can change your password in the Account page<br/><br/></p><img src="https://res.cloudinary.com/chrischartranddevelopment/image/upload/c_scale,w_228/v1647202668/epr6uehfm8cwacygsbuf.png"></img>'
+            html: '<h3>Password changed confirmation</h3><p>Your password has been changed to: ' + newPassword + '<br/><br/><p>Once logged back in you can change your password in the Account page<br/><br/></p><img src="https://res.cloudinary.com/chrischartranddevelopment/image/upload/c_scale,w_228/v1647202668/epr6uehfm8cwacygsbuf.png"></img>'
         };
         await sgMail.send(msg);
         res.status(200).send("Password changed successfully")

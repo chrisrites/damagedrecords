@@ -42,6 +42,6 @@ async function handleMarkShipped (req, res) {
         )
         res.status(200).json("Marked as shipped")
     } catch(error) {
-        res.status(403).send("Please login again")
+        res.status(403).send("Error marking as shipped")
     }
 }

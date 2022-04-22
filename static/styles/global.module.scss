@@ -46,7 +46,6 @@
     font-size: 15px;
 }
 
-
 .changePasswordContainer {
     margin-top: 40px !important;
     margin-left: 0 !important;
@@ -103,6 +102,18 @@
             display: inline;
         }
         // Admin
+    }   
+}
+
+.trackingNumberContainer {
+    justify-content: right;
+    margin-right: 27px;
+    display: flex;
+    
+
+    form {
+        margin-top: 8px;
+        text-align: right;
     }
 }
 // END Account/Admin

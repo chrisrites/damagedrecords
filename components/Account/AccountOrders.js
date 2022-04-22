@@ -60,6 +60,18 @@ function AccountOrders({ orders }) {
                 }
               </div>
             </div>
+            {order.shipped && 
+              <div className={globalStyles.shippingContainer} style={{marginTop: "6px"}}> 
+                <div className={globalStyles.shippingContainerInline}>
+                  <h4 className={globalStyles.shippingStatusLabel}>Tracking Number: </h4>
+                  <h5 className={globalStyles.shippingStatus} style={{color: 'black'}}>
+                    <a style={{color: '#ff206e'}} href={`https://www.canadapost-postescanada.ca/track-reperage/en#/search?searchFor=${order.trackingNumber}`} target="_blank">
+                      {order.trackingNumber}
+                    </a>
+                  </h5>
+                </div>
+              </div>
+            }
           </>
         )
       }

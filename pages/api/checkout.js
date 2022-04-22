@@ -27,7 +27,8 @@ export default async (req, res) => {
             shippingAmount: shippingAmount,
             products: cart.products,
             orderID: orderID,
-            shipped: false
+            shipped: false,
+            trackingNumber: ""
         }).save()
         // Clear products in cart
         await Cart.findOneAndUpdate(

@@ -1,5 +1,4 @@
 import sgMail from '@sendgrid/mail'
-// import { NextApiRequest, NextApiResponse } from 'next';
 
 sgMail.setApiKey(process.env.EMAIL_API_KEY);
 
@@ -11,8 +10,7 @@ export default async (req, res) => {
         from: 'info@meltedwaxrecords.com',
         subject: 'New Order Placed',
         name: 'Melted Wax Records',
-        // text: 'You have a new order!  Please ship asap and mark order as shipped',
-        html: '<h1>Order #: ' + orderNumber +  '</h1></img><p>Please ship asap and mark order as shipped</p>'
+        html: '<h3>Order #: ' + orderNumber +  '</h3></img><p>Please ship asap and mark order as shipped</p>'
     };
 
     // Send order notification email
