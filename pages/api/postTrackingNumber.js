@@ -20,7 +20,7 @@ export default async (req, res) => {
             from: 'info@meltedwaxrecords.com',
             subject: 'Your Melted Wax Order Has Been Shipped',
             name: 'Melted Wax Records',
-            html: '<h3>Order #: ' + orderNumber +  '</h3><p>Hello again. Your order has been shipped!<br/>You can track your order at Canada Post by clicking <a href="https://www.canadapost-postescanada.ca/track-reperage/en#/search?searchFor=' + trackingNumber + '" target="_blank">here.</a><br/>Your tracking number is: ' + trackingNumber + '.</p><p>Thanks again for your order and for supporting independent music!</p><img src="https://res.cloudinary.com/chrischartranddevelopment/image/upload/v1647202668/epr6uehfm8cwacygsbuf.png" style="max-width: 200px;" />'
+            html: '<img src="https://res.cloudinary.com/chrischartranddevelopment/image/upload/v1647202668/epr6uehfm8cwacygsbuf.png" style="max-width: 200px;" /><h3>Order #: ' + orderNumber +  '</h3><p>Hello again. Your order has been shipped!<br/>You can track your order at Canada Post by clicking <a href="https://www.canadapost-postescanada.ca/track-reperage/en#/search?searchFor=' + trackingNumber + '" target="_blank">here.</a><br/>Your tracking number is: ' + trackingNumber + '.</p><p>Thanks again for your order and for supporting independent music!</p>'
         };
 
         // Send order notification email

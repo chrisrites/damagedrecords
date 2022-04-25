@@ -88,9 +88,7 @@ function CartSummary({ products, handleCheckout, success, currentUserEmail, orde
         onError = {(err) => {
           console.error("Error: ", err)
         }}
-        // onClick = {() => {
-        //   console.log("PAYPAL_ENV_VAR: " + process.env.REACT_APP_PAYPAL_CLIENT_ID)
-        // }}
+        // onClick = {() => {}}
       />
   </>;
 }

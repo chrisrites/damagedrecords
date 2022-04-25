@@ -29,12 +29,6 @@ function AccountOrders({ orders }) {
     // copy state array into new array
     let newArr = [...trackingNumbers]; 
     newArr[id] = value; 
-  
-    console.log("Tracking Number:" + newArr[id])
-    console.log("Index: " + id)
-    for(let i=0;i < newArr.length; i++){
-      console.log("Array Index: " + i)
-    }
     setTrackingNumbers(newArr);
   }
 
