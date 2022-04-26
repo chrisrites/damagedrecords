@@ -10,7 +10,7 @@ export default async (req, res) => {
         from: 'info@meltedwaxrecords.com',
         subject: 'New Order Placed',
         name: 'Melted Wax Records',
-        html: '<h3>Order #: ' + orderNumber +  '</h3></img><p>Please ship asap and mark order as shipped</p>'
+        html: '<h4>Order #: ' + orderNumber +  '</h4><p>Please ship asap and mark order as shipped</p>'
     };
 
     // Send order notification email
