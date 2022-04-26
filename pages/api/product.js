@@ -29,9 +29,9 @@ async function handleGetRequest(req, res){
 }
 
 async function handlePostRequest(req, res){
-    const { name, price, description, mediaUrl, artist } = req.body
+    const { name, price, description, mediaUrl, quantity, artist } = req.body
     try{
-        if(!name || !price || !description || !mediaUrl || !artist) {
+        if(!name || !price || !description || !mediaUrl || !quantity ||  !artist) {
             // User hasn't provided the necessary info to make the request.  IE not all product details have been provided to create a new product entry
             return res.status(422).send("Product missing one or more fields")   
         }
@@ -40,6 +40,7 @@ async function handlePostRequest(req, res){
             price, 
             description,
             mediaUrl,
+            quantity, 
             artist
         }).save()
         // 201 status for when a resource is successfully created

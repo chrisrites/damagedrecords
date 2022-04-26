@@ -54,7 +54,7 @@ function Cart({ products, user }) {
       } catch(error){
         catchErrors(error, window.alert)
       }
-      // Email order connfirmation to Customer
+      // Email order confirmation to Customer
       try{
         const url = `${baseUrl}/api/emailCustomer`
         const payload = { orderNumber, user }

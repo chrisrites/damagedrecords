@@ -6,8 +6,8 @@ import baseUrl from '../../utils/baseUrl'
 import catchErrors from '../../utils/catchErrors'
 import cookie from 'js-cookie'
 
-function AddProductToCart({ user, productId, size, price, artist }) {
-  const [quantity, setQuantity] = React.useState(1)
+function AddProductToCart({ user, productId, size, price, artist, quantity }) {
+  const [cartQuantity, setCartQuantity] = React.useState(1)
   const [loading, setLoading] = React.useState(false)
   const [success, setSuccess] = React.useState(false)
   const router = useRouter()
@@ -30,11 +30,24 @@ function AddProductToCart({ user, productId, size, price, artist }) {
     try {
       setLoading(true)
       const url = `${baseUrl}/api/cart`
-      const payload = { quantity, productId, size, price, artist }
+      // cartQuantity is what the user has currently selected, quantity is the available quantity of that product
+      const payload = { cartQuantity, productId, size, price, artist, quantity }
       const token = cookie.get('token')
       const headers = { headers: { Authorization: token } }
-      await axios.put(url, payload, headers)
-      setSuccess(true)
+      const response = await axios.put(url, payload, headers)
+      // Check what's in our response to see if we have enough product for customer to add to basket
+      const data = response.data
+      switch(data.msg) {
+        // OOS = Out of stock.  Not enough to complete the add to basket request
+        case "OOS":
+          alert("We currently don't have enough stock to add that many to your basket. We only have " + data.quantity + " of these left :(")
+          break;
+        case "Cart updated":
+          setSuccess(true)
+          break;
+        default:
+          break;
+      }
     } catch(error) {
       catchErrors(error, window.alert)
     } finally {
@@ -47,8 +60,8 @@ function AddProductToCart({ user, productId, size, price, artist }) {
       type="number" 
       min="1" 
       placeholder="Quantity" 
-      value={quantity}
-      onChange={event => setQuantity(Number(event.target.value))}
+      value={cartQuantity}
+      onChange={event => setCartQuantity(Number(event.target.value))}
       action={
         user && success ? {
           color: 'blue',
@@ -61,7 +74,7 @@ function AddProductToCart({ user, productId, size, price, artist }) {
         content: "Add To Cart",
         icon: "plus cart",
         loading,
-        disabled: loading,
+        disabled: loading || !cartQuantity,
         onClick: handleAddProductToCart
       } : {
         color: 'blue',

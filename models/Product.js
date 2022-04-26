@@ -28,6 +28,14 @@ const ProductSchema  = new mongoose.Schema({
     artist: {
         type: String,
         required: true
+    },
+    discontinued: {
+        type: Boolean,
+        default: false
+    },
+    quantity: {
+        type: Number,
+        default: 0
     }
 })
 

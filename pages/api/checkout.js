@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken'
 import Cart from '../../models/Cart'
 import Order from '../../models/Order'
+import Product from '../../models/Product'
 // import calculateCartTotal from '../../utils/calculateCartTotal'
 
 export default async (req, res) => {
@@ -30,6 +31,13 @@ export default async (req, res) => {
             shipped: false,
             trackingNumber: ""
         }).save()
+        
+        // Decrement the product stock from this purchase
+        // Call an async function since we're doing await calls within a map function
+        cart.products.map(prdct => {
+            handleDecrementProduct(prdct)
+        })
+
         // Clear products in cart
         await Cart.findOneAndUpdate(
             { _id: cart._id },
@@ -42,4 +50,12 @@ export default async (req, res) => {
         console.error(error)
         res.status(500).send('Error processing charge')
     }
+}
+
+async function handleDecrementProduct(prdct) {
+    // Decrement products from db
+    await Product.findOneAndUpdate(
+        { _id: prdct.product },
+        { $inc: { quantity: -prdct.quantity } }
+    )
 }

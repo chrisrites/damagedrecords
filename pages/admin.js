@@ -12,6 +12,7 @@ const INITIAL_PRODUCT = {
   name: "",
   price: "",
   media: "",
+  quantity: "",
   description: "",
   artist: ""
 }
@@ -62,8 +63,8 @@ function Admin({ user, orders}) {
       setError('')
       const mediaUrl = await handleImageUpload()
       const url = `${baseUrl}/api/product`
-      const { name, price, description, artist } = product
-      const payload = { name, price, description, mediaUrl, artist }
+      const { name, price, description, quantity, artist } = product
+      const payload = { name, price, description, mediaUrl, quantity, artist }
       const response = await axios.post(url, payload)
       setProduct(INITIAL_PRODUCT)
       setSuccess(true)
@@ -124,7 +125,8 @@ function Admin({ user, orders}) {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Field 
+            <Form.Group>
+              <Form.Field 
                 control={Input}
                 name="media"
                 type="file"
@@ -134,6 +136,15 @@ function Admin({ user, orders}) {
                 width="6"
                 onChange={handleChange}
               />
+              <Form.Field 
+                control={Input}
+                name="quantity"
+                label="Quantity"
+                placeholder="0"
+                value={product.quantity}
+                onChange={handleChange}
+              />
+            </Form.Group>
             <Image src={mediaPreview} rounded centered size="small" />
             <Form.Field 
               control={TextArea}
