@@ -51,7 +51,8 @@ function Header({ user, toggleOverlay }) {
     <div className={styles.headerBody} style={{ top: headerScrollPos }}>
       <div id={styles.headerContainer} style={{ background: transparentNav }}>
         <nav className={styles.navBar}>
-          <div id={styles.navBrand} className={isActive('/')} >
+          {/* <div id={styles.navBrand} className={isActive('/')} > */}
+          <div id={styles.navBrand} >
             <Link href="/">
               <div id={styles.brandAlign}>
                 <div id={styles.navBrandContent}>
@@ -111,7 +112,8 @@ function Header({ user, toggleOverlay }) {
                   </div>
                 </Link>
               </li>
-              <li className={`${styles.navLi} ${isActive('/')}`} onClick={handleLogout}>
+              {/* <li className={`${styles.navLi} ${isActive('/')}`} onClick={handleLogout}> */}
+              <li className={styles.navLi} onClick={handleLogout}>
                 <Link href="/">
                   <div className={styles.navItems}>
                     {/* <Icon
