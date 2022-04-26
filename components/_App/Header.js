@@ -51,7 +51,6 @@ function Header({ user, toggleOverlay }) {
     <div className={styles.headerBody} style={{ top: headerScrollPos }}>
       <div id={styles.headerContainer} style={{ background: transparentNav }}>
         <nav className={styles.navBar}>
-          {/* <div id={styles.navBrand} className={isActive('/')} > */}
           <div id={styles.navBrand} >
             <Link href="/">
               <div id={styles.brandAlign}>
@@ -66,11 +65,6 @@ function Header({ user, toggleOverlay }) {
             <li className={`${styles.navLi} ${isActive('/store')}`}>
               <Link href="/store">
                 <div className={styles.navItems}>
-                  {/* <Icon
-                    className={styles.semUINavIcons}
-                    name="cart"
-                  /> */}
-                  {/* <FontAwesomeIcon icon={faStore} className={styles.faNavIcons} /> */}
                   <span className={`${styles.navTitles} ${navItemColour}`}>Store</span>
                 </div>
               </Link>
@@ -80,10 +74,6 @@ function Header({ user, toggleOverlay }) {
               <li className={`${styles.navLi} ${isActive('/admin')}`}>
                 <Link href="/admin">
                   <div className={styles.navItems}>
-                    {/* <Icon
-                      className={styles.semUINavIcons}
-                      name="add square"
-                    /> */}
                     <span className={`${styles.navTitles} ${navItemColour}`}>Admin</span>
                   </div>
                 </Link>
@@ -93,10 +83,6 @@ function Header({ user, toggleOverlay }) {
               <li className={`${styles.navLi} ${isActive('/cart')}`}>
                 <Link href="/cart">
                   <div className={styles.navItems}>
-                    {/* <Icon
-                      className={styles.semUINavIcons}
-                      name="cart"
-                    /> */}
                     <span className={`${styles.navTitles} ${navItemColour}`}>Cart</span>
                   </div>
                 </Link>
@@ -104,22 +90,13 @@ function Header({ user, toggleOverlay }) {
               <li className={`${styles.navLi} ${isActive('/account')}`}>
                 <Link href="/account">
                   <div className={styles.navItems}>
-                    {/* <Icon
-                      className={styles.semUINavIcons}
-                      name="user"
-                    /> */}
                     <span className={`${styles.navTitles} ${navItemColour}`}>Account</span>
                   </div>
                 </Link>
               </li>
-              {/* <li className={`${styles.navLi} ${isActive('/')}`} onClick={handleLogout}> */}
               <li className={styles.navLi} onClick={handleLogout}>
                 <Link href="/">
                   <div className={styles.navItems}>
-                    {/* <Icon
-                      className={styles.semUINavIcons}
-                      name="sign out"
-                    /> */}
                     <span className={`${styles.navTitles} ${navItemColour}`}>Logout</span>
                   </div>
                 </Link>
@@ -130,10 +107,6 @@ function Header({ user, toggleOverlay }) {
                 <li className={`${styles.navLi} ${isActive('/login')}`}>
                   <Link href="/login">
                     <div className={styles.navItems}>
-                      {/* <Icon
-                        className={styles.semUINavIcons}
-                        name="sign in"
-                      /> */}
                       <span className={`${styles.navTitles} ${navItemColour}`}>Login</span>
                     </div>
                   </Link>
