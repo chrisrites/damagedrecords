@@ -35,7 +35,7 @@ function ProductSummary({ name, mediaUrl, _id, price, sku, user, size, artist, q
               </>
             }
             <AddProductToCart user={user} productId={_id} size={selectSize ? selectSize : undefined} price={price} artist={artist} quantity={quantity} />
-            {quantity < 10 &&
+            {quantity < 11 &&
               <p style={{color: "red"}}>
                 Only {quantity} left in stock
               </p>

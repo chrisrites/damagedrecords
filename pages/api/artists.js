@@ -6,7 +6,8 @@ connectDb()
 export default async (req, res) => {
    
    try {
-        const artists = await Artist.find()
+        // .sort to sort by artist name
+        const artists = await Artist.find().sort({ name: 1 })
         res.status(200).json({ props: { artists }})
     } catch (error) {
         console.error(error)
