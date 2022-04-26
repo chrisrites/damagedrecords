@@ -74,7 +74,7 @@ function AddProductToCart({ user, productId, size, price, artist, quantity }) {
         content: "Add To Cart",
         icon: "plus cart",
         loading,
-        disabled: loading || !cartQuantity,
+        disabled: loading,
         onClick: handleAddProductToCart
       } : {
         color: 'blue',

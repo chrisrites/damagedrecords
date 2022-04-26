@@ -40,6 +40,7 @@ function Cart({ products, user }) {
       await axios.post(url, payload, headers)
       setSuccess(true)
       orderProcessed = true;
+      window.scrollTo(0, 0)
     } catch(error){
       catchErrors(error, window.alert)
     }finally{
