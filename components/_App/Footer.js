@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faFacebookF, faFacebookSquare, faInstagram, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { Image } from 'semantic-ui-react';
 import globalStyles from '../../static/styles/global.module.scss';
 import styles from '../../static/styles/footer.module.scss';
 
@@ -12,10 +13,7 @@ function Footer() {
                     <div id={styles.footerRow} className="row">
                         <div className={`col-12 col-md-6 ${styles.footerCol} ${styles.footerColLeft}`}>
                             <div id={styles.footerLogo}>
-                                <FontAwesomeIcon 
-                                    id={styles.footerLogoIcon}
-                                    icon={faInstagram}
-                                />
+                                <Image id={styles.footerLogoImg} src="/static/img/footer_logo.webp" />
                             </div>
                             <div id={styles.contactContainer}>
                                 {/* <p><address>Pembroke, ON, Canada</address></p> */}

@@ -21,8 +21,9 @@
                 #footerLogo {
                     text-align: left;
         
-                    #footerLogoIcon {
-                        font-size: 84pt;
+                    #footerLogoImg {
+                        width: 100px;
+                        height: auto;
                     }
     
                     @media(max-width: 768px) {

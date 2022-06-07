@@ -55,7 +55,7 @@ function Header({ user, toggleOverlay }) {
             <Link href="/">
               <div id={styles.brandAlign}>
                 <div id={styles.navBrandContent}>
-                  <Image id={styles.brandLogo} src="/static/logo.svg" />
+                  <Image id={styles.brandLogo} src="/static/img/MW_logo.png" />
                   <span id={styles.brandTitle}>MELTED WAX RECORDS</span>
                 </div>
               </div>
