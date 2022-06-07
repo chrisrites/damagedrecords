@@ -13,7 +13,7 @@ function Footer() {
                     <div id={styles.footerRow} className="row">
                         <div className={`col-12 col-md-6 ${styles.footerCol} ${styles.footerColLeft}`}>
                             <div id={styles.footerLogo}>
-                                <Image id={styles.footerLogoImg} src="/static/img/footer_logo.webp" />
+                                <Image id={styles.footerLogoImg} src="/static/img/footer_logo_fill.webp" />
                             </div>
                             <div id={styles.contactContainer}>
                                 {/* <p><address>Pembroke, ON, Canada</address></p> */}
