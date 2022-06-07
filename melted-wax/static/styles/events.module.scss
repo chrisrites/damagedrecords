@@ -1,0 +1,83 @@
+@use 'globals';
+@use 'colours';
+@use 'breakpoints';
+
+.eventsContainer {
+    padding-bottom: 10px;
+    
+    #mainEvent {
+        text-align: center;
+
+        #mainEventh2{
+            margin: 30px 0;
+        }
+
+        #mainEventDate {
+            margin: 0 0 15px 0;
+        }
+
+        #mainEventImg {
+            margin: auto;
+            margin-bottom: 15px; 
+            width: auto;
+            max-width: 100%;
+            height: auto;
+
+            @include breakpoints.small {
+                
+            }
+        
+            @include breakpoints.medium {
+                width: auto;
+                max-height: 550px; 
+            }
+        }
+
+        #description {
+            font-family: globals.$paragraphFont;
+            font-size: globals.$paragraphSize;
+            color: colours.$white;
+            margin: 30px 3em;
+        }
+
+        #relevantEventLinks {
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #eventsh2 {
+        text-align: center;
+        color: colours.$black;
+        margin-bottom: 35px;
+    }
+
+    #showInfo {
+        text-align: center;
+        font-family: globals.$heading4Font;
+        font-size: 14px;
+        margin-bottom: 20px;
+
+        h6 {
+            font-size: 16px; 
+            margin-bottom: 6px; 
+        }
+
+        p {
+            margin: 0;
+        }
+
+        #subInfo {
+
+            address {
+                margin-bottom: 0;
+            }
+
+            .infoItem {
+                margin-bottom: 6px;
+            }
+        }
+    }
+}

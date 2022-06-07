@@ -1,0 +1,53 @@
+
+@use 'colours';
+@use 'fonts';
+
+.productContainer {
+    padding-top: 20px;
+
+    .image {
+        margin-left: 0;
+    }
+
+    #price {
+        color: colours.$white;
+        font-family: fonts.$rubik;
+        font-size: 18px;
+    }
+
+    #size {
+        color: colours.$white;
+        font-family: fonts.$rubik;
+        font-size: 16px;
+    }
+
+    #sizeSelect {
+        color: colours.$black;
+        font-family: fonts.$montserrat;
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    h3 {
+        color: colours.$white;
+        font-family: fonts.$poppins;
+        font-weight: 400;
+    }
+
+    .shoppingLinks {
+        font-family: fonts.$montserrat;
+        color: colours.$white;
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .shoppingLinks:hover {
+        cursor: pointer;
+        color: colours.$pink;
+    }
+
+    #description {
+        font-family: fonts.$merriweather;
+        font-size: 15px;
+    }
+}

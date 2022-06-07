@@ -1,0 +1,40 @@
+{
+  "name": "melted-wax-records",
+  "version": "1.0.1",
+  "description": "A record label site and web store for independent musicians and artists.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "keywords": [],
+  "author": "Christopher Chartrand",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.17",
+    "@paypal/react-paypal-js": "^7.6.0",
+    "@sendgrid/mail": "^7.6.2",
+    "axios": "^0.21.4",
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.6.1",
+    "js-cookie": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.14",
+    "next": "^12.1.5",
+    "nookies": "^2.5.2",
+    "nprogress": "^0.2.0",
+    "react": "^18.0.0",
+    "react-bootstrap": "^1.6.4",
+    "react-dom": "^18.0.0",
+    "sass": "^1.49.4",
+    "semantic-ui-react": "^0.87.3",
+    "shortid": "^2.2.16",
+    "uuid": "^3.4.0",
+    "validator": "^11.1.0"
+  }
+}

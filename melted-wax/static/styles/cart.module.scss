@@ -1,0 +1,31 @@
+@use 'colours';
+
+.cartContainer {
+
+    img {
+        margin: 0;
+    }
+
+    #shippingNotice {
+        color: colours.$black;
+
+        #note {
+            font-weight: 800;
+            color: red;
+        }
+
+        #email {
+            color: colours.$black;
+        }
+        
+        #email:hover {
+            color: colours.$pink;
+        }
+    }
+
+    .payPalButtons {
+        text-align: center;
+    }
+    
+}
+
